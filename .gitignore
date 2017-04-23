@@ -1,0 +1,16 @@
+.metadata
+tmp/
+*.tmp
+*.bak
+.settings/
+.project
+.externalToolBuilders/
+.classpath
+
+*.iml
+*.ipr
+*.iws
+.idea/
+out/
+target/
+.DS_Store

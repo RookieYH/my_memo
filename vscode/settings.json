@@ -1,0 +1,15 @@
+// 将设置放入此文件中以覆盖默认设置
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true
+    },
+    "workbench.iconTheme": "vscode-icons",
+    "extensions.autoUpdate": true,
+    "files.autoSave": "off",   
+    "workbench.statusBar.visible": true,
+    "workbench.welcome.enabled": true
+}
