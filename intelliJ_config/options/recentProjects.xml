@@ -1,0 +1,75 @@
+<application>
+  <component name="RecentProjectsManager">
+    <option name="recentPaths">
+      <list>
+        <option value="C:\Projects\TestJunit" />
+      </list>
+    </option>
+    <option name="openPaths">
+      <list>
+        <option value="C:\Projects\TestJunit" />
+      </list>
+    </option>
+    <option name="lastPath" value="C:\Projects\TestJunit" />
+    <option name="additionalInfo">
+      <map>
+        <entry key="C:\Projects">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="IU-163.13906.18" />
+              <option name="productionCode" value="IU" />
+              <option name="binFolder" value="C:\Programs\IntelliJ IDEA\bin" />
+              <option name="projectOpenTimestamp" value="1489911336376" />
+              <option name="buildTimestamp" value="1488793107651" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="C:\Projects\TestJunit">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="IU-163.15188.11" />
+              <option name="productionCode" value="IU" />
+              <option name="binFolder" value="C:\Programs\IntelliJ IDEA\bin" />
+              <option name="projectOpenTimestamp" value="1492958263526" />
+              <option name="buildTimestamp" value="1490393406918" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="C:\Users\fumofuu\IdeaProjects\htmldemo">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="IU-162.2228.15" />
+              <option name="productionCode" value="IU" />
+              <option name="binFolder" value="C:\Programs\IntelliJ IDEA\bin" />
+              <option name="projectOpenTimestamp" value="1486990791340" />
+              <option name="buildTimestamp" value="1476374400000" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="C:\Users\fumofuu\git\learning">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="IU-163.13906.18" />
+              <option name="productionCode" value="IU" />
+              <option name="binFolder" value="C:\Programs\IntelliJ IDEA\bin" />
+              <option name="projectOpenTimestamp" value="1489911576816" />
+              <option name="buildTimestamp" value="1488793111405" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="C:\Users\fumofuu\git\shiro-example">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="IU-163.12024.16" />
+              <option name="productionCode" value="IU" />
+              <option name="binFolder" value="C:\Programs\IntelliJ IDEA\bin" />
+              <option name="projectOpenTimestamp" value="1488551736632" />
+              <option name="buildTimestamp" value="1485857130097" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="lastProjectLocation" value="C:/Projects" />
+  </component>
+</application>

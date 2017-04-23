@@ -1,0 +1,136 @@
+<application>
+  <component name="StatisticsApplicationUsages">
+    <group name="JavaScript versions">
+      <project id="learning" values="ECMAScript 5.1" collectionTime="1489911800048" />
+      <project id="TestJunit" values="ECMAScript 5.1" collectionTime="1492958620782" />
+      <project id="Testjunit" values="ECMAScript 5.1" collectionTime="1489911387145" />
+      <project id="htmldemo" values="ECMAScript 5.1" collectionTime="1486990889587" />
+      <project id="shiro-example" values="ECMAScript 5.1" collectionTime="1488551753293" />
+    </group>
+    <group name="module type">
+      <project id="learning" values="WEB_MODULE" collectionTime="1489911799824" />
+      <project id="TestJunit" values="JAVA_MODULE" collectionTime="1492958620568" />
+      <project id="Testjunit" values="JAVA_MODULE" collectionTime="1489911386929" />
+      <project id="shiro-example" values="JAVA_MODULE" collectionTime="1488551752993" />
+    </group>
+    <group name="vcs">
+      <project id="learning" values="Git" collectionTime="1489911799823" />
+      <project id="shiro-example" values="Git" collectionTime="1488551752993" />
+    </group>
+    <group name="VCS Log 2">
+      <project id="learning" values="data.git.root.count.1,data.branches.count.1+,data.commit.count.1+" collectionTime="1489911799920" />
+    </group>
+    <group name="run-configuration-type-temp">
+      <project id="TestJunit" values="JUnit" collectionTime="1492958620568" />
+    </group>
+    <group name="file-type">
+      <project id="learning" values="PLAIN_TEXT,Markdown,IDEA_MODULE" collectionTime="1489911799918" />
+      <project id="TestJunit" values="XML,JAVA,IDEA_MODULE" collectionTime="1492958620621" />
+      <project id="Testjunit" values="HTML,UNKNOWN,XML,CSS,Eclipse,SQL,Images,JSP,Markdown,JAVA,JavaScript,CLASS,ARCHIVE,IDEA_MODULE,Properties,PLAIN_TEXT,JSON,Manifest" collectionTime="1489911386993" />
+      <project id="shiro-example" values="HTML,IDEA_MODULE,CSS,PLAIN_TEXT,UNKNOWN,Properties,JavaScript,Eclipse,JAVA,XML,SQL,JSON,JSP,Markdown,Images" collectionTime="1488551753081" />
+    </group>
+    <group name="images.ide.background">
+      <project id="learning" values="frame 0,editor 0" collectionTime="1489911799920" />
+      <project id="TestJunit" values="frame=0,editor=0" collectionTime="1492958620633" />
+      <project id="Testjunit" values="editor 0,frame 0" collectionTime="1489911386994" />
+      <project id="htmldemo" values="editor 0,frame 0" collectionTime="1486990889456" />
+      <project id="shiro-example" values="frame 0,editor 0" collectionTime="1488551753113" />
+    </group>
+    <group name="Spring MVC">
+      <project id="shiro-example" values="fileset_webXml,viewResolvers_1,viewResolver_UrlBasedViewResolver_.jsp,fileset_webXml,viewResolvers_1,fileset_webXml,fileset_webXml,viewResolvers_1,viewResolvers_1,fileset_webXml,fileset_webXml,viewResolver_UrlBasedViewResolver_.jsp,fileset_webXml,viewResolvers_1,viewResolvers_1,fileset_webXml,viewResolver_UrlBasedViewResolver_.jsp,fileset_webXml,fileset_webXml,fileset_webXml,fileset_webXml,fileset_webXml,fileset_webXml,fileset_webXml,viewResolver_UrlBasedViewResolver_.jsp,fileset_webXml,viewResolvers_0,viewResolvers_1,viewResolvers_1,viewResolver_UrlBasedViewResolver_.jsp,fileset_webXml,viewResolver_UrlBasedViewResolver_.jsp,viewResolver_UrlBasedViewResolver_.jsp,viewResolver_UrlBasedViewResolver_.jsp,viewResolvers_1,fileset_webXml,viewResolver_UrlBasedViewResolver_.jsp,fileset_webXml,viewResolver_UrlBasedViewResolver_.jsp,fileset_webXml,fileset_webXml,fileset_webXml,mvcModelsInProject_11,viewResolvers_1" collectionTime="1488551754889" />
+    </group>
+    <group name="spring">
+      <project id="shiro-example" values="xmlNS_www.springframework.org/schema/aop,fileset_xmlContext,fileset_autodetect_com.intellij.spring.web.config.webXml.XmlServletFileSet,xmlNS_www.springframework.org/schema/util,xmlNS_www.springframework.org/schema/aop,xmlNS_www.springframework.org/schema/util,xmlNS_www.springframework.org/schema/p,fileset_autodetect_NONE,xmlNS_www.springframework.org/schema/p,fileset_configFiles5,xmlNS_www.springframework.org/schema/mvc,fileset_autodetect_com.intellij.spring.web.config.webXml.XmlServletFileSet,fileset_autodetect_com.intellij.spring.web.config.webXml.XmlServletFileSet,xmlNS_www.springframework.org/schema/p,xmlNS_www.springframework.org/schema/context,xmlNS_www.springframework.org/schema/aop,xmlNS_www.springframework.org/schema/util,fileset_autodetect_com.intellij.spring.web.config.webXml.XmlServletFileSet,xmlNS_www.springframework.org/schema/tx,xmlNS_www.springframework.org/schema/aop,xmlNS_www.springframework.org/schema/p,xmlNS_www.springframework.org/schema/context,xmlNS_www.springframework.org/schema/aop,xmlNS_www.springframework.org/schema/util,fileset_autodetect_com.intellij.spring.web.config.webXml.XmlServletFileSet,xmlNS_www.springframework.org/schema/aop,xmlNS_www.springframework.org/schema/util,xmlNS_www.springframework.org/schema/mvc,fileset_configFiles5,xmlNS_www.springframework.org/schema/context,xmlNS_www.springframework.org/schema/aop,xmlNS_www.springframework.org/schema/util,xmlNS_www.springframework.org/schema/context,xmlNS_www.springframework.org/schema/p,fileset_xmlContext,xmlNS_www.springframework.org/schema/security,xmlNS_www.springframework.org/schema/p,xmlNS_www.springframework.org/schema/tx,fileset_xmlContext,xmlNS_www.springframework.org/schema/context,fileset_xmlContext,fileset_autodetect_com.intellij.spring.web.config.webXml.XmlServletFileSet,xmlNS_www.springframework.org/schema/util,xmlNS_www.springframework.org/schema/p,fileset_xmlContext,xmlNS_www.springframework.org/schema/context,xmlNS_www.springframework.org/schema/util,xmlNS_www.springframework.org/schema/aop,fileset_configFiles5,xmlNS_www.springframework.org/schema/aop,fileset_autodetect_com.intellij.spring.web.config.webXml.XmlServletFileSet,xmlNS_www.springframework.org/schema/util,xmlNS_www.springframework.org/schema/aop,xmlNS_www.springframework.org/schema/tx,xmlNS_www.springframework.org/schema/p,xmlNS_www.springframework.org/schema/c,xmlNS_www.springframework.org/schema/util,xmlNS_www.springframework.org/schema/p,xmlNS_www.springframework.org/schema/mvc,xmlNS_www.springframework.org/schema/mvc,fileset_autodetect_com.intellij.spring.web.config.webXml.XmlServletFileSet,xmlNS_www.springframework.org/schema/aop,fileset_autodetect_NONE,xmlNS_www.springframework.org/schema/context,xmlNS_www.springframework.org/schema/util,fileset_configFiles5,xmlNS_www.springframework.org/schema/aop,xmlNS_www.springframework.org/schema/mvc,xmlNS_www.springframework.org/schema/p,xmlNS_www.springframework.org/schema/p,xmlNS_www.springframework.org/schema/aop,xmlNS_www.springframework.org/schema/util,xmlNS_www.springframework.org/schema/util,fileset_configFiles5,xmlNS_www.springframework.org/schema/util,fileset_autodetect_NONE,xmlNS_www.springframework.org/schema/util,xmlNS_www.springframework.org/schema/context,xmlNS_www.springframework.org/schema/util,xmlNS_www.springframework.org/schema/p,xmlNS_www.springframework.org/schema/aop,xmlNS_www.springframework.org/schema/aop,xmlNS_www.springframework.org/schema/tx,xmlNS_www.springframework.org/schema/context,xmlNS_www.springframework.org/schema/context,fileset_autodetect_com.intellij.spring.web.config.webXml.XmlServletFileSet,xmlNS_www.springframework.org/schema/context,xmlNS_www.springframework.org/schema/aop,xmlNS_www.springframework.org/schema/context,fileset_xmlContext,fileset_autodetect_NONE,xmlNS_www.springframework.org/schema/p,fileset_autodetect_com.intellij.spring.web.config.webXml.XmlServletFileSet,xmlNS_www.springframework.org/schema/aop,xmlNS_www.springframework.org/schema/p,xmlNS_www.springframework.org/schema/mvc,fileset_configFiles5,xmlNS_www.springframework.org/schema/util,xmlNS_www.springframework.org/schema/context,fileset_xmlContext,xmlNS_www.springframework.org/schema/util,xmlNS_www.springframework.org/schema/aop,xmlNS_www.springframework.org/schema/context,xmlNS_www.springframework.org/schema/context,xmlNS_www.springframework.org/schema/util,fileset_configFiles5,xmlNS_www.springframework.org/schema/context,xmlNS_www.springframework.org/schema/util,fileset_autodetect_com.intellij.spring.web.config.webXml.XmlServletFileSet,xmlNS_www.springframework.org/schema/aop,xmlNS_www.springframework.org/schema/aop,fileset_xmlContext,xmlNS_www.springframework.org/schema/aop,xmlNS_www.springframework.org/schema/tx,fileset_xmlContext,fileset_autodetect_com.intellij.spring.web.config.webXml.XmlServletFileSet,fileset_xmlContext,xmlNS_www.springframework.org/schema/tx,xmlNS_www.springframework.org/schema/util,xmlNS_www.springframework.org/schema/aop,xmlNS_www.springframework.org/schema/tx,xmlNS_www.springframework.org/schema/util,xmlNS_www.springframework.org/schema/p,xmlNS_www.springframework.org/schema/util,xmlNS_www.springframework.org/schema/c,xmlNS_www.springframework.org/schema/aop,xmlNS_www.springframework.org/schema/p,xmlNS_www.springframework.org/schema/context,fileset_configFiles10,xmlNS_www.springframework.org/schema/aop,fileset_xmlContext,xmlNS_www.springframework.org/schema/mvc,fileset_autodetect_com.intellij.spring.web.config.webXml.XmlServletFileSet,fileset_xmlContext,xmlNS_www.springframework.org/schema/aop,fileset_configFiles5,xmlNS_www.springframework.org/schema/util,xmlNS_www.springframework.org/schema/util,xmlNS_www.springframework.org/schema/p,xmlNS_www.springframework.org/schema/aop,xmlNS_www.springframework.org/schema/context,xmlNS_www.springframework.org/schema/util,xmlNS_www.springframework.org/schema/util,xmlNS_www.springframework.org/schema/aop,xmlNS_www.springframework.org/schema/aop,xmlNS_www.springframework.org/schema/aop,fileset_autodetect_NONE,xmlNS_www.springframework.org/schema/context,xmlNS_www.springframework.org/schema/c,fileset_configFiles5,xmlNS_www.springframework.org/schema/context,xmlNS_www.springframework.org/schema/p,xmlNS_www.springframework.org/schema/mvc,xmlNS_www.springframework.org/schema/aop,xmlNS_www.springframework.org/schema/aop,xmlNS_www.springframework.org/schema/aop,fileset_xmlContext,fileset_configFiles5,xmlNS_www.springframework.org/schema/p,fileset_configFiles5,fileset_autodetect_com.intellij.spring.web.config.webXml.XmlServletFileSet,fileset_configFiles10,xmlNS_www.springframework.org/schema/p,xmlNS_www.springframework.org/schema/c,xmlNS_www.springframework.org/schema/p,xmlNS_www.springframework.org/schema/util,xmlNS_www.springframework.org/schema/util,fileset_configFiles5,xmlNS_www.springframework.org/schema/mvc,xmlNS_www.springframework.org/schema/tx,xmlNS_www.springframework.org/schema/aop,xmlNS_www.springframework.org/schema/security,xmlNS_www.springframework.org/schema/c,fileset_configFilesGreater10,fileset_configFiles5,xmlNS_www.springframework.org/schema/context,xmlNS_www.springframework.org/schema/util,xmlNS_www.springframework.org/schema/util,xmlNS_www.springframework.org/schema/util,xmlNS_www.springframework.org/schema/context,xmlNS_www.springframework.org/schema/util,fileset_autodetect_com.intellij.spring.web.config.webXml.XmlServletFileSet,xmlNS_www.springframework.org/schema/util,fileset_xmlContext,fileset_autodetect_NONE,xmlNS_www.springframework.org/schema/mvc,xmlNS_www.springframework.org/schema/aop,xmlNS_www.springframework.org/schema/tx,xmlNS_www.springframework.org/schema/util,xmlNS_www.springframework.org/schema/security,xmlNS_www.springframework.org/schema/util,xmlNS_www.springframework.org/schema/context,fileset_autodetect_com.intellij.spring.web.config.webXml.XmlServletFileSet,fileset_configFiles5,xmlNS_www.springframework.org/schema/p,xmlNS_www.springframework.org/schema/aop,fileset_xmlContext,xmlNS_www.springframework.org/schema/util,fileset_autodetect_NONE,xmlNS_www.springframework.org/schema/util,xmlNS_www.springframework.org/schema/context,xmlNS_www.springframework.org/schema/util,xmlNS_www.springframework.org/schema/aop,fileset_xmlContext,xmlNS_www.springframework.org/schema/mvc,xmlNS_www.springframework.org/schema/aop,xmlNS_www.springframework.org/schema/webflow-config,xmlNS_www.springframework.org/schema/aop,xmlNS_www.springframework.org/schema/p,xmlNS_www.springframework.org/schema/p,xmlNS_www.springframework.org/schema/p,fileset_autodetect_com.intellij.spring.web.config.webXml.XmlServletFileSet,xmlNS_www.springframework.org/schema/tx,xmlNS_www.springframework.org/schema/mvc,fileset_autodetect_com.intellij.spring.web.config.webXml.XmlServletFileSet,xmlNS_www.springframework.org/schema/aop,xmlNS_www.springframework.org/schema/p,fileset_configFiles5,xmlNS_www.springframework.org/schema/c,xmlNS_www.springframework.org/schema/context,xmlNS_www.springframework.org/schema/p,fileset_autodetect_com.intellij.spring.web.config.webXml.XmlServletFileSet,fileset_autodetect_com.intellij.spring.web.config.webXml.XmlServletFileSet,xmlNS_www.springframework.org/schema/aop,xmlNS_www.springframework.org/schema/aop,fileset_autodetect_com.intellij.spring.web.config.webXml.XmlServletFileSet,xmlNS_www.springframework.org/schema/util,xmlNS_www.springframework.org/schema/c,fileset_xmlContext,fileset_autodetect_com.intellij.spring.web.config.webXml.XmlServletFileSet,fileset_xmlContext,xmlNS_www.springframework.org/schema/context,xmlNS_www.springframework.org/schema/mvc" collectionTime="1488551753866" />
+    </group>
+    <group name="frameworks">
+      <project id="shiro-example" values="web,Spring,AspectJ" collectionTime="1488551752993" />
+    </group>
+    <group name="javaScript Scope Usages">
+      <project id="learning" values="Project,Project" collectionTime="1489911800048" />
+      <project id="TestJunit" values="Project,Project" collectionTime="1492958620782" />
+      <project id="Testjunit" values="Project,Project" collectionTime="1489911387145" />
+      <project id="htmldemo" values="Project,Project" collectionTime="1486990889587" />
+      <project id="shiro-example" values="Project,Project" collectionTime="1488551753293" />
+    </group>
+    <group name="Git">
+      <project id="learning" values="data.remotes.in.project.1,config.push.update.all.roots.enabled,config.update.type.BRANCH_DEFAULT,config.cherry-pick.autocommit.disabled,config.push.autoupdate.disabled,config.force.push.enabled,config.ssh.enabled,config.repo.sync.NOT_DECIDED,config.save.policy.STASH,config.warn.about.crlf.enabled,data.local.branches.count.2+,config.warn.about.detached.enabled,data.remote.branches.count.1" collectionTime="1489911799926" />
+      <project id="TestJunit" values="config.update.type.BRANCH_DEFAULT,config.warn.about.crlf.enabled,config.push.autoupdate.disabled,config.cherry-pick.autocommit.disabled,config.save.policy.STASH,config.repo.sync.NOT_DECIDED,config.force.push.enabled,config.ssh.enabled,config.push.update.all.roots.enabled,config.warn.about.detached.enabled" collectionTime="1492958620639" />
+      <project id="Testjunit" values="config.warn.about.crlf.enabled,config.ssh.enabled,config.repo.sync.NOT_DECIDED,config.push.update.all.roots.enabled,config.save.policy.STASH,config.force.push.enabled,config.warn.about.detached.enabled,config.cherry-pick.autocommit.disabled,config.push.autoupdate.disabled,config.update.type.BRANCH_DEFAULT" collectionTime="1489911387003" />
+      <project id="htmldemo" values="config.repo.sync.NOT_DECIDED,config.warn.about.crlf.enabled,config.save.policy.STASH,config.push.autoupdate.disabled,config.push.update.all.roots.enabled,config.update.type.BRANCH_DEFAULT,config.ssh.enabled,config.warn.about.detached.enabled,config.force.push.enabled,config.cherry-pick.autocommit.disabled" collectionTime="1486990889456" />
+      <project id="shiro-example" values="config.update.type.BRANCH_DEFAULT,config.ssh.enabled,config.push.autoupdate.disabled,config.push.update.all.roots.enabled,config.save.policy.STASH,config.repo.sync.NOT_DECIDED,config.force.push.enabled,config.warn.about.crlf.enabled,config.cherry-pick.autocommit.disabled,config.warn.about.detached.enabled" collectionTime="1488551753152" />
+    </group>
+    <group name="libraries">
+      <project id="shiro-example" values="spring,spring-security,TransactionJavaee,BeanValidation,spring-webflow,hibernate,spring-mvc" collectionTime="1488551753113" />
+    </group>
+    <group name="Libraries by jars">
+      <project id="shiro-example" values="spring-mvc_4.0.0.RELEASE,spring-core_4.0.0.RELEASE,spring-core_3.2.2.RELEASE,spring-security_3.1.2.RELEASE,spring-mvc_3.2.2.RELEASE,spring-webflow_2.3.2.RELEASE" collectionTime="1488551753150" />
+    </group>
+    <group name="language-level">
+      <project id="learning" values="JDK_1_8" collectionTime="1489911799925" />
+      <project id="TestJunit" values="JDK_1_5,JDK_1_8" collectionTime="1492958620638" />
+      <project id="Testjunit" values="JDK_1_8" collectionTime="1489911387002" />
+      <project id="htmldemo" values="JDK_1_8" collectionTime="1486990889456" />
+      <project id="shiro-example" values="JDK_1_8,JDK_1_6,JDK_1_5" collectionTime="1488551753151" />
+    </group>
+  </component>
+  <component name="UsageTrigger">
+    <counts>
+      <entry feature="CreateFile.CreateFileAction" count="1" />
+      <entry feature="OpenInBrowser.Chrome" count="1" />
+      <entry feature="execute.JUnit.Debug" count="17" />
+      <entry feature="git.branch.checkout.local" count="3" />
+      <entry feature="git.branch.compare" count="8" />
+      <entry feature="git.branch.create.new" count="1" />
+      <entry feature="git.branch.delete.local" count="1" />
+      <entry feature="git.branch.delete.remote" count="1" />
+      <entry feature="git.branch.merge" count="1" />
+      <entry feature="ide.help.gitResetHead" count="1" />
+      <entry feature="ide.help.ideaInterface.editor" count="1" />
+      <entry feature="ide.help.preferences.inspections" count="1" />
+      <entry feature="ide.help.preferences.updates" count="1" />
+      <entry feature="ide.help.reference.VersionControl.Git.UpdateProject" count="2" />
+      <entry feature="ide.help.reference.dialogs.rundebug.#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" count="1" />
+      <entry feature="ide.help.reference.dialogs.vcs.commit" count="3" />
+      <entry feature="ide.help.reference.settingsdialog.project.structure.library" count="1" />
+      <entry feature="ide.help.top" count="1" />
+      <entry feature="ide.settings.Appearance" count="1" />
+      <entry feature="ide.settings.Application&#10;Servers" count="1" />
+      <entry feature="ide.settings.Code_Completion" count="2" />
+      <entry feature="ide.settings.Compiler" count="2" />
+      <entry feature="ide.settings.File_Encodings" count="3" />
+      <entry feature="ide.settings.File_and_Code_Templates" count="2" />
+      <entry feature="ide.settings.GitHub" count="2" />
+      <entry feature="ide.settings.Java_Compiler" count="1" />
+      <entry feature="ide.settings.Keymap" count="10" />
+      <entry feature="ide.settings.Plugins" count="6" />
+      <entry feature="ide.settings.SSH_Terminal" count="1" />
+      <entry feature="ide.settings.System_Settings" count="1" />
+      <entry feature="ide.settings.Terminal" count="5" />
+      <entry feature="ide.settings.Tomcat_Server" count="1" />
+      <entry feature="ide.settings.Updates" count="1" />
+      <entry feature="ide.settings.Version_Control" count="2" />
+      <entry feature="ide.settings.Web_Browsers" count="1" />
+      <entry feature="idea.caches.invalidated" count="2" />
+      <entry feature="ideaapp.started" count="56" />
+      <entry feature="terminal.win" count="6" />
+      <entry feature="tips.of.the.day.next" count="118" />
+      <entry feature="tips.of.the.day.prev" count="115" />
+      <entry feature="uml.ShowDiagram.DIFF.popup" count="2" />
+      <entry feature="uml.ShowDiagram.JAVA.popup" count="1" />
+      <entry feature="uml.ShowDiagram.MAVEN" count="2" />
+      <entry feature="vcs.log.GoToHash/Branch/Tag" count="1" />
+      <entry feature="welcome.screen.Help.KeymapReference" count="1" />
+      <entry feature="welcome.screen.ShowTips" count="1" />
+      <entry feature="welcome.screen.WelcomeScreen.Configure" count="61" />
+      <entry feature="welcome.screen.WelcomeScreen.CreateNewProject" count="2" />
+      <entry feature="welcome.screen.WelcomeScreen.Documentation" count="4" />
+      <entry feature="welcome.screen.WelcomeScreen.GetFromVcs" count="9" />
+      <entry feature="welcome.screen.WelcomeScreen.ImportProject" count="5" />
+      <entry feature="welcome.screen.WelcomeScreen.OpenProject" count="1" />
+      <entry feature="welcome.screen.WelcomeScreen.Plugins" count="11" />
+      <entry feature="welcome.screen.WelcomeScreen.Settings" count="22" />
+      <entry feature="welcome.screen.WelcomeScreen.Update" count="5" />
+      <entry feature="welcome.screen.null" count="12" />
+    </counts>
+  </component>
+</application>

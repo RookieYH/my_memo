@@ -1,0 +1,64 @@
+<application>
+  <component name="DimensionService">
+    <location key="WELCOME_SCREEN.0.0.1920.1080@120dpi" x="959" y="287" />
+    <location key="#Plugins.0.0.1920.1080@120dpi" x="572" y="177" />
+    <location key="FileChooserDialogImpl.0.0.1920.1080@120dpi" x="930" y="295" />
+    <location key="SettingsEditor.0.0.1920.1080@120dpi" x="459" y="78" />
+    <location key="new project wizard.0.0.1920.1080@120dpi" x="392" y="54" />
+    <location key="com.intellij.ide.util.TipDialog.0.0.1920.1080@120dpi" x="793" y="399" />
+    <location key="#Notifications.0.0.1920.1080@120dpi" x="703" y="218" />
+    <location key="#com.intellij.execution.impl.EditConfigurationsDialog.0.0.1920.1080@120dpi" x="392" y="9" />
+    <location key="#Browse_Repositories.0.0.1920.1080@120dpi" x="552" y="129" />
+    <location key="#Browse_JetBrains_Plugins_.0.0.1920.1080@120dpi" x="552" y="75" />
+    <location key="NewModule_or_Project.wizard.0.0.1920.1080@120dpi" x="567" y="24" />
+    <location key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate.0.0.1920.1080@120dpi" x="645" y="365" />
+    <location key="CommitChangelistDialog2.0.0.1920.1080@120dpi" x="648" y="85" />
+    <location key="ProcessPopupWindow.0.0.1920.1080@120dpi" x="123" y="776" />
+    <location key="DiffContextDialog.0.0.1920.1080@120dpi" x="183" y="79" />
+    <location key="WebDeployment.AddServerDialog.v.1.0.0.1920.1080@120dpi" x="711" y="373" />
+    <location key="#Project_Structure.0.0.1920.1080@120dpi" x="311" y="0" />
+    <location key="VCS.ChangelistChooser.0.0.1920.1080@120dpi" x="774" y="319" />
+    <location key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog.0.0.1920.1080@120dpi" x="638" y="204" />
+    <location key="#Tomcat_Server.0.0.1920.1080@120dpi" x="708" y="421" />
+    <location key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable.0.0.1920.1080@120dpi" x="650" y="129" />
+    <location key="#Inspections.0.0.1920.1080@120dpi" x="588" y="162" />
+    <location key="#com.intellij.ide.util.MemberChooser.0.0.1920.1080@120dpi" x="720" y="146" />
+    <location key="StructurePopup.0.0.1920.1080@120dpi" x="652" y="271" />
+    <location key="#Menus_and_Toolbars.0.0.1920.1080@120dpi" x="694" y="246" />
+    <location key="EditParametersPopupWindow.0.0.1920.1080@120dpi" x="717" y="320" />
+    <location key="RollbackChangesDialog.0.0.1920.1080@120dpi" x="611" y="154" />
+    <location key="#com.intellij.ide.actions.ChooseComponentsToExportDialog.0.0.1920.1080@120dpi" x="640" y="312" />
+    <location key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog.0.0.1920.1080@120dpi" x="486" y="121" />
+    <location key="GitCloneDialog.0.0.1920.1080@120dpi" x="743" y="323" />
+    <location key="Vcs.Push.Dialog.0.0.1920.1080@120dpi" x="724" y="180" />
+    <location key="VCS.ChangeListViewerDialog.0.0.1920.1080@120dpi" x="1049" y="216" />
+    <location key="git4idea.ui.GitResetDialog.0.0.1920.1080@120dpi" x="749" y="385" />
+    <location key="git4idea.history.wholeTree.VcsStructureChooser.0.0.1920.1080@120dpi" x="689" y="267" />
+    <location key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2.0.0.1920.1080@120dpi" x="402" y="188" />
+    <location key="#com.intellij.tools.ToolEditorDialog.0.0.1920.1080@120dpi" x="535" y="163" />
+    <location key="bookmarks.0.0.1920.1080@120dpi" x="490" y="278" />
+    <location key="jetbrains.javascript.buildTools.run-task-popup.0.0.1920.1080@120dpi" x="792" y="318" />
+    <location key="#Chrome_Settings.0.0.1920.1080@120dpi" x="690" y="432" />
+    <size key="new project wizard.0.0.1920.1080@120dpi" width="1160" height="947" />
+    <size key="GotoFile_FileTypePopup.0.0.1920.1080@120dpi" width="237" height="246" />
+    <size key="#com.intellij.execution.impl.EditConfigurationsDialog.0.0.1920.1080@120dpi" width="1204" height="975" />
+    <size key="javadoc.popup.0.0.1920.1080@120dpi" width="752" height="429" />
+    <size key="ProcessPopupWindow.0.0.1920.1080@120dpi" width="1797" height="232" />
+    <size key="StructurePopup.0.0.1920.1080@120dpi" width="568" height="410" />
+    <size key="CommitChangelistDialog2.0.0.1920.1080@120dpi" width="972" height="945" />
+    <size key="SettingsEditor.0.0.1920.1080@120dpi" width="1388" height="926" />
+    <size key="Vcs.CompareWithSelectedRevision.Popup.0.0.1920.1080@120dpi" width="302" height="300" />
+    <size key="GridCell.Tab.0.left.0.0.1920.1080@120dpi" width="1864" height="324" />
+    <size key="GridCell.Tab.0.center.0.0.1920.1080@120dpi" width="1864" height="324" />
+    <size key="GridCell.Tab.0.right.0.0.1920.1080@120dpi" width="1864" height="324" />
+    <size key="GridCell.Tab.0.bottom.0.0.1920.1080@120dpi" width="1864" height="324" />
+    <size key="GridCell.Tab.1.left.0.0.1920.1080@120dpi" width="1864" height="324" />
+    <size key="GridCell.Tab.1.center.0.0.1920.1080@120dpi" width="1864" height="324" />
+    <size key="GridCell.Tab.1.right.0.0.1920.1080@120dpi" width="1864" height="324" />
+    <size key="GridCell.Tab.1.bottom.0.0.1920.1080@120dpi" width="1864" height="324" />
+    <size key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2.0.0.1920.1080@120dpi" width="1116" height="733" />
+    <size key="bookmarks.0.0.1920.1080@120dpi" width="920" height="425" />
+    <size key="DebuggerActiveHint.0.0.1920.1080@120dpi" width="554" height="508" />
+    <size key="jetbrains.javascript.buildTools.run-task-popup.0.0.1920.1080@120dpi" width="315" height="345" />
+  </component>
+</application>

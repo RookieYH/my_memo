@@ -236,25 +236,8 @@
 
 - Linux 压缩文件为后缀 `.7z` 格式的文件
 - 命令：`7za a test1.7z /opt/test1/`
-
-
-## 特殊格式
-
-- 7z
-    - 7z 的安装：
-        - 访问官网下载解压包：<http://sourceforge.net/projects/p7zip/files/p7zip/>
-        - 解压压缩包：`tar jxvf p7zip_15.14_src_all.tar.bz2`
-        - 进入目录：`cd p7zip_15.14`
-        - 执行安装：`sh install.sh`
-- rar
-    - rar 的安装：
-        - 下载：`wget http://www.rarlab.com/rar/rarlinux-3.8.0.tar.gz`
-        - 解压下载下来的压缩包：`tar zxvf rarlinux-3.8.0.tar.gz`
-        - 进入解压后目录：`cd rar`
-        - 编译：`make`
-        - 安装：`make install`
-    - rar 解压：`rar x 文件名.rar`
-
-## 资料
-
-- <http://blog.csdn.net/nzing/article/details/9166057>
+- 7z 的安装：
+	- 访问官网下载解压包：<http://sourceforge.net/projects/p7zip/files/p7zip/>
+	- 解压压缩包：`tar jxvf p7zip_15.14_src_all.tar.bz2`
+	- 进入目录：`cd p7zip_15.14`
+	- 执行安装：`sh install.sh`
