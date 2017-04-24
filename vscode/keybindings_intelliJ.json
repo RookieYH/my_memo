@@ -52,7 +52,7 @@
     },
     {
         "key": "alt+`",
-        "command": "workbench.view.git"
+        "command": "git.viewHistory"
     },
     {
         "key": "ctrl+`",

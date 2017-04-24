@@ -11,21 +11,21 @@
 - `history`，查看所有的历史命令
 - `Ctrl + r`，进入历史命令的搜索功能模式
 - `clear`，清除屏幕里面的所有命令
-- `pwd`，显示当前目录路径（常用）
+- `pwd`，显示当前目录路径
 - `firefox&`，最后后面的 **&** 符号，表示使用后台方式打开 Firefox，然后显示该进程的 PID 值
 - `jobs`，查看后台运行的程序列表
-- `ifconfig`，查看 IP 等信息（常用）
-- `locate 搜索关键字`，快速搜索系统文件/文件夹（类似 Windows 上的 everything 索引式搜索）（常用）
-	- `updatedb`，配合上面的 locate，给 locate 的索引更新（locate 默认是一天更新一次索引）（常用）
-- `date`，查看系统时间（常用）
-	- `date -s20080103`，设置日期（常用）
-	- `date -s18:24`，设置时间，如果要同时更改 BIOS 时间，再执行 `hwclock --systohc`（常用）
+- `ifconfig`，查看 IP 等信息
+- `locate 搜索关键字`，快速搜索系统文件/文件夹（类似 Windows 上的 everything 索引式搜索）
+	- `updatedb`，配合上面的 locate，给 locate 的索引更新（locate 默认是一天更新一次索引）
+- `date`，查看系统时间
+	- `date -s20080103`，设置日期
+	- `date -s18:24`，设置时间，如果要同时更改 BIOS 时间，再执行 `hwclock --systohc`
 - `cal`，在终端中查看日历，肯定没有农历显示的
-- `uptime`，查看系统已经运行了多久，当前有几个用户等信息（常用）
+- `uptime`，查看系统已经运行了多久，当前有几个用户等信息
 - `echo "字符串内容"`，输出 "字符串内容"
 - `cat 文件路名`，显示文件内容（属于打印语句）
 - `cat -n 文件名`，显示文件，并每一行内容都编号
-- `more 文件名`，用分页的方式查看文件内容（按 space 翻下一页，按 *Ctrl + B* 返回上页）
+- `more 文件名`，用分页的方式查看文件内容（按 *space* 翻下一页，按 *Ctrl + B* 返回上页）
 - `less`文件名，用分页的方式查看文件内容（带上下翻页）
 	- 按 **j** 向下移动，按 **k** 向上移动
 	- 按 **/** 后，输入要查找的字符串内容，可以对文件进行向下查询，如果存在多个结果可以按 **n** 调到下一个结果出
@@ -36,8 +36,8 @@
     - `shutdown -h+10`，10 分钟后关机
     - `shutdown -h23:30`，23:30 关机
     - `shutdown -rnew`，立即重启
-- `poweroff`，立即关机（常用）
-- `reboot`，立即重启（常用）
+- `poweroff`，立即关机
+- `reboot`，立即重启
 - `zip mytest.zip /opt/test/`，把 /opt 目录下的 test/ 目录进行压缩，压缩成一个名叫 mytest 的 zip 文件
 	- `unzip mytest.zip`，对 mytest.zip 这个文件进行解压，解压到当前所在目录
 	- `unzip mytest.zip -d /opt/setups/`，对 mytest.zip 这个文件进行解压，解压到 /opt/setups/ 目录下
@@ -101,7 +101,7 @@
 	- `find /opt -name .oh-my-zsh`，其中 /opt 代表目录名，.oh-my-zsh 代表搜索的是隐藏文件 / 文件夹名字为 oh-my-zsh 的
 	- `find /opt -type f -iname .oh-my-zsh`，其中 /opt 代表目录名，-type f 代表只找文件，.oh-my-zsh 代表搜索的是隐藏文件名字为 oh-my-zsh 的
 	- `find /opt -type d -iname .oh-my-zsh`，其中 /opt 代表目录名，-type d 代表只找目录，.oh-my-zsh 代表搜索的是隐藏文件夹名字为 oh-my-zsh 的
-	- `find . -name "lin*" -execls -l{}\;`，当前目录搜索lin开头的文件，然后用其搜索后的结果集，再执行ls -l的命令（这个命令可变，其他命令也可以），其中 -exec 和 {}\; 都是固定格式
+	- `find . -name "lin*" -exec ls -l{}\;`，当前目录搜索lin开头的文件，然后用其搜索后的结果集，再执行ls -l的命令（这个命令可变，其他命令也可以），其中 -exec 和 {}\; 都是固定格式
 	- `find /opt -type f -size +800M  -print0 | xargs -0 du -h | sort -nr`，找出 /opt 目录下大于 800 M 的文件
 	- `find / -name "*tower*" -exec rm {} \;`，找到文件并删除
 	- `find /usr/local/backups -name "*.html" -mtime +10 -print0 |xargs -0 rm -rfv`,删除以html结尾的10天前的文件，包括带空格的文件
@@ -142,13 +142,13 @@
 - `chmod 777 文件名/目录`，给指定文件增加最高权限，系统中的所有人都可以进行读写。
 	- linux 的权限分为 rwx。r 代表：可读，w 代表：可写，x 代表：可执行
 	- 这三个权限都可以转换成数值表示，r = 4，w = 2，x = 1，- = 0，所以总和是 7，也就是最大权限。第一个 7 是所属主（user）的权限，第二个 7 是所属组（group）的权限，最后一位 7 是非本群组用户（others）的权限。
-- `su`：切换到 root 用户，终端目录还是原来的地方（常用）
+- `su`：切换到 root 用户，终端目录还是原来的地方
 	- `su -`：切换到 root 用户，其中 **-** 号另起一个终端并切换账号
 	- `su 用户名`，切换指定用户帐号登陆，终端目录还是原来地方。
 	- `su - 用户名`，切换到指定用户帐号登陆，其中 **-** 号另起一个终端并切换账号
-- `exit`，注销当前用户（常用）
-- `sudo 某个命令`，使用管理员权限使用命令，使用 sudo 回车之后需要输入当前登录账号的密码。（常用）
-- `passwd`，修改当前用户密码（常用）
+- `exit`，注销当前用户
+- `sudo 某个命令`，使用管理员权限使用命令，使用 sudo 回车之后需要输入当前登录账号的密码。
+- `passwd`，修改当前用户密码
 
 
 
@@ -208,13 +208,11 @@
 - 命令：`unzip XXXXXX.zip`
 - 命令：`unzip XXXXXX.zip -d /opt/`，解压到指定目录
 
-- Linux 后缀为 `.7z` 格式的文件-解压
-- 命令：`7za x XXXXXX.7z`
-
 - Linux 后缀为 `.tar.xz` 格式的文件-解压，解压出来是tar，再对tar进行解压
 - 命令：`tar xf XXXXXX.tar.xz`
 
-
+- Linux 后缀为 `.7z` 格式的文件-解压
+- 命令：`7za x XXXXXX.7z`
 
 
 ## 常用文件进行**压缩**命令整理
@@ -236,6 +234,7 @@
 
 - Linux 压缩文件为后缀 `.7z` 格式的文件
 - 命令：`7za a test1.7z /opt/test1/`
+
 - 7z 的安装：
 	- 访问官网下载解压包：<http://sourceforge.net/projects/p7zip/files/p7zip/>
 	- 解压压缩包：`tar jxvf p7zip_15.14_src_all.tar.bz2`

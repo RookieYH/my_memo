@@ -1,41 +1,26 @@
 <keymap version="1" name="Fumofuu" parent="$default">
-  <action id="CloseActiveTab">
-    <keyboard-shortcut first-keystroke="shift ctrl w" />
-  </action>
-  <action id="CloseContent">
-    <keyboard-shortcut first-keystroke="ctrl w" />
-  </action>
-  <action id="CodeCompletion">
-    <keyboard-shortcut first-keystroke="alt slash" />
-  </action>
-  <action id="EditorSelectWord">
-    <keyboard-shortcut first-keystroke="ctrl f4" />
-  </action>
-  <action id="EditorUnSelectWord">
-    <keyboard-shortcut first-keystroke="shift ctrl f4" />
-  </action>
-  <action id="HippieBackwardCompletion">
-    <keyboard-shortcut first-keystroke="shift alt comma" />
-  </action>
-  <action id="HippieCompletion">
-    <keyboard-shortcut first-keystroke="alt comma" />
-  </action>
-  <action id="SmartTypeCompletion">
-    <keyboard-shortcut first-keystroke="alt period" />
-  </action>
-  <action id="SwitchApply">
-    <keyboard-shortcut first-keystroke="shift alt enter" />
-  </action>
-  <action id="SwitchDown">
-    <keyboard-shortcut first-keystroke="shift alt down" />
-  </action>
-  <action id="SwitchLeft">
-    <keyboard-shortcut first-keystroke="shift alt left" />
-  </action>
-  <action id="SwitchRight">
-    <keyboard-shortcut first-keystroke="shift alt right" />
-  </action>
-  <action id="SwitchUp">
-    <keyboard-shortcut first-keystroke="shift alt up" />
-  </action>
+    <action id="CloseActiveTab">
+        <keyboard-shortcut first-keystroke="shift ctrl w" />
+    </action>
+    <action id="CloseContent">
+        <keyboard-shortcut first-keystroke="ctrl w" />
+    </action>
+    <action id="CodeCompletion">
+        <keyboard-shortcut first-keystroke="alt slash" />
+    </action>
+    <action id="EditorSelectWord">
+        <keyboard-shortcut first-keystroke="ctrl f4" />
+    </action>
+    <action id="EditorUnSelectWord">
+        <keyboard-shortcut first-keystroke="shift ctrl f4" />
+    </action>
+    <action id="HippieBackwardCompletion">
+        <keyboard-shortcut first-keystroke="shift alt comma" />
+    </action>
+    <action id="HippieCompletion">
+        <keyboard-shortcut first-keystroke="alt comma" />
+    </action>
+    <action id="SmartTypeCompletion">
+        <keyboard-shortcut first-keystroke="alt period" />
+    </action>
 </keymap>
