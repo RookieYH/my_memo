@@ -114,14 +114,5 @@
         "key": "ctrl+b",
         "command": "-editor.action.goToDeclaration",
         "when": "editorHasDefinitionProvider && editorTextFocus"
-    },
-    {
-        "key": "ctrl+shift+f",
-        "command": "-workbench.view.search"
-    },
-    {
-        "key": "ctrl+shift+f",
-        "command": "workbench.action.findInFiles",
-        "when": "!searchInputBoxFocus"
     }
 ]

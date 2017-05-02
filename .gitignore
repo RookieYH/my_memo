@@ -1,16 +1,16 @@
-.metadata
-tmp/
-*.tmp
+target/
+.DS_Store
 *.bak
+
 .settings/
 .project
-.externalToolBuilders/
 .classpath
+.metadata/
+.recommenders/
 
 *.iml
-*.ipr
 *.iws
 .idea/
 out/
-target/
-.DS_Store
+
+.vscode/*
