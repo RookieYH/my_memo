@@ -103,7 +103,7 @@
 	- `find /usr/local/backups -mtime +10 -name "*.html" -exec rm -rf {} \;`,删除以html结尾的10天前的文件，包括带空格的文件
 	- `du -hm --max-depth=2 | sort -nr | head -12`，找出系统中占用容量最大的前 12 个目录
 - `cat /etc/resolv.conf`，查看 DNS 设置
-- `netstat -tlunp`，查看当前运行的服务
+- `netstat -tlunp`，显示各种网络相关信息,程序
 - `env`，查看所有系统变量
 - `export PATH=$PATH:/opt/java/bin`，设置环境变量
 - `echo $JAVA_HOME`，查看指定系统变量的值，这里查看的是自己配置的 JAVA_HOME
