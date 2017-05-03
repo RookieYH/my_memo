@@ -101,7 +101,6 @@
 	- `find / -name "*tower*" -exec rm {} \;`，找到文件并删除
 	- `find /usr/local/backups -name "*.html" -mtime +10 -print0 |xargs -0 rm -rfv`,删除以html结尾的10天前的文件，包括带空格的文件
 	- `find /usr/local/backups -mtime +10 -name "*.html" -exec rm -rf {} \;`,删除以html结尾的10天前的文件，包括带空格的文件
-	- `du -hm --max-depth=2 | sort -nr | head -12`，找出系统中占用容量最大的前 12 个目录
 - `cat /etc/resolv.conf`，查看 DNS 设置
 - `netstat -tlunp`，显示各种网络相关信息,程序
 - `env`，查看所有系统变量
@@ -160,6 +159,7 @@
 - `du -sh /opt`，查看 opt 这个文件夹大小 （h 的意思 human-readable 用人类可读性较好方式显示，系统会自动调节单位，显示合适大小的单位）
 - `du -sh ./*`，查看当前目录下所有文件夹大小 （h 的意思 human-readable 用人类可读性较好方式显示，系统会自动调节单位，显示合适大小的单位）
 - `du -sh /opt/setups/`，显示 /opt/setups/ 目录所占硬盘空间大小（s 表示 –summarize 仅显示总计，即当前目录的大小。h 表示 –human-readable 以 KB，MB，GB 为单位，提高信息的可读性）
+- `du -hm --max-depth=2 | sort -nr | head -12`，找出系统中占用容量最大的前 12 个目录
 - `mount /dev/sdb5 /newDir/`，把分区 sdb5 挂载在根目录下的一个名为 newDir 的空目录下，需要注意的是：这个目录最好为空，不然已有的那些文件将看不到，除非卸载挂载。
 	- 挂载好之后，通过：`df -h`，查看挂载情况。
 - `umount /newDir/`，卸载挂载，用目录名
