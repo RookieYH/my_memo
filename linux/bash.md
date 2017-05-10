@@ -3,7 +3,7 @@
 
 ## 基础常用命令
 
-- `某个命令 -h | --help`，对这个命令进行解释
+- `某个命令 --help`，对这个命令进行解释
 - `man某个命令`，文档式解释这个命令(更详细)(执行该命令后,还可以按/+关键字进行查询结果的搜索)
 - `Ctrl + c`，结束命令
 - `TAB键`，自动补全命令（按一次自动补全，连续按两次，提示所有以输入开头字母的所有命令）
@@ -105,6 +105,29 @@
 	- `find /usr/local/backups -mtime +10 -name "*.html" -exec rm -rf {} \;`,删除以html结尾的10天前的文件，包括带空格的文件
 	
 
+## 系统管理
+
+- `uptime`，查看系统已经运行了多久，当前有几个用户，系统负载等信息
+- `shutdown`
+    - `shutdown -hnow`，立即关机
+    - `shutdown -h+10`，10 分钟后关机
+    - `shutdown -h23:30`，23:30 关机
+- `poweroff`，立即关机
+- `reboot`，立即重启
+- `env`，查看所有系统变量
+- `export PATH=$PATH:/opt/java/bin`，设置环境变量
+- `echo $JAVA_HOME`，查看指定系统变量的值，这里查看的是自己配置的 JAVA_HOME
+- `unset $JAVA_HOME`，删除指定的环境变量
+- `ifconfig`，查看 IP 等信息
+- `cat /etc/resolv.conf`，查看 DNS 设置
+- `netstat -tlunp`，显示各种网络相关信息,程序
+- `hostname`，查看hostname或DNS domain
+- `dig www.baidu.com`，根据域名查出IP地址(DNS)
+	- `dig -x 192.30.252.153`，从IP地址反查域名
+- `host github.com` or `host 192.30.252.153`，根据域名查IP|从IP地址查域名
+- 编辑 hosts 文件：`vim /etc/hosts`，添加内容格式：`127.0.0.1 www.youmeek.com`
+
+
 ## 用户、权限-相关命令
 
 - `cat /etc/group`，查看所有组
@@ -112,6 +135,8 @@
 - `useradd -s /bin/bash -g group –G adm,root gem`，新建一个用户gem，该用户的登录Shell是 /bin/bash，它属于group用户组，同时又属于adm和root用户组，其中group用户组是其主组
 - `usermod -s /bin/ksh -d /home/z –g developer sam`，将用户sam的登录Shell修改为ksh，主目录改为/home/z，用户组改为developer
 - `userdel -r youmeek`，删除名字为 youmeek 的用户，**-r**，表示删除用户的时候连同用户的家目录一起删除
+- `groups sam`，查询sam所属的组，参数空则查询当前用户
+- `newgrp root`，登陆后切换到其他用户组，参数为目的用户组，必须是该群组的用户
 - 修改普通用户 youmeek 的权限跟 root 权限一样：
 	- 常用方法（原理是把该用户加到可以直接使用 sudo 的一个权限状态而已）：
 		- 编辑配置文件：`vim /etc/sudoers`
@@ -138,28 +163,6 @@
 - `exit`，注销当前用户
 - `last`，显示最近登录的帐户及时间
 - `lastlog`，显示系统所有用户各自在最近登录的记录，如果没有登录过的用户会显示 **从未登陆过**
-
-
-## 系统管理
-
-- `uptime`，查看系统已经运行了多久，当前有几个用户，系统负载等信息
-- `shutdown`
-    - `shutdown -hnow`，立即关机
-    - `shutdown -h+10`，10 分钟后关机
-    - `shutdown -h23:30`，23:30 关机
-- `poweroff`，立即关机
-- `reboot`，立即重启
-- `env`，查看所有系统变量
-- `export PATH=$PATH:/opt/java/bin`，设置环境变量
-- `echo $JAVA_HOME`，查看指定系统变量的值，这里查看的是自己配置的 JAVA_HOME
-- `unset $JAVA_HOME`，删除指定的环境变量
-- `ifconfig`，查看 IP 等信息
-- `cat /etc/resolv.conf`，查看 DNS 设置
-- `netstat -tlunp`，显示各种网络相关信息,程序
-- `hostname`，查看hostname或DNS domain
-- `host github.com` | `host 192.30.252.153`，根据域名查IP|从IP地址查域名
-- `dig www.baidu.com`，根据域名查出IP地址(DNS)
-	- `dig -x 192.30.252.153`，从IP地址反查域名
 	
 
 ## 磁盘管理
@@ -172,20 +175,17 @@
 	- `du -h --max-depth=2 ./* | sort -hr | head -12`，找出当前目录下占用容量最大的前 12 个目录,最多两级
 - `mount /dev/sdb5 /newDir/`，把分区 sdb5 挂载在根目录下的一个名为 newDir 的空目录下，需要注意的是：这个目录最好为空，不然已有的那些文件将看不到，除非卸载挂载。
 	- 挂载好之后，通过：`df -h`，查看挂载情况。
-- `umount /newDir/`，卸载挂载，用目录名，如果这样卸载不了可以使用：`umount -l /newDir/`
-	- `umount /dev/sdb5`，卸载挂载，用分区名
+- `umount /newDir/`，卸载挂载，用目录名，**umount /dev/sdb5**，卸载挂载，用分区名
 
 
 ## 其他常用命令
 
-- 编辑 hosts 文件：`vim /etc/hosts`，添加内容格式：`127.0.0.1 www.youmeek.com`
 - RPM 文件操作命令：
 	- 安装
 		- `rpm -i example.rpm`，安装 example.rpm 包
-		- `rpm -iv example.rpm`，安装 example.rpm 包并在安装过程中显示正在安装的文件信息
 		- `rpm -ivh example.rpm`，安装 example.rpm 包并在安装过程中显示正在安装的文件信息及安装进度
 	- 查询
-		- `rpm -qa | grep jdk`，查看 jdk 是否被安装
+		- `rpm -a | grep jdk`，查看 jdk 是否被安装
 	- 卸载
 		- `rpm -e jdk`，卸载 jdk（一般卸载的时候都要先用 rpm -qa 看下整个软件的全名）
 
