@@ -20,11 +20,10 @@ select * from tb where name in (select name from tb group by name having count(*
 ```
 SELECT id,name,saledate FROM(SELECT id,name,saledate,ROWNUM rn FROM 
     ( SELECT * FROM es_product ORDER BY saledate)
-WHERE ROWNUM<=12) WHERE rn>=9
+    WHERE ROWNUM<=12) WHERE rn>=9
 或者
 SELECT id,name,saledate FROM 
-    (SELECT id,name,saledate,ROWNUM rn FROM 
-    (SELECT * FROM es_product ORDER BY saledate)) 
+    (SELECT id,name,saledate,ROWNUM rn FROM (SELECT * FROM es_product ORDER BY saledate)) 
     WHERE rn>=9 AND rn<=12
 ```
 ### cdb & pdb
@@ -76,13 +75,14 @@ drop tablespace tablespacename including contents and datafiles cascade constrai
 select username,default_tablespace from dba_users 
 alter user SGPROPERTYTRADE default tablespace SGPROPERTYTRADE
 ```
-### 导入dmp,不需要登入
+### 导入导出dmp,不需要登入
 ```
-imp SGPROPERTYTRADE/SGPROPERTYTRADE@pdborcl fromuser=SGPROPERTYTRADEtouser=SGPROPERTYTRADE file=d:\SGPROPERTYTRADE20160517.dmp ignore=y
+imp SGPROPERTYTRADE/SGPROPERTYTRADE@pdborcl fromuser=SGPROPERTYTRADE touser=SGPROPERTYTRADE 
+file=d:\SGPROPERTYTRADE20160517.dmp ignore=y
 exp SGPROPERTYTRADE/SGPROPERTYTRADE@TSNEI file=d:\daochu2.dmp owner(SGPROPERTYTRADE)
 ```
  
 ## mysql
-`SET FOREIGN_KEY_CHECKS = 0` 不检查外键
-`SET FOREIGN_KEY_CHECKS = 1` 检查外键
-`show variables like 'character%'` 查看默认字符编码
+- `SET FOREIGN_KEY_CHECKS = 0` 不检查外键
+- `SET FOREIGN_KEY_CHECKS = 1` 检查外键
+- `show variables like 'character%'` 查看默认字符编码
