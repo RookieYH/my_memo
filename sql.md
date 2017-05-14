@@ -1,22 +1,23 @@
 ## 通用
 
 
-### 列修改
+- 列修改
 ```
 ALTER TABLE B_HSKCINFO ADD "MODE" CHAR(1) 
 ALTER TABLE B_BULLETIN MODIFY "NUM" VARCHAR2(500) 
 comment on column B_HSKCINFO."MODE" is '价格类型 1:按总价 2：按单价' 
 ```
-### 查重
+- 查重
 ```
 select * from tb where name in (select name from tb group by name having count(*)>1)
 ```
 
-## ORACLE
+## Oracle
 
 
-### 分页
-将商品id、商品名称、上架时间按日期升序分页显示，每页显示4条记录，请编写查询第3页商品信息的sql语句
+- 分页
+
+将商品id、商品名称、上架时间按日期升序分页显示，每页显示4条记录，查询第3页商品信息
 ```
 SELECT id,name,saledate FROM(SELECT id,name,saledate,ROWNUM rn FROM 
     ( SELECT * FROM es_product ORDER BY saledate)
@@ -26,7 +27,7 @@ SELECT id,name,saledate FROM
     (SELECT id,name,saledate,ROWNUM rn FROM (SELECT * FROM es_product ORDER BY saledate)) 
     WHERE rn>=9 AND rn<=12
 ```
-### cdb & pdb
+- CDB & PDB
 ```
 SELECT * FROM cdb_users
 ```
@@ -46,7 +47,7 @@ CREATE OR REPLACE NONEDITIONABLE TRIGGER open_all_pdbs
        EXECUTE IMMEDIATE 'alter pluggable database all open' 
      END  open_all_pdbs 
 ```
-### 建表空间，建用户，建库
+- 建表空间，建用户，建库
 ```
 create tablespace SGPROPERTYTRADE 
     datafile 'F:\app\RookieYH\oradata\orcl\pdborcl\SGPROPERTYTRADE.dbf' 
@@ -75,14 +76,14 @@ drop tablespace tablespacename including contents and datafiles cascade constrai
 select username,default_tablespace from dba_users 
 alter user SGPROPERTYTRADE default tablespace SGPROPERTYTRADE
 ```
-### 导入导出dmp,不需要登入
+- 导入导出dmp,不需要登入
 ```
 imp SGPROPERTYTRADE/SGPROPERTYTRADE@pdborcl fromuser=SGPROPERTYTRADE touser=SGPROPERTYTRADE 
 file=d:\SGPROPERTYTRADE20160517.dmp ignore=y
 exp SGPROPERTYTRADE/SGPROPERTYTRADE@TSNEI file=d:\daochu2.dmp owner(SGPROPERTYTRADE)
 ```
  
-## mysql
+## MySQL
 - `SET FOREIGN_KEY_CHECKS = 0` 不检查外键
 - `SET FOREIGN_KEY_CHECKS = 1` 检查外键
 - `show variables like 'character%'` 查看默认字符编码
