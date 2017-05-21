@@ -17,5 +17,4 @@
     },
     "workbench.iconTheme": "vscode-icons",
     "extensions.autoUpdate": true,
-    "workbench.welcome.enabled": true
 }
