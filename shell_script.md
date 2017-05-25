@@ -101,15 +101,21 @@ if who | grep $user
 then echo "Hello $user" | write $user
 else echo "$user has not logged in the system"
 fi
+#写成一行（适用于终端命令提示符）
+if [ $(ps -ef | grep -c "ssh") -gt 1 ]; then echo "true"; fi
 ```
 &emsp;多路条件分支
 ```
-if 判断条件1
-then 命令1
-elif 判断条件2
-then 命令2
-...
-else 命令n
+num1=$[2*3]
+num2=$[1+5]
+if test "$num1" -gt "$num2"
+then
+    echo 'num1大于num2!'
+elif [ "$num1" -le "$num2" ]
+then
+    echo 'num1小等于num2!'
+else
+    echo '没有符合的条件!'
 fi
 ```
 - `case`语句，可以用变量值对多个Pattern进行匹配，Pattern中可以使用通配符，任何一个相符，则执行其后的命令一直到分号（;;）结束
@@ -140,8 +146,10 @@ then cd $dir
      done
 else echo "Bad directory name:$dir"
 fi
+写成一行
+for var in item1 item2 ... itemN; do command1; command2… done;
 ```
-- `while`，只要 expression 的值为真，则进入循环体，执行 command -list 中的命令，然后再做条件测试，直到测试条件为假时才终止，`until`，只在表达式为假时才执行循环体
+- `while`，只要 expression 的值为真，则进入循环体，执行 command-list 中的命令，然后再做条件测试，直到测试条件为假时才终止，`until`，只在表达式为假时才执行循环体
 ```
 while/until expression
 do
@@ -151,17 +159,29 @@ done
 - `break [n] `，n 表示跳出几层循环。默认值是 1，表示只跳出一层循环。如果 n 为 3，则表示一次跳出 3 层循环。执行 break 时，是从包含它的那个循环体中向外跳出
 - `continue [n]`，从 continue 语句的最内层循环向外跳出第 n 层循环，默认值为 1
 
+### 函数
+
+```
+[ function ] funname[()]
+{
+    command-list
+    [return int;]
+}
+```
+- `return`，参数返回，如果不加，将以最后一条命令运行结果，作为返回值，return后跟数值n(0-255)，函数返回值在调用该函数后通过`$?`来获得
+- 所有函数在使用前必须定义，调用函数仅使用其函数名即可，调用函数时可以向其传递参数，在函数体内部，通过`$n`的形式来获取参数的值
+
 ### 进程
 
 - `./script-name`，`(cd ..; ls -l)`，如果默认方式执行脚本，或将命令行下输入的命令用括号括起来，那么会 fork 出一个子 shell 执行小括号中的命令，一行中可以输入由分号隔开的多个命令，执行命令后，虽然执行了 cd .. 命令，但是 shell 当前的路径并没改变
-- `source ./script-name`，`. ./script-name `，如果用 source 命令或者 . 来执行脚本时，则不会创建子进程，而是直接在交互式 shell 中执行脚本中的命令
+- `source ./script-name`，`. ./script-name `，如果用 source 命令或者 . 来执行脚本时，则不会创建子进程，而是直接在交互式 shell 中执行脚本中的命令，这种形式还可以用来在一个脚本中包含另一个脚本，执行后可以获取另一个脚本中的变量
 - `firefox &`，最后后面的 & 符号，表示使用后台方式打开 Firefox，然后显示该进程的 PID 值
 - `Ctrl + Z`，可以暂时把当前程序挂起到后台，挂起后的进程将不再进行任何操作
 - `fg job_spec`，将后台挂起的进程恢复到前台来运行
 - `jobs`，查看挂起在后台的进程
 - 输入输出重定向
-  - `command < input-file`，命令 “command” 读取的输入 stdin(1) 来自文件 “input-file”, 而不是与命令运行终端相连接的键盘
-  - `command > output-file`，命令 “command” 的输出 stdout 重定向到文件 “output-file” 上以取代显示屏
+  - `command < input-file`，命令 “command” 读取的输入 stdin(0) 来自文件 “input-file”, 而不是与命令运行终端相连接的键盘
+  - `command > output-file`，命令 “command” 的输出 stdout(1) 重定向到文件 “output-file” 上以取代显示屏
   - `command >> output-file `，把命令（或执行程序）的输出附加到指定文件的后面，文件原有内容不被破坏
   - `command 2> error-file `，对命令的错误 stderr(2) 重定向，将产生的错误消息发送到文件中，`2>&1`，把 stderr 重定向到 stdout
   - `command > /dev/null 2>&1`，标准输出和错误输出丢弃
