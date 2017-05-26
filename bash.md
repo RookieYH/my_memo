@@ -41,9 +41,9 @@
 	- `ls -a -R`，显示出目录下以及其所有子目录的文件 / 文件夹(递归地方式，显示隐藏的文件)
 	- `ls -l`，等同于 `ll`，列出目录下所有文件的权限、所有者、文件大小、修改时间及名称(也就是显示详细信息，不显示隐藏文件)。效果如下：
 
-		> -rwxr-xr-x. 1 root root 4096 3月 26 10:57  #其中最前面的 - 表示这是一个普通文件<br/>
-		> lrwxrwxrwx. 1 root root 4096 3月 26 10:57  #其中最前面的 l 表示这是一个链接文件<br/>
-		> drwxr-xr-x. 5 root root 4096 3月 26 10:57  #其中最前面的 d 表示这是一个目录
+		> -rwxr-xr-x. 1 root root 4096 3月 26 10:57  &emsp;#其中最前面的 - 表示这是一个普通文件<br/>
+		> lrwxrwxrwx. 1 root root 4096 3月 26 10:57  &emsp;#其中最前面的 l 表示这是一个链接文件<br/>
+		> drwxr-xr-x. 5 root root 4096 3月 26 10:57  &emsp;#其中最前面的 d 表示这是一个目录
 		
 	- `ls -ld 目录名`，显示该目录的基本信息，而非目录下内容信息
 	- `ls -t`，依照文件最后修改时间的顺序列出文件名，新的在前，`-S`，以文件大小排序，大的在前，`-r`，逆序排列
@@ -239,10 +239,10 @@
 	- 常用方法(原理是把该用户加到可以直接使用 sudo 的一个权限状态而已)：
 		- 编辑配置文件：`vim /etc/sudoers`
 		- 找到 98 行(预估)，有一个：`root    ALL=(ALL)   ALL`，在这一行下面再增加一行，效果如下：
-		
-		> root    ALL=(ALL)   ALL<br/>
-		> youmeek    ALL=(ALL)   ALL
-		
+		```
+		root    ALL=(ALL)   ALL
+		youmeek    ALL=(ALL)   ALL
+		```
 	- 另一种方法：
 		- 编辑系统用户的配置文件：`vim /etc/passwd`，找到 root 和 youmeek 各自开头的那一行，比如 root 是：`root:x:0:0:root:/root:/bin/zsh`，这个代表的含义为：*用户名:密码:UserId:GroupId:描述:家目录:登录使用的 shell*
 		- 通过这两行对比，我们可以直接修改 youmeek 所在行的 UserId 值 和 GroupId 值，都改为 0。
