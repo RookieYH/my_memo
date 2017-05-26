@@ -44,7 +44,6 @@
   value0
   value1
   value2
-  value3
   )
   ```
   - `${array_name[index]}`，读取数组元素的值，`${array_name[*]}`或`${array_name[@]}`，获取数组所有元素
@@ -84,8 +83,8 @@
   str1 != str2 : 字符串 str1 和字符串str2 不相等时返回真 
   [ $string ] : 字符串 string 不为空返回真
   ```
-  - 关系运算符，`-eq`，`-ne`，`-gt`，`-lt`，`-ge`，`-le`
-  - 布尔运算符，`-a` 逻辑与，`-o` 逻辑或，`!` 逻辑否，其优先级为 **!** 最高，**-a** 次之，**-o** 最低，用`&&`表示逻辑与`||`表示逻辑或时，需用 **[[]]** 包裹
+  - 数值测试，关系运算符，`-eq`，`-ne`，`-gt`，`-lt`，`-ge`，`-le`
+  - 组合测试，布尔运算符，`-a` 逻辑与，`-o` 逻辑或，`!` 逻辑否，其优先级为 **!** 最高，**-a** 次之，**-o** 最低，用`&&`表示逻辑与`||`表示逻辑或时，需用 **[[]]** 包裹
   - `()`改变执行顺序，括号前后应该有空格并用转义符转义
   ```
   [[ $a -lt 100 || $b -ge 100 ]]，a < 100 且 b >= 100
@@ -106,7 +105,7 @@ fi
 if [ $(ps -ef | grep -c "ssh") -gt 1 ]; then echo "true"; fi
 ```
 &emsp;多路条件分支
-```
+```Shell
 num1=$[2*3]
 num2=$[1+5]
 if test "$num1" -gt "$num2"
@@ -137,7 +136,7 @@ esac
 dir=$1; shift
 if [ -d $dir ]
 then cd $dir
-     for name # or for name in "$@"
+     for name # equivalent to (for name in "$@")
      do
          if [ -f $name ]
          then cat $name

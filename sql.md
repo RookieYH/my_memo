@@ -17,7 +17,7 @@ select * from tb where name in (select name from tb group by name having count(*
 
 - 分页
 ```SQL
-将商品id、商品名称、上架时间按日期升序分页显示，每页显示4条记录，查询第3页商品信息
+-- 将商品id、商品名称、上架时间按日期升序分页显示，每页显示4条记录，查询第3页商品信息
 SELECT id,name,saledate FROM(SELECT id,name,saledate,ROWNUM rn FROM 
     ( SELECT * FROM es_product ORDER BY saledate)
     WHERE ROWNUM<=12) WHERE rn>=9
