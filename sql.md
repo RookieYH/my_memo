@@ -2,13 +2,13 @@
 
 
 - 列修改
-```SQL
+```sql
 ALTER TABLE B_HSKCINFO ADD "MODE" CHAR(1) 
 ALTER TABLE B_BULLETIN MODIFY "NUM" VARCHAR2(500) 
 comment on column B_HSKCINFO."MODE" is '价格类型 1:按总价 2：按单价' 
 ```
 - 查重
-```SQL
+```sql
 select * from tb where name in (select name from tb group by name having count(*)>1)
 ```
 
@@ -16,7 +16,7 @@ select * from tb where name in (select name from tb group by name having count(*
 
 
 - 分页
-```SQL
+```sql
 -- 将商品id、商品名称、上架时间按日期升序分页显示，每页显示4条记录，查询第3页商品信息
 SELECT id,name,saledate FROM(SELECT id,name,saledate,ROWNUM rn FROM 
     ( SELECT * FROM es_product ORDER BY saledate)
@@ -27,18 +27,18 @@ SELECT id,name,saledate FROM
     WHERE rn>=9 AND rn<=12
 ```
 - CDB & PDB
-```SQL
+```sql
 SELECT * FROM cdb_users
 ```
 &emsp;查询，切换，查询当前container
-```SQL
+```sql
 select con_id,name,open_mode from v$pdbs 
 alter session set container=CDB$ROOT
 alter session set container=pdborcl
 select sys_context('userenv','con_name') from dual
 ```
 &emsp;启动数据库自动启动pdb
-```SQL
+```sql
 CREATE OR REPLACE NONEDITIONABLE TRIGGER open_all_pdbs
        AFTER startup
        ON DATABASE
@@ -47,7 +47,7 @@ CREATE OR REPLACE NONEDITIONABLE TRIGGER open_all_pdbs
      END  open_all_pdbs 
 ```
 - 建表空间，建用户，建库
-```SQL
+```sql
 create tablespace SGPROPERTYTRADE 
     datafile 'F:\app\RookieYH\oradata\orcl\pdborcl\SGPROPERTYTRADE.dbf' 
     size 50m  
@@ -55,23 +55,23 @@ create tablespace SGPROPERTYTRADE
     next 50m
 ```
 &emsp;创建用户，赋予/收回/查询角色
-```SQL
+```sql
 create user SGRYOA identified by SGRYOA default tablespace SGRYOA  
 grant connect,resource,dba to SGRYOA  
 revoke connect,resource,dba from C##CDB [container=all] 
 SELECT GRANTED_ROLE FROM DBA_ROLE_PRIVS WHERE GRANTEE = 'C##CDB' 
 ```
 &emsp;设置/修改密码
-```SQL
+```sql
 alter user C##CDB identified by C##CDB 
 ```
 &emsp;删除用户以及表空间
-```SQL
+```sql
 drop user username cascade 
 drop tablespace tablespacename including contents and datafiles cascade constraints  
 ```
 &emsp;查询/修改用户表空间
-```SQL
+```sql
 select username,default_tablespace from dba_users 
 alter user SGPROPERTYTRADE default tablespace SGPROPERTYTRADE
 ```

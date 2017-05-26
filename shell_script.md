@@ -29,7 +29,7 @@
   - `${var/1234/1111}`， 如果变量中有符合样式的字符串，则使用替换字符串替代，只替换第一个符合样式的字符串
   - `${变量//Pattern/替换字符串}`，如果变量中有符合样式的字符串，则使用替换字符串替代，替换全部符合样式的字符串
   - `${变量#Pattern}`，表示由变量值的最左边开始与样式进行对比，删除”最短相符合的字符串” ，`${变量##Pattern}`，表示由变量值的最左边开始与样式进行对比，删除”最长相符合的字符串” ，`${变量%Pattern} `，表示由变量值的最右边或最后边开始与样式进行对比，删除”最短相符的字符串” ，`${变量%%Pattern}`， 表示由变量值的最右边或最后边开始与样式进行对比，删除”最长相符的字符串” 
-  ```Shell
+  ```bash
   var="12345678"
   echo ${var:0-2:2} #输出:67
   echo ${var#*3} #输出:45678
@@ -39,7 +39,7 @@
   ```
 - 数组
   - `array_name=(value0 value1 value2 … valuen)`，用括号来表示数组，数组元素用“空格”符号分割开，也可以单独定义数组的各个分量 `array_name[0]=value0`，也可以
-  ```Shell
+  ```bash
   array_name=(
   value0
   value1
@@ -53,46 +53,46 @@
 
 - `[ expression ] `或`test expression `，测试语句，与 if、case、while 搭配，返回“真(0)”或“假(非0)”，在任何一个运算符、圆括号或者方括号等操作符额前后 至少需要留有一个空格，否则可能会出错
   - 文件测试，`test -f "$1"`或`[ -f "$1" ]`，测试位置参数携带的文件名是否在当前目录下已存在并且为普通文件，引用变量时，最好用 **""** 包裹，避免歧义
-  ```Shell
-  -e pathname : 当由pathname 指定的文件或目录存在时返回真
-  -f filename : 当filename 存在并且是普通文件时返回真
-  -d pathname : 当pathname 存在并且是一个目录时返回真
-  -h filename : 当filename 存在并且是符号链接文件时返回真 (或 -L filename)
-  -s filename : 当filename 存在并且文件大小大于0 时返回真
-  -S filename : 当filename 存在并且是socket 时返回真
-  -b filename : 当filename 存在并且是块文件时返回真
-  -c filename : 当filename 存在并且是字符文件时返回真
-  -p filename : 当filename 存在并且是命名管道时返回真 
-  -t fd : 当fd 是与终端设备相关联的文件描述符时返回真
-  -u pathname : 当由pathname 指定的文件或目录存在并且设置了SUID 位时返回真
-  -g pathname : 当由pathname 指定的文件或目录存在并且设置了SGID 位时返回真
-  -k pathname : 当由pathname 指定的文件或目录存在并且设置了”粘滞”位(Sticky Bit)时返回真 
-  -r pathname : 当由pathname 指定的文件或目录存在并且可读时返回真
-  -w pathname : 当由pathname 指定的文件或目录存在并且可写时返回真
-  -x pathname : 当由pathname 指定的文件或目录存在并且可执行时返回真
-  -O pathname : 当由pathname 存在并且被当前进程的有效用户id 的用户拥有时返回真(字母O 大写)
-  -G pathname : 当由pathname 存在并且属于当前进程的有效用户id 的用户的用户组时返回真
-  file1 -nt file2 : file1 比file2 新时返回真
-  file1 -ot file2 : file1 比file2 旧时返回真 
+  ```bash
+  -e pathname # 当由pathname 指定的文件或目录存在时返回真
+  -f filename # 当filename 存在并且是普通文件时返回真
+  -d pathname # 当pathname 存在并且是一个目录时返回真
+  -h filename # 当filename 存在并且是符号链接文件时返回真 (或 -L filename)
+  -s filename # 当filename 存在并且文件大小大于0 时返回真
+  -S filename # 当filename 存在并且是socket 时返回真
+  -b filename # 当filename 存在并且是块文件时返回真
+  -c filename # 当filename 存在并且是字符文件时返回真
+  -p filename # 当filename 存在并且是命名管道时返回真 
+  -t fd # 当fd 是与终端设备相关联的文件描述符时返回真
+  -u pathname # 当由pathname 指定的文件或目录存在并且设置了SUID 位时返回真
+  -g pathname # 当由pathname 指定的文件或目录存在并且设置了SGID 位时返回真
+  -k pathname # 当由pathname 指定的文件或目录存在并且设置了”粘滞”位(Sticky Bit)时返回真 
+  -r pathname # 当由pathname 指定的文件或目录存在并且可读时返回真
+  -w pathname # 当由pathname 指定的文件或目录存在并且可写时返回真
+  -x pathname # 当由pathname 指定的文件或目录存在并且可执行时返回真
+  -O pathname # 当由pathname 存在并且被当前进程的有效用户id 的用户拥有时返回真(字母O 大写)
+  -G pathname # 当由pathname 存在并且属于当前进程的有效用户id 的用户的用户组时返回真
+  file1 -nt file2 # file1 比file2 新时返回真
+  file1 -ot file2 # file1 比file2 旧时返回真 
   ```
   - 字符串测试，`[ "$s1" = "$s2" ]` 或 `test "$s1" = "$s2"`，判断两个变量 是 s1 和 s2 所代表的字符串是否相等
-  ```Shell
-  -z string : 字符串 string 为空串(长度为0)时返回真
-  -n string : 字符串 string 为非空串时返回真
-  str1 = str2 : 字符串 str1 和字符串str2 相等时返回真
-  str1 != str2 : 字符串 str1 和字符串str2 不相等时返回真 
-  [ $string ] : 字符串 string 不为空返回真
+  ```bash
+  -z string # 字符串 string 为空串(长度为0)时返回真
+  -n string # 字符串 string 为非空串时返回真
+  str1 = str2 # 字符串 str1 和字符串str2 相等时返回真
+  str1 != str2 # 字符串 str1 和字符串str2 不相等时返回真 
+  [ $string ] # 字符串 string 不为空返回真
   ```
   - 数值测试，关系运算符，`-eq`，`-ne`，`-gt`，`-lt`，`-ge`，`-le`
   - 组合测试，布尔运算符，`-a` 逻辑与，`-o` 逻辑或，`!` 逻辑否，其优先级为 **!** 最高，**-a** 次之，**-o** 最低，用`&&`表示逻辑与`||`表示逻辑或时，需用 **[[]]** 包裹
   - `()`改变执行顺序，括号前后应该有空格并用转义符转义
-  ```
-  [[ $a -lt 100 || $b -ge 100 ]]，a < 100 且 b >= 100
-  [ ! "$s1" -le 0 ]，s1大于0
-  [ \( "$a" -gt 0 -a "$a" -lt 10 \) -a "$a" -ne 5 ]，0 < a < 10 且 a 不等于 5  
+  ```bash
+  [[ $a -lt 100 || $b -ge 100 ]] #a < 100 且 b >= 100
+  [ ! "$s1" -le 0 ] #s1大于0
+  [ \( "$a" -gt 0 -a "$a" -lt 10 \) -a "$a" -ne 5 ] #0 < a < 10 且 a 不等于 5  
   ```
 - `if`，如果命令返回值 0，判断条件为真；如果命令返回值不等于 0，判断条件为假
-```Shell
+```bash
 #!/bin/bash
 #查找给定用户是否在系统中工作，如果在系统中就发一个问候给他
 echo "Type in the user name"
@@ -105,7 +105,7 @@ fi
 if [ $(ps -ef | grep -c "ssh") -gt 1 ]; then echo "true"; fi
 ```
 &emsp;多路条件分支
-```Shell
+```bash
 num1=$[2*3]
 num2=$[1+5]
 if test "$num1" -gt "$num2"
@@ -119,7 +119,7 @@ else
 fi
 ```
 - `case`语句，可以用变量值对多个Pattern进行匹配，Pattern中可以使用通配符，任何一个相符，则执行其后的命令一直到分号（;;）结束
-```Shell
+```bash
 case $1 in
     file) 
         echo "it is a file";;
@@ -132,7 +132,7 @@ case $1 in
 esac
 ```
 - `for`循环
-```Shell
+```bash
 dir=$1; shift
 if [ -d $dir ]
 then cd $dir
@@ -146,11 +146,11 @@ then cd $dir
      done
 else echo "Bad directory name:$dir"
 fi
-写成一行
+#写成一行
 for var in item1 item2 ... itemN; do command1; command2… done;
 ```
 - `while`，只要 expression 的值为真，则进入循环体，执行 command-list 中的命令，然后再做条件测试，直到测试条件为假时才终止，`until`，只在表达式为假时才执行循环体
-```Shell
+```bash
 while/until expression
 do
     command-list
@@ -161,7 +161,7 @@ done
 
 ### 函数
 
-```Shell
+```bash
 [ function ] funname[()]
 {
     command-list
