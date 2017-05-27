@@ -20,8 +20,8 @@
 - `shift`，参数整体向左移一位，即原来 $1 的值被移走了，新 $1 的值是原来 $2 的值，新 $2 的值是原来 $3 的值，依次类推，`shift 3`，左移三位
 - `$?`，读取最后执行命令的退出状态，一般情况下，0为成功，1-255之间的整数为失败
 - 特殊字符包括：`space`, `tab`, `newline`，`|`, `&`, `;`, `(`, `)`, `<`,`>`，`!`
-- `"`包裹字符，除 **$**，**`**(反引号)和 **\\**(转义符)之外的其他字符将被作为普通字符对待，可以防止空格被解释为分隔符，含有空格的字符串被包在双引号中依旧是算作单一字符
-- `'`包裹字符，除了'之外的所有特殊字符都将会被直接按照字面意思进行解析，不允许出现 ' 
+- `"`包裹字符，除 **$**，**`**(反引号)和 **\\**(转义符)之外的其他字符将被作为普通字符对待，" 需转义，可以防止空格被解释为分隔符，含有空格的字符串被包在双引号中依旧是算作单一字符
+- `'`包裹字符，除了 ' 之外的所有特殊字符都将会被直接按照字面意思进行解析，不允许出现 ' 
 - `readonly val`，将变量定义为只读变量，改变只读变量的值会报错
 - 字符串处理
   - `${变量:位置起点:要截取的长度}`，字符串截取，位置从0开始，`${变量名:位置起点}`，从起点开始取到末尾，起点可以从右边算起，`0-n`表示从右起第n位
@@ -118,7 +118,7 @@ else
     echo '没有符合的条件!'
 fi
 ```
-- `case`语句，可以用变量值对多个Pattern进行匹配，Pattern中可以使用通配符，任何一个相符，则执行其后的命令一直到分号（;;）结束
+- `case`语句，可以用变量值对多个Pattern进行匹配，Pattern中可以使用通配符，任何一个相符，则执行其后的命令一直到分号`;;`结束，如果使用`;&`而不是 ;;，将继续执行下一个 ) 后的命令，如果使用`;;&` in place of ‘;;’ causes the shell to test the patterns in the next clause, if any, and execute any associated command-list on a successful match. 
 ```bash
 case $1 in
     file) 
@@ -147,11 +147,13 @@ then cd $dir
 else echo "Bad directory name:$dir"
 fi
 #写成一行
-for var in item1 item2 ... itemN; do command1; command2… done;
+for var in item1 item2 ... itemN; do commands ; done;
+#还有如下形式，先执行expr1，然后反复执行expr2直到返回0，如果expr2返回非0，commands将执行而后执行expr3
+for (( expr1 ; expr2 ; expr3 )) ; do commands ; done
 ```
 - `while`，只要 expression 的值为真，则进入循环体，执行 command-list 中的命令，然后再做条件测试，直到测试条件为假时才终止，`until`，只在表达式为假时才执行循环体
 ```bash
-while/until expression
+while/until test-commands
 do
     command-list
 done
@@ -175,6 +177,7 @@ done
 
 - `./script-name`，`(cd ..; ls -l)`，如果默认方式执行脚本，或将命令行下输入的命令用括号括起来，那么会 fork 出一个子 shell 执行小括号中的命令，一行中可以输入由分号隔开的多个命令，执行命令后，虽然执行了 cd .. 命令，但是 shell 当前的路径并没改变
 - `source ./script-name`，`. ./script-name `，如果用 source 命令或者 . 来执行脚本时，则不会创建子进程，而是直接在交互式 shell 中执行脚本中的命令，这种形式还可以用来在一个脚本中包含另一个脚本，执行后可以获取另一个脚本中的变量
+- 在脚本中`;`和`newline`等价，`&&` 和 `||` 有相同的优先级，高于 `;` 和 `&`，这两优先级相同
 - `firefox &`，最后后面的 & 符号，表示使用后台方式打开 Firefox，然后显示该进程的 PID 值
 - `Ctrl + Z`，可以暂时把当前程序挂起到后台，挂起后的进程将不再进行任何操作
 - `fg job_spec`，将后台挂起的进程恢复到前台来运行
