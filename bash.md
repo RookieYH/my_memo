@@ -22,7 +22,7 @@
 - `echo "字符串内容"`，双引号可省略，输出 "字符串内容"， **\\** 转义特殊字符，**${}** 输出变量，**``** 执行命令，输出结果
 	- `echo '$name\"'`，原样输出字符串，不进行转义或取变量
 	- `echo 字符串...`， 对各种特殊符号转义，空格会被转义为参数分隔符(可以用 **\\** 转义空格)，`` echo `date` ``，显示命令执行结果
-- `printf  format-string  [arguments...]`，C语言，不会像 echo 自动添加换行符，换行需添加 **\n**
+- `printf  format-string  [arguments...]`，类似C语言，不会像 echo 自动添加换行符，换行需添加 **\n**
 	- `printf "%-10s %-8s %-3.2f\n" 郭靖 男 66.12`，％-10s 字符串，宽度为10个字符(-表示左对齐，没有则表示右对齐，超过10个也会显示)，%-3.2f 浮点数，其中.2指保留2位小数，％d 整数，％e 指数形式浮点数， %% 百分号
 - `cat 文件路劲名...`，显示文件内容(属于打印语句)
 	- `cat -n 文件名`，打印文件至标准输出，并显示每行行号，等价于`nl -ba 文件名`
@@ -58,8 +58,8 @@
 	- `cd ~`，改变目录位置至用户登录时的工作目录。
 	- `cd 回车`，回到家目录
 	- `cd -`，上一个工作目录
-	- `cd dir1/`，改变目录位置至 dir1 目录下。
-	- `cd ~user`，改变目录位置至用户的工作目录。
+	- `cd dir1`，改变目录位置至 dir1 目录下。
+	- `cd ~user`，改变目录位置至用户 user 的工作目录。
 	- `cd ../user`，改变目录位置至上级路径user的目录下。
 	- `cd /../..`，改变目录位置至绝对路径的目录位置下。
 - `cp 源文件 目标文件`，复制文件
@@ -70,14 +70,7 @@
 	- `cp /usr/share/easy-rsa/2.0/keys/{ca.crt,server.{crt,key},dh2048.pem,ta.key} /etc/openvpn/keys/`，复制同目录下花括号中的文件
 - `mv 文件 目标文件夹`，移动文件到目标文件夹
 	- `mv 文件`，不指定目录重命名后的名字，用来重命名文件
-- `tar -cpf - . | tar -xpf - -C /opt`，复制当前所有文件到 /opt 目录下，一般如果文件夹文件多的情况下用这个更好，用 cp 比较容易出问题
-- `tar -cvf mytest.tar mytest/`，对 mytest/ 目录进行归档处理(归档和压缩不一样)
-- `tar -xvf mytest.tar`，释放 mytest.tar 这个归档文件，释放到当前目录
-	- `tar -xvf mytest.tar -C /opt/setups/`，释放 mytest.tar 这个归档文件，释放到 /opt/setups/ 目录下	
-- `zip mytest.zip /opt/test/`，把 /opt 目录下的 test/ 目录进行压缩，压缩成一个名叫 mytest 的 zip 文件
-	- `unzip mytest.zip`，对 mytest.zip 这个文件进行解压，解压到当前所在目录
-	- `unzip mytest.zip -d /opt/setups/`，对 mytest.zip 这个文件进行解压，解压到 /opt/setups/ 目录下
-- `touch 文件名`，创建一个空白文件/更新已有文件的时间(后者少用)
+- `touch 文件名`，创建一个空白文件/更新已有文件的时间
 - `mkdir 文件夹名`，创建文件夹
 	- `mkdir -p /opt/setups/nginx/conf/`，创建一个名为 conf 文件夹，如果它的上级目录没有也会跟着一起生成，如果有则跳过
 	- `mkdir -m 711 /opt/setups/bin`，创建 bin 文件夹，给予 rwx--x--x 的权限。
@@ -86,24 +79,19 @@
 	- `rm -r 文件夹`，删除文件夹
 	- `rm -r -i 文件夹`，在删除文件夹里的文件会提示(要的话,在提示后面输入yes)
 	- `rm -r -f 文件夹`，强制删除
-	- `rm -r -f 文件夹1/ 文件夹2/ 文件夹3/`删除多个
-- `grep`，正则选取
-	- 查看某个配置文件，排除掉里面以 # 开头的注释内容：
-		- `grep '^[^#]' /etc/openvpn/server.conf`
-	- 查看某个配置文件，排除掉里面以 # 开头和 ; 开头的注释内容：
-		- `grep '^[^#;]' /etc/openvpn/server.conf`
+	- `rm -rfv 文件夹1/ 文件夹2/ 文件夹3/`删除多个，v 表示显示详情
+- `grep`，正则查找行
+	- `grep '^[^#]' /etc/openvpn/server.conf`，查看某个配置文件，排除掉里面以 # 开头的注释内容
+	- `grep '^[^#;]' /etc/openvpn/server.conf`，查看某个配置文件，排除掉里面以 # 开头和 ; 开头的注释内容
 - `find`，高级查找
-	- `find . -name *lin*`，其中 . 代表在当前目录找，-name 表示匹配文件名 / 文件夹名，\*lin\* 用通配符搜索含有lin的文件或是文件夹
-	- `find . -iname *lin*`，其中 . 代表在当前目录找，-iname 表示匹配文件名 / 文件夹名(忽略大小写差异)，\*lin\* 用通配符搜索含有lin的文件或是文件夹
-	- `find / -name *.conf`，其中 / 代表根目录查找，*.conf代表搜索后缀会.conf的文件
-	- `find /opt -name .oh-my-zsh`，其中 /opt 代表目录名，.oh-my-zsh 代表搜索的是隐藏文件 / 文件夹名字为 oh-my-zsh 的
-	- `find /opt -type f -iname .oh-my-zsh`，其中 /opt 代表目录名，-type f 代表只找文件，.oh-my-zsh 代表搜索的是隐藏文件名字为 oh-my-zsh 的
-	- `find /opt -type d -iname .oh-my-zsh`，其中 /opt 代表目录名，-type d 代表只找目录，.oh-my-zsh 代表搜索的是隐藏文件夹名字为 oh-my-zsh 的
-	- `find . -name "lin*" -exec ls -l{}\;`，当前目录搜索 lin 开头的文件，然后用其搜索后的结果集，再执行 ls -l 的命令(这个命令可变，其他命令也可以)，其中 -exec 和 {}\; 都是固定格式
+	- `find . -name '*lin*'`，其中 . 代表在当前目录找，-name 表示匹配文件名 / 文件夹名，\*lin\* 用通配符搜索含有lin的文件或是文件夹
+	- `find / -name '*.conf'`，其中 / 代表根目录查找，*.conf代表搜索后缀为 .conf 的文件
+	- `find /opt -type d -iname .oh-my-zsh`，在/opt下查找，-type d 代表只找目录，.oh-my-zsh 代表搜索的是隐藏文件夹名字为 oh-my-zsh 的，-iname 表示忽略大小写
+	- `find . -name "lin*" -exec ls -l {} \;`，当前目录搜索 lin 开头的文件，然后用其搜索后的结果集，再执行 ls -l 的命令
+	- `find /usr/local/backups -mtime +10 -name "*.html" -exec rm -rf {} \;`,找到并删除以html结尾的10天前的文件，包括带空格的文件
 	- `find /opt -type f -size +800M  -print0 | xargs -0 du -h | sort -nr`，找出  /opt 目录下大于 800 M 的文件
-	- `find / -name "*tower*" -exec rm {} \;`，找到文件并删除
 	- `find /usr/local/backups -name "*.html" -mtime +10 -print0 |xargs -0 rm -rfv`,删除以html结尾的10天前的文件，包括带空格的文件
-	- `find /usr/local/backups -mtime +10 -name "*.html" -exec rm -rf {} \;`,删除以html结尾的10天前的文件，包括带空格的文件
+
 
 ## vi/vim
 
@@ -211,6 +199,23 @@
     - `O`，在目前光标所在处的上一行插入新的一行
 
 
+## 压缩/解压
+- `tar -cvf mytest.tar mytest/`，对 mytest/ 目录进行归档处理(归档和压缩不一样)
+- `tar -xvf mytest.tar`，释放 mytest.tar 这个归档文件，释放到当前目录
+	- `tar -xvf mytest.tar -C /opt/setups/`，释放 mytest.tar 这个归档文件，释放到 /opt/setups/ 目录下	
+- `zip mytest.zip /opt/test/`，把 /opt 目录下的 test/ 目录进行压缩，压缩成一个名叫 mytest 的 zip 文件
+- `unzip mytest.zip`，对 mytest.zip 这个文件进行解压，解压到当前所在目录
+	- `unzip mytest.zip -d /opt/setups/`，对 mytest.zip 这个文件进行解压，解压到 /opt/setups/ 目录下，如果目录不存在会自动创建
+- 其他格式
+	- `.war`，解压`unzip -oq XXXXXX.war -d /opt/setups/`
+	- `.tar.gz`，解压`tar -zxvf XXXXXX.tar.gz`，压缩`tar -zcvf test11.tar.gz test11`
+	- `.tar.bz2`，解压`tar -jxvf XXXXXX.tar.bz2`，压缩`tar -jcvf test11.tar.bz2 test11`
+	- `.tar.xz`，解压`tar -Jxvf XXXXXX.tar.xz`，压缩`tar -Jcvf test11.tar.xz test11`
+	- `.bz2`，解压`bunzip2`，压缩`bzip2`
+	- `.gz`，解压`gunzip`，压缩`gzip`
+	- `.7z`，解压`7za x XXXXXX.7z`，压缩`7za a test1.7z /opt/test1/`
+
+
 ## 系统管理
 
 - `uptime`，查看系统已经运行了多久，当前有几个用户，系统负载等信息
@@ -255,7 +260,8 @@
 	- 这三个权限都可以转换成数值表示，r = 4，w = 2，x = 1，也就是最大权限，第一个 7 是所属主(user)的权限，第二个 7 是所属组(group)的权限，最后一位 7 是非本群组用户(others)的权限
 	- `chmod ug+rx,o-x start.sh`，将文件 start.sh 设为该文件拥有者，与其所属同组者可写读取可执行，其他以人则不可执行
 	- \+ 表示增加权限，- 表示取消权限，= 表示设定权限
-	- `chmod -R a+r`，将目前目录下的所有文件与子目录皆设为任何人可读取，**-R** 对目前目录下的所有文件与子目录进行相同的权限变更，递归
+	- `chmod -R a+r`，将当前目录下的所有文件与子目录皆设为任何人可读取，**-R** 对目前目录下的所有文件与子目录进行相同的权限变更，递归
+	- 所属主的 x 权限位上是 **s**，这时称为 set uid 简写 SUID，则用户如果具有这个文件的执行权限，执行时将临时变成所属主身份，如果所属组的 x 权限位上是 **s**，称为 set gid，简称SGID，SGID用在目录上最多，则用户如果具有这个文件夹的读写执行权限，则该用户在这个目录下建立的文件和文件夹所属组都是这个目录所属组，但所属主仍是该用户，即任何人在 SGID 目录中创建文件文件夹，该组的其他用户都可以删掉，如果 others 的 x 权限位是 **t**，这时称为 SBIT 全称 Sticky Bit，只对目录有效，表示任何一个能够在这个目录下建立文件的用户，在这个目录下所建立的文件，只有该用户自己和root可以删除，其他用户均不可以，设定可以用数字方式：**SUID 为 4，SGID 为 2，SBIT 为 1**，如果我们想把 file 加上 SUID 权限的话`chmod 4755 file`，也可以用表达式：给test目录加上SGID权限和other可读取写入执行权限`chmod o=rwxt test/`， 给test目录加上SBIT权限和other可读取写入执行权限`chmod g+s,o=wrx test/`
 - `umask`，查看当前权限掩码，结果 **0022** 所对应的文件和目录创建缺省权限分别为644和755，`umask 002`，设定权限掩码为 022 
 - `sudo 某个命令`，使用管理员权限使用命令，使用 sudo 回车之后需要输入当前登录账号的密码。
 - `su`：切换到 root 用户，non-login shell
@@ -302,62 +308,3 @@
 		- `rpm -a | grep jdk`，查看 jdk 是否被安装
 	- 卸载
 		- `rpm -e jdk`，卸载 jdk(一般卸载的时候都要先用 rpm -qa 看下整个软件的全名)
-
-
-## 常用压缩包**解压**命令整理
-
-- Linux 后缀为 `.war` 格式的文件(一般用在部署 Tomcat 项目的时候)
-- 命令：`unzip -oq XXXXXX.war -d ROOT`
-	- 如果没有 ROOT 目录会自动创建 ROOT 目录。
-
-- Linux 后缀为 `.tar.gz` 格式的文件-解压
-- 命令：`tar zxvf XXXXXX.tar.gz`
-
-- Linux 后缀为 `.bz2` 格式的文件-解压
-- 命令：`bzip2 -d XXXXXX.bz2`
-
-- Linux 后缀为 `.tar.bz2` 格式的文件-解压
-- 命令：`tar jxvf XXXXXX.tar.bz2`
-
-- Linux 后缀为 `.tar` 格式的文件-解压
-- 命令：`tar zxvf XXXXXX.tar`
-
-- Linux 后缀为 `.gz` 格式的文件-解压
-- 命令：`gunzip XXXXXX.gz`
-
-- Linux 后缀为 `.zip` 格式的文件-解压
-- 命令：`unzip XXXXXX.zip`
-- 命令：`unzip XXXXXX.zip -d /opt/`，解压到指定目录
-
-- Linux 后缀为 `.tar.xz` 格式的文件-解压，解压出来是tar，再对tar进行解压
-- 命令：`tar xf XXXXXX.tar.xz`
-
-- Linux 后缀为 `.7z` 格式的文件-解压
-- 命令：`7za x XXXXXX.7z`
-
-
-## 常用文件进行**压缩**命令整理
-
-- Linux 压缩文件为后缀 `.tar` 格式的文件
-- 命令：`tar -zcvf test11.tar test11`
-
-- Linux 压缩文件为后缀 `.tar.gz` 格式的文件
-- 命令：`tar -zcvf test11.tar.gz test11`
-
-- Linux 压缩文件为后缀 `.bz2` 格式的文件
-- 命令：`bzip2 -v test.txt`
-
-- Linux 压缩文件为后缀 `.tar.bz2` 格式的文件
-- 命令：`tar -jcvf test11.tar.gz test11`
-
-- Linux 压缩文件为后缀 `.zip` 格式的文件
-- 命令：`zip -r test1.zip /opt/test1/`
-
-- Linux 压缩文件为后缀 `.7z` 格式的文件
-- 命令：`7za a test1.7z /opt/test1/`
-
-- 7z 的安装：
-	- 访问官网下载解压包：<http://sourceforge.net/projects/p7zip/files/p7zip/>
-	- 解压压缩包：`tar jxvf p7zip_15.14_src_all.tar.bz2`
-	- 进入目录：`cd p7zip_15.14`
-	- 执行安装：`sh install.sh`

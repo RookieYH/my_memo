@@ -10,6 +10,7 @@ GlassFish
 Heroku
 J2ME
 OpenShift
+Osmorc
 PerforceDirectPlugin
 Resin
 StrutsAssistant
@@ -17,10 +18,12 @@ TFS
 WebSphere
 Weblogic
 com.intellij.appengine
+com.intellij.dmserver
 com.intellij.flex
 com.intellij.guice
 com.intellij.gwt
 com.intellij.play
+com.intellij.spring.osgi
 com.intellij.tapestry
 com.intellij.vaadin
 com.jetbrains.plugins.asp
