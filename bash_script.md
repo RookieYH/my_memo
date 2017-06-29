@@ -1,4 +1,4 @@
-# Shell Script
+# Bash Script
 
 
 - `#!/usr/bin/env bash`，Sha-Bang

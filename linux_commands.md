@@ -1,4 +1,4 @@
-# Bash 常用命令
+# Linux 常用命令
 
 
 ## 基础常用命令
@@ -234,6 +234,7 @@
 
 ## 用户/权限/安全
 
+- `whoami`，当前用户名称，相当于`id -un`，`id sam`，输出 sam 的用户 id，组 id，`id -gn`，输出当前用户的当前组
 - `cat /etc/group`，查看所有组
 - `cat /etc/passwd`，查看所有用户
 - `useradd -s /bin/bash -g group –G adm,root gem`，新建一个用户gem，该用户的登录Shell是 /bin/bash，它属于group用户组，同时又属于adm和root用户组，其中group用户组是其主组
@@ -262,15 +263,17 @@
 	- `chmod ug+rx,o-x start.sh`，将文件 start.sh 设为该文件拥有者，与其所属同组者可写读取可执行，其他以人则不可执行
 	- \+ 表示增加权限，- 表示取消权限，= 表示设定权限
 	- `chmod -R a+r`，将当前目录下的所有文件与子目录皆设为任何人可读取，**-R** 对目前目录下的所有文件与子目录进行相同的权限变更，递归
-	- 所属主的 x 权限位上是 **s**，这时称为 set uid 简写 SUID，则用户如果具有这个文件的执行权限，执行时将临时变成所属主身份，如果所属组的 x 权限位上是 **s**，称为 set gid，简称SGID，SGID用在目录上最多，则用户如果具有这个文件夹的读写执行权限，则该用户在这个目录下建立的文件和文件夹所属组都是这个目录所属组，但所属主仍是该用户，即任何人在 SGID 目录中创建文件文件夹，该组的其他用户都可以删掉，如果 others 的 x 权限位是 **t**，这时称为 SBIT 全称 Sticky Bit，只对目录有效，表示任何一个能够在这个目录下建立文件的用户，在这个目录下所建立的文件，只有该用户自己和root可以删除，其他用户均不可以，设定可以用数字方式：**SUID 为 4，SGID 为 2，SBIT 为 1**，如果我们想把 file 加上 SUID 权限的话`chmod 4755 file`，也可以用表达式：给test目录加上SGID权限和other可读取写入执行权限`chmod o=rwxt test/`， 给test目录加上SBIT权限和other可读取写入执行权限`chmod g+s,o=wrx test/`
+	- 所属主的 x 权限位上是 **s**，这时称为 set uid 简写 SUID，则用户如果具有这个文件的执行权限，执行时将临时变成所属主身份，如果所属组的 x 权限位上是 **s**，称为 set gid，简称SGID，SGID用在目录上最多，则用户如果具有这个文件夹的读写执行权限，则该用户在这个目录下建立的文件和文件夹所属组都是这个目录所属组，但所属主仍是该用户，即任何人在 SGID 目录中创建文件文件夹，该组的其他用户都可以删掉，如果 others 的 x 权限位是 **t**，这时称为 SBIT 全称 Sticky Bit，只对目录有效，表示任何一个能够在这个目录下建立文件的用户，在这个目录下所建立的文件，只有该用户自己和root可以删除，其他用户均不可以，设定可以用数字方式：**SUID 为 4，SGID 为 2，SBIT 为 1**，如果我们想把 file 加上 SUID 权限的话`chmod 4755 file`，也可以用表达式：给test目录加上SGID权限和other可读取写入执行权限`chmod o=rwxt test/`， 给test目录加上SBIT权限和other可读取写入执行权限`chmod g+s,o=rwx test/`
 - `umask`，查看当前权限掩码，结果 **0022** 所对应的文件和目录创建缺省权限分别为644和755，`umask 002`，设定权限掩码为 022 
+- `chown -R user:group /usr/sam`，将 /usr/sam 下的所有文件与子目录的属主设为 user 属组 group
 - `sudo 某个命令`，使用管理员权限使用命令，使用 sudo 回车之后需要输入当前登录账号的密码。
 - `su`：切换到 root 用户，non-login shell
 	- `su -`：切换到 root 用户，**-** 或 **-l** 表示login shell
 	- `su 用户名`，切换指定用户帐号登陆，non-login shell
 	- `su - 用户名`，切换到指定用户帐号登陆，**-** 表示login shell
 - `exit`，注销当前用户
-- `last`，显示最近登录的帐户及时间
+- `w [user]`，不带 user 输出当前登录用户以及进程，带 user 输出 user 的登录情况
+- `last [user...] [tty...]`，显示最近登录的帐户及时间
 - `lastlog`，显示系统所有用户各自在最近登录的记录，如果没有登录过的用户会显示从未登陆过
 	
 
