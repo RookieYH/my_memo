@@ -1,16 +1,13 @@
-target/
+/target/
 .DS_Store
 *.bak
 
-.settings/
-.project
-.classpath
-.metadata/
-.recommenders/
+/.settings/
+/.project
+/.classpath
 
-*.iml
-*.iws
-.idea/
-out/
+/*.iml
+/*.iws
+/.idea/
 
-.vscode/*
+/.vscode/*
