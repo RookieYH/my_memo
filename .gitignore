@@ -1,13 +1,15 @@
-/target/
+target/
 .DS_Store
 *.bak
 
-/.settings/
-/.project
-/.classpath
+.settings/
+.project
+.classpath
+.springBeans
 
-/*.iml
-/*.iws
-/.idea/
+.idea/
+*.iml
+*.iws
+*.ipr
 
-/.vscode/*
+.vscode/*
