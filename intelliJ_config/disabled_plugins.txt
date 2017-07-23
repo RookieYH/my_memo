@@ -17,12 +17,14 @@ PerforceDirectPlugin
 Resin
 StrutsAssistant
 TFS
+Tomcat
 WebSphere
 Weblogic
 com.intellij.appengine
 com.intellij.dmserver
 com.intellij.drools
 com.intellij.flex
+com.intellij.freemarker
 com.intellij.guice
 com.intellij.gwt
 com.intellij.jboss.arquillian

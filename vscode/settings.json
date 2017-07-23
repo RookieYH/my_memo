@@ -14,5 +14,7 @@
         "**/CVS": true,
         "**/.DS_Store": true
     },
-    "workbench.iconTheme": "vscode-icons"
+    "workbench.iconTheme": "vscode-icons",
+    "git.confirmSync": false,
+    "workbench.startupEditor": "none"
 }
