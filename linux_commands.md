@@ -3,39 +3,34 @@
 
 ## 基础常用命令
 
-- `某个命令 --help`，对这个命令进行解释
-- `man某个命令`，文档式解释这个命令(更详细)(执行该命令后,还可以按/+关键字进行查询结果的搜索)
-- `Ctrl + c`，结束命令
-- `TAB键`，自动补全命令(按一次自动补全，连续按两次，提示所有以输入开头字母的所有命令)
-- `键盘上下键`，输入临近的历史命令
+- `<command> --help`，对这个命令进行解释
+- `man <command>`，文档式解释命令(浏览文档时，操作同`less`)
+- `TAB`，自动补全命令(按一次自动补全，连续按两次，提示所有以输入开头字母的所有命令)
+- `UpArrow & DownArrow`，输入临近的历史命令
 - `history`，查看所有的历史命令
-- `Ctrl + r`，进入历史命令的搜索功能模式
-- `clear`，清除屏幕里面的所有命令
-- `pwd`，显示当前目录路径
+- `Ctrl-R`，进入历史命令的搜索功能模式
+- `clear`，清屏，等价于 `ctrl-L`
 - `locate 搜索关键字`，快速搜索文件(类似 Windows 上的 everything 索引式搜索)
 	- `updatedb`，配合上面的 locate，给 locate 的索引更新(locate 默认是一天更新一次索引)
-- `date`，查看系统时间
-	- `date -s20080103`，设置日期
-	- `date -s18:24`，设置时间，如果要同时更改 BIOS 时间，再执行 `hwclock --systohc`
-- `cal`，在终端中查看日历，肯定没有农历显示的
-- `which git`，返回文件的路径，从环境变量 **PATH** 搜索
-- `echo "字符串内容"`，双引号可省略，输出 "字符串内容"， **\\** 转义特殊字符，**${}** 输出变量，**``** 执行命令，输出结果
-	- `echo '$name\"'`，原样输出字符串，不进行转义或取变量
-	- `echo 字符串...`， 对各种特殊符号转义，空格会被转义为参数分隔符(可以用 **\\** 转义空格)，`` echo `date` ``，显示命令执行结果
+- `which git`，返回文件路径，从环境变量 **PATH** 搜索
+- `echo "string"`，输出字符串"， **\\** 转义特殊字符，**${}** 输出变量，**``** 执行命令，输出结果
+	- `echo '$name\"'`，原样输出字符串，不进行转义或变量替换
+	- `echo string...`， 对各种特殊符号转义，空格会被转义为参数分隔符(可以用 **\\** 转义空格)，`` echo `date` ``，显示命令执行结果
 - `printf  format-string  [arguments...]`，类似C语言，不会像 echo 自动添加换行符，换行需添加 **\n**
 	- `printf "%-10s %-8s %-3.2f\n" 郭靖 男 66.12`，％-10s 字符串，宽度为10个字符(-表示左对齐，没有则表示右对齐，超过10个也会显示)，%-3.2f 浮点数，其中.2指保留2位小数，％d 整数，％e 指数形式浮点数， %% 百分号
-- `cat 文件路劲名...`，显示文件内容(属于打印语句)
-	- `cat -n 文件名`，打印文件至标准输出，并显示每行行号，等价于`nl -ba 文件名`
-	- `cat -b 文件名`，打印文件至标准输出，只对非空行编号，等价于`nl 文件名`
-- `more 文件名`，用分页的方式查看文件内容(按 *space* 翻下一页，按 *Ctrl + B* 返回上页)
-- `less`文件名，用分页的方式查看文件内容(带上下翻页)
+- `cat <filename>...`，显示文件内容(属于打印语句)
+	- `cat -n <filename>`，打印文件至标准输出，并显示每行行号，等价于`nl -ba 文件名`
+	- `cat -b <filename>`，打印文件至标准输出，只对非空行编号，等价于`nl 文件名`
+- `more <filename>`，用分页的方式查看文件内容(按 *space* 翻下一页，按 *Ctrl-B* 返回上页)
+- `less <filename>`，用分页的方式查看文件内容(带上下翻页)
 	- 按 `j` 向下移动，按 `k` 向上移动，`u` 向上半页，`d` 向下半页
 	- `G`，移动到最后一行，`g` 移动到第一行
 	- 按 `/` 后，输入要查找的字符串内容，可以对文件进行向下查询，如果存在多个结果可以按  `n` 下一个结果，`N` 上一个
 	- 按 `?` 后，输入要查找的字符串内容，可以对文件进行向上查询，如果存在多个结果可以按   `n` 下一个结果，`N` 上一个
 	- `&string`，仅显示匹配的行，而不是整个文件
-- `tail -200f 文件名`，查看文件被更新的新内容尾 200 行，如果文件还有在新增可以动态查看到(一般用于查看日记文件)
-- `ls`，列出当前目录下的所有非隐藏的文件&文件夹。
+- `tail -200f <filename>`，查看文件被更新的新内容尾 200 行，如果文件还有在新增可以动态查看到(一般用于查看日记文件)
+- `pwd`，显示当前目录路径
+- `ls`，列出当前目录下的所有非隐藏的文件&文件夹
 	- `ls -a`，列出所有文件文件&文件夹(包括 . 开头的隐藏文件)
 	- `ls -R`，显示出目录下以及其所有子目录的文件&文件夹(递归地方式，不显示隐藏的文件)
 	- `ls -A -R`，显示出目录下以及其所有子目录的文件&文件夹(递归地方式，显示隐藏的文件，但不包括 . 和 ..)
@@ -54,14 +49,14 @@
 	- `ls -l /opt |grep "^d"|wc -l`，统计 opt 目录下目录的个数，不会递归统计
 	- `ls -lR /opt |grep "js"|wc -l`，统计 opt 目录下 js 文件的个数，会递归统计
 - `cd`，目录切换
-	- `cd ..`，改变目录位置至当前目录的父目录(上级目录)。
+	- `cd ..`，改变目录位置至当前目录的父目录(上级目录)
 	- `cd ~`，改变目录位置至用户登录时的工作目录。
+	- `cd ~user`，改变当前路径至用户 user 的工作目录
 	- `cd 回车`，回到家目录
 	- `cd -`，上一个工作目录
-	- `cd dir1`，改变目录位置至 dir1 目录下。
-	- `cd ~user`，改变目录位置至用户 user 的工作目录。
-	- `cd ../user`，改变目录位置至上级路径user的目录下。
-	- `cd /../..`，改变目录位置至绝对路径的目录位置下。
+	- `cd dir1`，改变当前路径至 dir1 目录下
+	- `cd ../dir1`，改变当前路径至上级路径 dir1 目录下
+	- `cd /dir1/dir2`，改变当前路径至绝对路径/dir1/dir2
 - `cp 源文件 目标文件`，复制文件
 	- `cp -r 源文件夹 目标文件夹`，复制文件夹
 	- `cp -r -v 源文件夹 目标文件夹`，复制文件夹(显示详细信息，一般用于文件夹很大，需要查看复制进度的时候)
@@ -70,7 +65,7 @@
 	- `cp /usr/share/easy-rsa/2.0/keys/{ca.crt,server.{crt,key},dh2048.pem,ta.key} /etc/openvpn/keys/`，复制同目录下花括号中的文件
 - `mv 文件 目标文件夹`，移动文件到目标文件夹
 	- `mv 文件`，不指定目录重命名后的名字，用来重命名文件
-- `touch 文件名`，创建一个空白文件/更新已有文件的时间
+- `touch <filename>`，创建一个空白文件/更新已有文件的时间
 - `mkdir 文件夹名`，创建文件夹
 	- `mkdir -p /opt/setups/nginx/conf/`，创建一个名为 conf 文件夹，如果它的上级目录没有也会跟着一起生成，如果有则跳过
 	- `mkdir -m 711 /opt/setups/bin`，创建 bin 文件夹，给予 rwx--x--x 的权限。
@@ -91,18 +86,19 @@
 	- `find /usr/local/backups -mtime +10 -name "*.html" -exec rm -rf {} \;`,找到并删除以html结尾的10天前的文件，包括带空格的文件
 	- `find /opt -type f -size +800M  -print0 | xargs -0 du -h | sort -nr`，找出  /opt 目录下大于 800 M 的文件
 	- `find /usr/local/backups -name "*.html" -mtime +10 -print0 |xargs -0 rm -rfv`,删除以html结尾的10天前的文件，包括带空格的文件
+- `file <filename>`，显示文件类型，`file -i <filename>`，显示文件 MINE-type
 
 
 ## vi/vim
 
 - `:help <command>`，显示相关命令的帮助。你也可以就输入 :help 而不跟命令
-- `:! <command>`，暂时离开 vi 到指令行模式下执行 command 的显示结果！例如 `:! ls /home` 即可在 vi 当中察看 /home 底下以 ls 输出的档案信息
+- `:! <command>`，暂时离开 vi 回 shell 环境执行 command，`:! ls /home` 暂时跳出vim，列出 /home 目录下 文件/文件夹
 - `:set nu`，显示行号，设定之后，会在每一行的前缀显示该行的行号
 - `:set nonu`，取消显示行号
 - `:r! <command>`，将命令 command 的输出结果放到当前行
-- `:w [filename]`，将编辑的数据储存成另一个档案(另存为)
-- `:r [filename]`，在编辑的数据中，读入另一个档案的数据，即将filename的内容加到游标所在行后面
-- `:n1,n2 w [filename]`，将 n1 到 n2 的内容储另存为filename
+- `:w <filename>`，将编辑的数据储存成另一个档案(另存为)
+- `:r <filename>`，在编辑的数据中，读入另一个档案的数据，即将filename的内容加到游标所在行后面
+- `:n1,n2 w <filename>`，将 n1 到 n2 的内容储另存为filename
 - `q!`，不保存强制退出，`wq`，保存并退出
 - 移动
 	- `n方向键`，n 表示数字，按下数字后再按方向键或hjkl，光标移动 n 个单位相应方向
@@ -114,14 +110,14 @@
 	- `0` 或 `Home`，到本行行头
 	- `$` 或 `End`，到本行行尾
 	- `fa`，行内搜素，到下一个为 a 的字符处，也可以 fs 到下一个为 s 的字符，`F`方向相反
-	- `t"`, 行内搜素，到 " 前的第一个字符，" 可以变成其它字符,`T`方向相反	
+	- `t"`, 行内搜素，到下一个 " 前的字符，" 可以变成其它字符,`T`方向相反	
 	- `(`，光标移至当前句句首，`)`，光标移至下一句句首
 	- `{`，光标移至当前段开头，`}`, 光标移至下一段开头
 	- `%`，匹配括号移动，包括 **(、{、[**
-	- `Ctrl + u`，向文件首翻半屏
-	- `Ctrl + d`，向文件尾翻半屏
-	- `Ctrl + b`，向文件首翻一屏，同`PageUp`
-	- `Ctrl + f`，向文件尾翻一屏，同`PageDown`
+	- `Ctrl-u`，向文件首翻半屏
+	- `Ctrl-d`，向文件尾翻半屏
+	- `Ctrl-b`，向文件首翻一屏，同`PageUp`
+	- `Ctrl-f`，向文件尾翻一屏，同`PageDown`
 	- `H`，光标移动到这个屏幕的最上方那一行的第一个字符
 	- `M`，光标移动到这个屏幕的中央那一行的第一个字符
 	- `L`，光标移动到这个屏幕的最下方那一行的第一个字符
@@ -143,7 +139,7 @@
 		- 按 `0` 或 `Home` 选取到行首，`^` 选取到本行第一个单词首，`$` 或 `End` 选取到行尾
 		- 连续按 `w` ,持续向后选取单词(包括空格)，`t`/`f`/`T`/`F`选取到行内某字符为止
 	- `V`，上下整行选择		
-	- `Ctrl + v`，进入列编辑，块选取
+	- `Ctrl-v`，进入列编辑，块选取
 	- 任意一种选取后，`<` 或 `>`，选取行左右缩进，`=`选取行自动缩进
 	- 块选取后，`A`, 输入字符串，按`ESC`，可以在选取的块的每一行末尾插入所输入的字符，`I`后输入字符串再`ESC`，每一行开头插入
 - 删除
@@ -184,7 +180,7 @@
 	- `Insert`，切换插入模式和取代模式
 	- `ddp`，交换当前光标所在行和下一行的位置
 	- `u`，撤销(Undo)
-	- `Ctrl + r`，重做(Redo)
+	- `Ctrl-r`，重做(Redo)
 	- `.`，重复前一个动作，如要重复删除、重复贴上等动作，按下小数点
 	- `u`，选取内容转化为小写，`guu`，把当前行的字母全部转换成小写
 	- `U`，选取内容转化为大写，`gUU`，把当前行的字母全部转换成大写
@@ -199,25 +195,12 @@
     - `O`，在目前光标所在处的上一行插入新的一行
 
 
-## 压缩/解压
-- `tar -cvf mytest.tar mytest/`，对 mytest/ 目录进行归档处理(归档和压缩不一样)
-- `tar -xvf mytest.tar`，释放 mytest.tar 这个归档文件，释放到当前目录
-	- `tar -xvf mytest.tar -C /opt/setups/`，释放 mytest.tar 这个归档文件，释放到 /opt/setups/ 目录下	
-- `zip mytest.zip /opt/test/`，把 /opt 目录下的 test/ 目录进行压缩，压缩成一个名叫 mytest 的 zip 文件
-- `unzip mytest.zip`，对 mytest.zip 这个文件进行解压，解压到当前所在目录
-	- `unzip mytest.zip -d /opt/setups/`，对 mytest.zip 这个文件进行解压，解压到 /opt/setups/ 目录下，如果目录不存在会自动创建
-- 其他格式
-	- `.war`，解压`unzip -oq XXXXXX.war -d /opt/setups/`
-	- `.tar.gz`，解压`tar -zxvf XXXXXX.tar.gz`，压缩`tar -zcvf test11.tar.gz test11`
-	- `.tar.bz2`，解压`tar -jxvf XXXXXX.tar.bz2`，压缩`tar -jcvf test11.tar.bz2 test11`
-	- `.tar.xz`，解压`tar -Jxvf XXXXXX.tar.xz`，压缩`tar -Jcvf test11.tar.xz test11`
-	- `.bz2`，解压`bunzip2`，压缩`bzip2`
-	- `.gz`，解压`gunzip`，压缩`gzip`
-	- `.7z`，解压`7za x XXXXXX.7z`，压缩`7za a test1.7z /opt/test1/`
-
-
 ## 系统管理
 
+- `env`，查看所有系统变量
+- `export PATH=$PATH:/opt/java/bin`，设置环境变量
+- `echo $JAVA_HOME`，查看指定系统变量的值
+- `unset JAVA_HOME`，删除指定的环境变量
 - `uptime`，查看系统已经运行了多久，当前有几个用户，系统负载等信息
 - `uname`，用于打印当前系统相关信息(内核版本号、硬件架构、主机名称和操作系统类型等)
 - `shutdown`
@@ -226,10 +209,30 @@
     - `shutdown -h23:30`，23:30 关机
 - `poweroff`，立即关机
 - `reboot`，立即重启
-- `env`，查看所有系统变量
-- `export PATH=$PATH:/opt/java/bin`，设置环境变量
-- `echo $JAVA_HOME`，查看指定系统变量的值，这里查看的是自己配置的 JAVA_HOME
-- `unset $JAVA_HOME`，删除指定的环境变量
+- `lsb_release -a`，查看发行代号
+- `locale`，查看支持的语言
+- `update-locale`，修改系统语言
+- `date`，查看系统时间
+	- `date -s20080103`，设置日期
+	- `date -s18:24`，设置时间，如果要同时更改 BIOS 时间，再执行 `hwclock --systohc`
+- `cal`，在终端中查看日历
+- `ifconfig`，查看 IP 等信息
+- `cat /etc/resolv.conf`，查看 DNS 设置
+- `netstat -tlunp`，显示各种网络相关信息,程序
+- `hostname`，查看hostname或DNS domain
+- `dig www.baidu.com`，根据域名查出IP地址(DNS)
+	- `dig -x 192.30.252.153`，从IP地址反查域名
+- `host github.com` or `host 192.30.252.153`，根据域名查IP|从IP地址查域名
+- 编辑 hosts 文件：`vim /etc/hosts`，添加内容格式：`127.0.0.1 www.youmeek.com`
+- `df -h`，自动以合适的磁盘容量单位查看磁盘大小和使用空间
+	- `df -k /etc`，以磁盘容量单位 K 为数值结果查看/etc目录磁盘使用情况
+	- `df -mT`，以磁盘容量单位 M 为数值结果查看磁盘使用情况，并显示文件系统类型，如ext4
+- `du -sh`，查看当前目录所占磁盘空间，h 的意思 human-readable 用人类可读性较好方式显示，系统会自动调节单位，显示合适大小的单位，s 表示 **-–summarize** 仅显示总计，即当前目录的大小
+	- `du -sh /opt`，查看 opt 这个文件夹大小 
+	- `du -h --max-depth=2 ./* | sort -hr | head -12`，找出当前目录下占用容量最大的前 12 个目录,最多两级
+- `mount /dev/sdb5 /newDir/`，把分区 sdb5 挂载在根目录下的一个名为 newDir 的空目录下，需要注意的是：这个目录最好为空，不然已有的那些文件将看不到，除非卸载挂载。
+	- 挂载好之后，通过：`df -h`，查看挂载情况。
+- `umount /newDir/`，卸载挂载，用目录名，`umount /dev/sdb5`，卸载挂载，用分区名
 
 
 ## 用户/权限/安全
@@ -271,39 +274,30 @@
 	- `su -`：切换到 root 用户，**-** 或 **-l** 表示login shell
 	- `su 用户名`，切换指定用户帐号登陆，non-login shell
 	- `su - 用户名`，切换到指定用户帐号登陆，**-** 表示login shell
-- `exit`，注销当前用户
+- `exit`，注销当前用户 (logout)，等价于 `Ctrl-D`
 - `w [user]`，不带 user 输出当前登录用户以及进程，带 user 输出 user 的登录情况
 - `last [user...] [tty...]`，显示最近登录的帐户及时间
 - `lastlog`，显示系统所有用户各自在最近登录的记录，如果没有登录过的用户会显示从未登陆过
+- `md5sum <filename>`，输出文件 MD5，`md5sum *.jpg > MD5 && md5sum -c MD5`，将当前目录下的 jpg 格式文件 MD5 码输出到文件 MD5 并验证，`md5sum -c --status MD5`，不输出校验结果，一致返回 0，不一致返回 1 
 	
-
-## 网络/磁盘管理
-
-- `ifconfig`，查看 IP 等信息
-- `cat /etc/resolv.conf`，查看 DNS 设置
-- `netstat -tlunp`，显示各种网络相关信息,程序
-- `hostname`，查看hostname或DNS domain
-- `dig www.baidu.com`，根据域名查出IP地址(DNS)
-	- `dig -x 192.30.252.153`，从IP地址反查域名
-- `host github.com` or `host 192.30.252.153`，根据域名查IP|从IP地址查域名
-- 编辑 hosts 文件：`vim /etc/hosts`，添加内容格式：`127.0.0.1 www.youmeek.com`
-- `df -h`，自动以合适的磁盘容量单位查看磁盘大小和使用空间
-	- `df -k /etc`，以磁盘容量单位 K 为数值结果查看/etc目录磁盘使用情况
-	- `df -mT`，以磁盘容量单位 M 为数值结果查看磁盘使用情况，并显示文件系统类型，如ext4
-- `du -sh`，查看当前目录所占磁盘空间，h 的意思 human-readable 用人类可读性较好方式显示，系统会自动调节单位，显示合适大小的单位，s 表示 **-–summarize** 仅显示总计，即当前目录的大小
-	- `du -sh /opt`，查看 opt 这个文件夹大小 
-	- `du -h --max-depth=2 ./* | sort -hr | head -12`，找出当前目录下占用容量最大的前 12 个目录,最多两级
-- `mount /dev/sdb5 /newDir/`，把分区 sdb5 挂载在根目录下的一个名为 newDir 的空目录下，需要注意的是：这个目录最好为空，不然已有的那些文件将看不到，除非卸载挂载。
-	- 挂载好之后，通过：`df -h`，查看挂载情况。
-- `umount /newDir/`，卸载挂载，用目录名，`umount /dev/sdb5`，卸载挂载，用分区名
-
 
 ## 其他常用命令
 
-- `lsb_release -a`，查看发行代号
-- `locale`，查看支持的语言
-- `update-locale`，修改系统语言
-- `sudo apt install ~/Downloads/google-chrome-stable_current_amd64.deb`，安装deb
+- `tar -cvf mytest.tar mytest/`，对 mytest/ 目录进行归档处理(归档和压缩不一样)
+- `tar -xvf mytest.tar`，释放 mytest.tar 这个归档文件，释放到当前目录
+	- `tar -xvf mytest.tar -C /opt/setups/`，释放 mytest.tar 这个归档文件，释放到 /opt/setups/ 目录下	
+- `zip mytest.zip /opt/test/`，把 /opt 目录下的 test/ 目录进行压缩，压缩成一个名叫 mytest 的 zip 文件
+- `unzip mytest.zip`，对 mytest.zip 这个文件进行解压，解压到当前所在目录
+	- `unzip mytest.zip -d /opt/setups/`，对 mytest.zip 这个文件进行解压，解压到 /opt/setups/ 目录下，如果目录不存在会自动创建
+- 其他格式
+	- `.war`，解压`unzip -oq XXXXXX.war -d /opt/setups/`
+	- `.tar.gz`，解压`tar -zxvf XXXXXX.tar.gz`，压缩`tar -zcvf test11.tar.gz test11`
+	- `.tar.bz2`，解压`tar -jxvf XXXXXX.tar.bz2`，压缩`tar -jcvf test11.tar.bz2 test11`
+	- `.tar.xz`，解压`tar -Jxvf XXXXXX.tar.xz`，压缩`tar -Jcvf test11.tar.xz test11`
+	- `.bz2`，解压`bunzip2`，压缩`bzip2`
+	- `.gz`，解压`gunzip`，压缩`gzip`
+	- `.7z`，解压`7za x XXXXXX.7z`，压缩`7za a test1.7z /opt/test1/`
+- `apt install ~/Downloads/google-chrome-stable_current_amd64.deb`，安装deb
 - RPM 文件操作命令：
 	- 安装
 		- `rpm -i example.rpm`，安装 example.rpm 包
