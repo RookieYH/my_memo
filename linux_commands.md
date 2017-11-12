@@ -87,6 +87,7 @@
 	- `find /opt -type f -size +800M  -print0 | xargs -0 du -h | sort -nr`，找出  /opt 目录下大于 800 M 的文件
 	- `find /usr/local/backups -name "*.html" -mtime +10 -print0 |xargs -0 rm -rfv`,删除以html结尾的10天前的文件，包括带空格的文件
 - `file <filename>`，显示文件类型，`file -i <filename>`，显示文件 MINE-type
+- `wget -O wordpress.zip http://www.linuxde.net/download.aspx?id=1080`，下载并以 wordpress.zip 文件名保存
 
 
 ## vi/vim
@@ -278,19 +279,19 @@
 - `w [user]`，不带 user 输出当前登录用户以及进程，带 user 输出 user 的登录情况
 - `last [user...] [tty...]`，显示最近登录的帐户及时间
 - `lastlog`，显示系统所有用户各自在最近登录的记录，如果没有登录过的用户会显示从未登陆过
-- `md5sum <filename>`，输出文件 MD5，`md5sum *.jpg > MD5 && md5sum -c MD5`，将当前目录下的 jpg 格式文件 MD5 码输出到文件 MD5 并验证，`md5sum -c --status MD5`，不输出校验结果，一致返回 0，不一致返回 1 
+- `md5sum <filename>`，输出文件 MD5，`md5sum *.jpg > MD5 && md5sum -c MD5`，将当前目录下的 jpg 格式文件 MD5 码输出到文件 MD5 并验证，`md5sum -c --status MD5`，校验但不输出校验结果，一致返回 0，不一致返回 1 
 	
 
 ## 其他常用命令
 
 - `tar -cvf mytest.tar mytest/`，对 mytest/ 目录进行归档处理(归档和压缩不一样)
-- `tar -xvf mytest.tar`，释放 mytest.tar 这个归档文件，释放到当前目录
+- `tar -xvf mytest.tar`，释放 mytest.tar 到当前目录
 	- `tar -xvf mytest.tar -C /opt/setups/`，释放 mytest.tar 这个归档文件，释放到 /opt/setups/ 目录下	
-- `zip mytest.zip /opt/test/`，把 /opt 目录下的 test/ 目录进行压缩，压缩成一个名叫 mytest 的 zip 文件
-- `unzip mytest.zip`，对 mytest.zip 这个文件进行解压，解压到当前所在目录
+- `zip mytest.zip /opt/test/`，把 /opt 目录下的 test/ 目录压缩为 mytest.zip
+- `unzip mytest.zip`，解压 mytest.zip 到当前所在目录
 	- `unzip mytest.zip -d /opt/setups/`，对 mytest.zip 这个文件进行解压，解压到 /opt/setups/ 目录下，如果目录不存在会自动创建
 - 其他格式
-	- `.war`，解压`unzip -oq XXXXXX.war -d /opt/setups/`
+	- `.war`，解压`unzip XXXXXX.war -d /opt/setups/`
 	- `.tar.gz`，解压`tar -zxvf XXXXXX.tar.gz`，压缩`tar -zcvf test11.tar.gz test11`
 	- `.tar.bz2`，解压`tar -jxvf XXXXXX.tar.bz2`，压缩`tar -jcvf test11.tar.bz2 test11`
 	- `.tar.xz`，解压`tar -Jxvf XXXXXX.tar.xz`，压缩`tar -Jcvf test11.tar.xz test11`
