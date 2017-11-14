@@ -1,0 +1,130 @@
+{
+  "timestamp": "2017-11-14T13:43:31.598Z",
+  "fileName": "foxyGestures.2017-11-14.json",
+  "addonId": "{e839c3f9-298e-4cd0-99e0-464431cb7c34}",
+  "version": "1.0.11",
+  "settings": {
+    "gestureTimeout": 2000,
+    "statusTimeout": 2000,
+    "showStatusText": true,
+    "gestureButton": 2,
+    "gestureFidelity": 10,
+    "drawTrails": true,
+    "trailFidelity": 10,
+    "trailWidth": 2.5,
+    "trailColor": "#00AAFF",
+    "mouseMappings": [
+      {
+        "command": "historyBack",
+        "gesture": "L"
+      },
+      {
+        "command": "historyForward",
+        "gesture": "R"
+      },
+      {
+        "command": "pageUp",
+        "gesture": "URU"
+      },
+      {
+        "command": "pageDown",
+        "gesture": "DRD"
+      },
+      {
+        "command": "closeLeftTabs",
+        "gesture": "DR"
+      },
+      {
+        "command": "closeRightTabs",
+        "gesture": "DL"
+      },
+      {
+        "command": "scrollUp",
+        "gesture": "U"
+      },
+      {
+        "command": "undoClose",
+        "gesture": "RL"
+      },
+      {
+        "command": "scrollDown",
+        "gesture": "D"
+      },
+      {
+        "command": "scrollBottom",
+        "gesture": "UD"
+      },
+      {
+        "command": "scrollTop",
+        "gesture": "DU"
+      },
+      {
+        "command": "reload",
+        "gesture": "LR"
+      },
+      {
+        "command": "nextTab",
+        "gesture": "UR"
+      },
+      {
+        "command": "previousTab",
+        "gesture": "UL"
+      },
+      {
+        "command": "newTab",
+        "gesture": "RU"
+      },
+      {
+        "command": "newPrivateWindow",
+        "gesture": "LU"
+      },
+      {
+        "command": "closeOtherTabs",
+        "gesture": "RD"
+      }
+    ],
+    "disableOnAlt": true,
+    "disableOnShift": true,
+    "canSelectStart": false,
+    "wheelGestures": true,
+    "wheelMappings": {
+      "up": {
+        "command": "previousTab"
+      },
+      "down": {
+        "command": "nextTab"
+      },
+      "left": null,
+      "right": null
+    },
+    "chordGestures": false,
+    "chordMappings": [
+      {
+        "chord": [
+          0,
+          2
+        ],
+        "mapping": null
+      },
+      {
+        "chord": [
+          2,
+          0
+        ],
+        "mapping": null
+      }
+    ],
+    "userScripts": [],
+    "sawXSSWarning": true,
+    "scrollDuration": 500,
+    "scrollAmount": 92,
+    "nextTabWrap": true,
+    "newTabUrl": null,
+    "newWindowUrl": null,
+    "newPrivateWindowUrl": null,
+    "useRelPrevNext": true,
+    "insertRelatedTab": true,
+    "zoomStep": 0.1,
+    "statusTemplate": "<div style=\"all: initial; display: block; position: fixed; bottom: 0; right: 0; z-index: 2147483647\">\r\n  <div style=\"all: initial; background: #fff; border: 1px solid #ccc; color: #333; font-family: sans-serif; font-size: 12px; padding: 2px\" data-mg-status></div>\r\n</div>"
+  }
+}
