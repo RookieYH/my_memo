@@ -1,6 +1,6 @@
 {
-  "timestamp": "2017-11-14T13:43:31.598Z",
-  "fileName": "foxyGestures.2017-11-14.json",
+  "timestamp": "2017-11-14T16:15:31.942Z",
+  "fileName": "foxyGestures.2017-11-15.json",
   "addonId": "{e839c3f9-298e-4cd0-99e0-464431cb7c34}",
   "version": "1.0.11",
   "settings": {
@@ -23,14 +23,6 @@
         "gesture": "R"
       },
       {
-        "command": "pageUp",
-        "gesture": "URU"
-      },
-      {
-        "command": "pageDown",
-        "gesture": "DRD"
-      },
-      {
         "command": "closeLeftTabs",
         "gesture": "DR"
       },
@@ -39,16 +31,8 @@
         "gesture": "DL"
       },
       {
-        "command": "scrollUp",
-        "gesture": "U"
-      },
-      {
         "command": "undoClose",
         "gesture": "RL"
-      },
-      {
-        "command": "scrollDown",
-        "gesture": "D"
       },
       {
         "command": "scrollBottom",
@@ -71,16 +55,24 @@
         "gesture": "UL"
       },
       {
-        "command": "newTab",
-        "gesture": "RU"
-      },
-      {
         "command": "newPrivateWindow",
         "gesture": "LU"
       },
       {
         "command": "closeOtherTabs",
         "gesture": "RD"
+      },
+      {
+        "command": "newTab",
+        "gesture": "RU"
+      },
+      {
+        "command": "scrollDown",
+        "gesture": "D"
+      },
+      {
+        "command": "scrollUp",
+        "gesture": "U"
       }
     ],
     "disableOnAlt": true,
@@ -116,8 +108,8 @@
     ],
     "userScripts": [],
     "sawXSSWarning": true,
-    "scrollDuration": 500,
-    "scrollAmount": 92,
+    "scrollDuration": 200,
+    "scrollAmount": 90,
     "nextTabWrap": true,
     "newTabUrl": null,
     "newWindowUrl": null,
