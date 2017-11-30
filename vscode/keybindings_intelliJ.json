@@ -1,3 +1,4 @@
+// Place your key bindings in this file to overwrite the defaults
 [
     {
         "key": "alt+/",
@@ -54,20 +55,12 @@
         "command": "git.viewHistory"
     },
     {
-        "key": "ctrl+`",
-        "command": "-workbench.view.git"
-    },
-    {
         "key": "ctrl+k",
-        "command": "-workbench.action.git.input-commit"
+        "command": "-git.commitAll"
     },
     {
         "key": "ctrl+t",
         "command": "-workbench.action.git.sync"
-    },
-    {
-        "key": "ctrl+`",
-        "command": "-workbench.action.selectTheme"
     },
     {
         "key": "ctrl+shift+alt+j",

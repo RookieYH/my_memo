@@ -217,14 +217,15 @@
 	- `date -s20080103`，设置日期
 	- `date -s18:24`，设置时间，如果要同时更改 BIOS 时间，再执行 `hwclock --systohc`
 - `cal`，在终端中查看日历
-- `ifconfig`，查看 IP 等信息
-- `cat /etc/resolv.conf`，查看 DNS 设置
-- `netstat -tlunp`，显示各种网络相关信息,程序
-- `hostname`，查看hostname或DNS domain
-- `dig www.baidu.com`，根据域名查出IP地址(DNS)
-	- `dig -x 192.30.252.153`，从IP地址反查域名
-- `host github.com` or `host 192.30.252.153`，根据域名查IP|从IP地址查域名
-- 编辑 hosts 文件：`vim /etc/hosts`，添加内容格式：`127.0.0.1 www.youmeek.com`
+- `hostname`，查看 hostname，`hostname <name>`，临时设置 hsotname，`hostname -f`，完整 hostname，`hostname -i`，查看 ip， `domainname`或`hostname -d`，查看 DNS domain
+- 系统配置文件
+	- `/etc/resolv.conf`，DNS 设置
+	- `/etc/hosts`，hosts
+- `net-tools`
+	- `ifconfig`，`netstat -tlunp`
+- `dnsutils`
+	- `dig www.baidu.com`，根据域名查出IP地址(DNS)
+		- `dig -x 192.30.252.153`，从IP地址反查域名
 - `df -h`，自动以合适的磁盘容量单位查看磁盘大小和使用空间
 	- `df -k /etc`，以磁盘容量单位 K 为数值结果查看/etc目录磁盘使用情况
 	- `df -mT`，以磁盘容量单位 M 为数值结果查看磁盘使用情况，并显示文件系统类型，如ext4
@@ -270,11 +271,9 @@
 	- 所属主的 x 权限位上是 **s**，这时称为 set uid 简写 SUID，则用户如果具有这个文件的执行权限，执行时将临时变成所属主身份，如果所属组的 x 权限位上是 **s**，称为 set gid，简称SGID，SGID用在目录上最多，则用户如果具有这个文件夹的读写执行权限，则该用户在这个目录下建立的文件和文件夹所属组都是这个目录所属组，但所属主仍是该用户，即任何人在 SGID 目录中创建文件文件夹，该组的其他用户都可以删掉，如果 others 的 x 权限位是 **t**，这时称为 SBIT 全称 Sticky Bit，只对目录有效，表示任何一个能够在这个目录下建立文件的用户，在这个目录下所建立的文件，只有该用户自己和root可以删除，其他用户均不可以，设定可以用数字方式：**SUID 为 4，SGID 为 2，SBIT 为 1**，如果我们想把 file 加上 SUID 权限的话`chmod 4755 file`，也可以用表达式：给test目录加上SGID权限和other可读取写入执行权限`chmod o=rwxt test/`， 给test目录加上SBIT权限和other可读取写入执行权限`chmod g+s,o=rwx test/`
 - `umask`，查看当前权限掩码，结果 **0022** 所对应的文件和目录创建缺省权限分别为644和755，`umask 002`，设定权限掩码为 022 
 - `chown -R user:group /usr/sam`，将 /usr/sam 下的所有文件与子目录的属主设为 user 属组 group
-- `sudo 某个命令`，使用管理员权限使用命令，使用 sudo 回车之后需要输入当前登录账号的密码。
-- `su`：切换到 root 用户，non-login shell
-	- `su -`：切换到 root 用户，**-** 或 **-l** 表示login shell
-	- `su 用户名`，切换指定用户帐号登陆，non-login shell
-	- `su - 用户名`，切换到指定用户帐号登陆，**-** 表示login shell
+- `sudo <command>`，使用管理员权限使用命令，使用 sudo 回车之后需要输入当前登录账号的密码。
+- `su <username>`，切换为 username 帐号登陆，non-login shell，省略 username 表示登录 root 
+	- `su - <username>`，切换到 username 帐号登陆，**-** 或 **-l** 表示 login shell，省略 username 表示登录 root 
 - `exit`，注销当前用户 (logout)，等价于 `Ctrl-D`
 - `w [user]`，不带 user 输出当前登录用户以及进程，带 user 输出 user 的登录情况
 - `last [user...] [tty...]`，显示最近登录的帐户及时间
