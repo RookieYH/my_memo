@@ -1,8 +1,8 @@
 {
-  "timestamp": "2017-11-14T16:15:31.942Z",
-  "fileName": "foxyGestures.2017-11-15.json",
+  "timestamp": "2017-12-02T02:37:04.135Z",
+  "fileName": "foxyGestures.2017-12-02.json",
   "addonId": "{e839c3f9-298e-4cd0-99e0-464431cb7c34}",
-  "version": "1.0.11",
+  "version": "1.0.15",
   "settings": {
     "gestureTimeout": 2000,
     "statusTimeout": 2000,
@@ -21,14 +21,6 @@
       {
         "command": "historyForward",
         "gesture": "R"
-      },
-      {
-        "command": "closeLeftTabs",
-        "gesture": "DR"
-      },
-      {
-        "command": "closeRightTabs",
-        "gesture": "DL"
       },
       {
         "command": "undoClose",
@@ -73,6 +65,10 @@
       {
         "command": "scrollUp",
         "gesture": "U"
+      },
+      {
+        "command": "closeTab",
+        "gesture": "DR"
       }
     ],
     "disableOnAlt": true,
