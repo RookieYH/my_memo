@@ -1,12 +1,416 @@
 {
-  "Engines": [
-    {
-      "name": "百度搜索",
-      "url": "https://www.baidu.com/baidu?wd=%s"
+  "Actions": {
+    "textAction": {
+      "DIR_U": {
+        "act_name": "ACT_COPY",
+        "tab_pos": "TAB_LAST",
+        "engine_name": "百度搜索",
+        "engine_url": "https://www.baidu.com/baidu?wd=%s",
+        "download_directory": "0",
+        "tab_active": true,
+        "open_type": "OPEN_TEXT",
+        "search_type": "SEARCH_TEXT",
+        "copy_type": "COPY_TEXT",
+        "download_type": "DOWNLOAD_TEXT",
+        "download_saveas": true,
+        "search_onsite": false
+      },
+      "DIR_D": {
+        "act_name": "ACT_SEARCH",
+        "tab_active": true,
+        "tab_pos": "TAB_CRIGHT",
+        "engine_name": "Bing Search",
+        "open_type": "OPEN_LINK",
+        "search_type": "SEARCH_TEXT",
+        "copy_type": "COPY_TEXT",
+        "download_type": "DOWNLOAD_LINK",
+        "download_directory": "0",
+        "download_saveas": true,
+        "search_onsite": true,
+        "engine_url": "https://www.bing.com/search?q=%s"
+      },
+      "DIR_L": {
+        "act_name": "ACT_SEARCH",
+        "tab_active": true,
+        "tab_pos": "TAB_CRIGHT",
+        "engine_name": "Bing Search",
+        "open_type": "OPEN_LINK",
+        "search_type": "SEARCH_TEXT",
+        "copy_type": "COPY_TEXT",
+        "download_type": "DOWNLOAD_LINK",
+        "download_directory": "0",
+        "download_saveas": true,
+        "search_onsite": false,
+        "engine_url": "https://www.bing.com/search?q=%s"
+      },
+      "DIR_R": {
+        "act_name": "ACT_SEARCH",
+        "tab_active": false,
+        "tab_pos": "TAB_CRIGHT",
+        "engine_name": "Bing Search",
+        "open_type": "OPEN_LINK",
+        "search_type": "SEARCH_TEXT",
+        "copy_type": "COPY_TEXT",
+        "download_type": "DOWNLOAD_LINK",
+        "download_directory": "0",
+        "download_saveas": true,
+        "search_onsite": false,
+        "engine_url": "https://www.bing.com/search?q=%s"
+      },
+      "DIR_UP_L": {
+        "act_name": "ACT_OPEN",
+        "tab_active": false,
+        "tab_pos": "TAB_LAST",
+        "engine_name": "百度搜索",
+        "open_type": "OPEN_LINK",
+        "search_type": "SEARCH_TEXT",
+        "copy_type": "COPY_TEXT",
+        "download_type": "DOWNLOAD_LINK",
+        "download_directory": "0",
+        "download_saveas": true,
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/baidu?wd=%s"
+      },
+      "DIR_UP_R": {
+        "act_name": "ACT_OPEN",
+        "tab_active": false,
+        "tab_pos": "TAB_LAST",
+        "engine_name": "百度搜索",
+        "open_type": "OPEN_LINK",
+        "search_type": "SEARCH_TEXT",
+        "copy_type": "COPY_TEXT",
+        "download_type": "DOWNLOAD_LINK",
+        "download_directory": "0",
+        "download_saveas": true,
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/baidu?wd=%s"
+      },
+      "DIR_LOW_L": {
+        "act_name": "ACT_OPEN",
+        "tab_active": false,
+        "tab_pos": "TAB_LAST",
+        "engine_name": "百度搜索",
+        "open_type": "OPEN_LINK",
+        "search_type": "SEARCH_TEXT",
+        "copy_type": "COPY_TEXT",
+        "download_type": "DOWNLOAD_LINK",
+        "download_directory": "0",
+        "download_saveas": true,
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/baidu?wd=%s"
+      },
+      "DIR_LOW_R": {
+        "act_name": "ACT_OPEN",
+        "tab_active": false,
+        "tab_pos": "TAB_LAST",
+        "engine_name": "百度搜索",
+        "open_type": "OPEN_LINK",
+        "search_type": "SEARCH_TEXT",
+        "copy_type": "COPY_TEXT",
+        "download_type": "DOWNLOAD_LINK",
+        "download_directory": "0",
+        "download_saveas": true,
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/baidu?wd=%s"
+      },
+      "DIR_OUTER": {
+        "act_name": "ACT_NONE",
+        "tab_active": false,
+        "tab_pos": "TAB_LAST",
+        "engine_name": "百度搜索",
+        "open_type": "OPEN_LINK",
+        "search_type": "SEARCH_TEXT",
+        "copy_type": "COPY_TEXT",
+        "download_type": "DOWNLOAD_LINK",
+        "download_directory": "0",
+        "download_saveas": true,
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/baidu?wd=%s"
+      }
     },
+    "imageAction": {
+      "DIR_U": {
+        "act_name": "ACT_DL",
+        "tab_active": true,
+        "tab_pos": "TAB_LAST",
+        "engine_name": "百度搜索",
+        "open_type": "OPEN_LINK",
+        "search_type": "SEARCH_TEXT",
+        "copy_type": "COPY_TEXT",
+        "download_type": "DOWNLOAD_LINK",
+        "download_directory": "0",
+        "download_saveas": true,
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/baidu?wd=%s"
+      },
+      "DIR_D": {
+        "act_name": "ACT_SEARCH",
+        "tab_active": true,
+        "tab_pos": "TAB_CRIGHT",
+        "engine_name": "Baidu Image",
+        "open_type": "OPEN_LINK",
+        "search_type": "SEARCH_LINK",
+        "copy_type": "COPY_TEXT",
+        "download_type": "DOWNLOAD_LINK",
+        "download_directory": "0",
+        "download_saveas": true,
+        "search_onsite": false,
+        "engine_url": "https://image.baidu.com/n/pc_search?queryImageUrl=%s"
+      },
+      "DIR_L": {
+        "act_name": "ACT_OPEN",
+        "tab_active": true,
+        "tab_pos": "TAB_CRIGHT",
+        "engine_name": "百度搜索",
+        "open_type": "OPEN_LINK",
+        "search_type": "SEARCH_TEXT",
+        "copy_type": "COPY_TEXT",
+        "download_type": "DOWNLOAD_LINK",
+        "download_directory": "0",
+        "download_saveas": true,
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/baidu?wd=%s"
+      },
+      "DIR_R": {
+        "act_name": "ACT_OPEN",
+        "tab_active": false,
+        "tab_pos": "TAB_CRIGHT",
+        "engine_name": "百度搜索",
+        "open_type": "OPEN_LINK",
+        "search_type": "SEARCH_TEXT",
+        "copy_type": "COPY_TEXT",
+        "download_type": "DOWNLOAD_LINK",
+        "download_directory": "0",
+        "download_saveas": true,
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/baidu?wd=%s"
+      },
+      "DIR_UP_L": {
+        "act_name": "ACT_OPEN",
+        "tab_active": false,
+        "tab_pos": "TAB_LAST",
+        "engine_name": "百度搜索",
+        "open_type": "OPEN_LINK",
+        "search_type": "SEARCH_TEXT",
+        "copy_type": "COPY_TEXT",
+        "download_type": "DOWNLOAD_LINK",
+        "download_directory": "0",
+        "download_saveas": true,
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/baidu?wd=%s"
+      },
+      "DIR_UP_R": {
+        "act_name": "ACT_OPEN",
+        "tab_active": false,
+        "tab_pos": "TAB_LAST",
+        "engine_name": "百度搜索",
+        "open_type": "OPEN_LINK",
+        "search_type": "SEARCH_TEXT",
+        "copy_type": "COPY_TEXT",
+        "download_type": "DOWNLOAD_LINK",
+        "download_directory": "0",
+        "download_saveas": true,
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/baidu?wd=%s"
+      },
+      "DIR_LOW_L": {
+        "act_name": "ACT_OPEN",
+        "tab_active": false,
+        "tab_pos": "TAB_LAST",
+        "engine_name": "百度搜索",
+        "open_type": "OPEN_LINK",
+        "search_type": "SEARCH_TEXT",
+        "copy_type": "COPY_TEXT",
+        "download_type": "DOWNLOAD_LINK",
+        "download_directory": "0",
+        "download_saveas": true,
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/baidu?wd=%s"
+      },
+      "DIR_LOW_R": {
+        "act_name": "ACT_OPEN",
+        "tab_active": false,
+        "tab_pos": "TAB_LAST",
+        "engine_name": "百度搜索",
+        "open_type": "OPEN_LINK",
+        "search_type": "SEARCH_TEXT",
+        "copy_type": "COPY_TEXT",
+        "download_type": "DOWNLOAD_LINK",
+        "download_directory": "0",
+        "download_saveas": true,
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/baidu?wd=%s"
+      },
+      "DIR_OUTER": {
+        "act_name": "ACT_NONE",
+        "tab_active": false,
+        "tab_pos": "TAB_LAST",
+        "engine_name": "百度搜索",
+        "open_type": "OPEN_LINK",
+        "search_type": "SEARCH_TEXT",
+        "copy_type": "COPY_TEXT",
+        "download_type": "DOWNLOAD_LINK",
+        "download_directory": "0",
+        "download_saveas": true,
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/baidu?wd=%s"
+      }
+    },
+    "linkAction": {
+      "DIR_U": {
+        "act_name": "ACT_OPEN",
+        "tab_active": true,
+        "tab_pos": "TAB_LAST",
+        "engine_name": "百度搜索",
+        "open_type": "OPEN_LINK",
+        "search_type": "SEARCH_TEXT",
+        "copy_type": "COPY_TEXT",
+        "download_type": "DOWNLOAD_LINK",
+        "download_directory": "0",
+        "download_saveas": true,
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/baidu?wd=%s"
+      },
+      "DIR_D": {
+        "act_name": "ACT_OPEN",
+        "tab_active": false,
+        "tab_pos": "TAB_LAST",
+        "engine_name": "百度搜索",
+        "open_type": "OPEN_LINK",
+        "search_type": "SEARCH_TEXT",
+        "copy_type": "COPY_TEXT",
+        "download_type": "DOWNLOAD_LINK",
+        "download_directory": "0",
+        "download_saveas": true,
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/baidu?wd=%s"
+      },
+      "DIR_L": {
+        "act_name": "ACT_OPEN",
+        "tab_active": true,
+        "tab_pos": "TAB_CRIGHT",
+        "engine_name": "百度搜索",
+        "open_type": "OPEN_LINK",
+        "search_type": "SEARCH_TEXT",
+        "copy_type": "COPY_LINK",
+        "download_type": "DOWNLOAD_LINK",
+        "download_directory": "0",
+        "download_saveas": true,
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/baidu?wd=%s"
+      },
+      "DIR_R": {
+        "act_name": "ACT_OPEN",
+        "tab_active": false,
+        "tab_pos": "TAB_CRIGHT",
+        "engine_name": "百度搜索",
+        "open_type": "OPEN_LINK",
+        "search_type": "SEARCH_TEXT",
+        "copy_type": "COPY_TEXT",
+        "download_type": "DOWNLOAD_LINK",
+        "download_directory": "0",
+        "download_saveas": true,
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/baidu?wd=%s"
+      },
+      "DIR_UP_L": {
+        "act_name": "ACT_OPEN",
+        "tab_active": false,
+        "tab_pos": "TAB_LAST",
+        "engine_name": "百度搜索",
+        "open_type": "OPEN_LINK",
+        "search_type": "SEARCH_TEXT",
+        "copy_type": "COPY_TEXT",
+        "download_type": "DOWNLOAD_LINK",
+        "download_directory": "0",
+        "download_saveas": true,
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/baidu?wd=%s"
+      },
+      "DIR_UP_R": {
+        "act_name": "ACT_OPEN",
+        "tab_active": false,
+        "tab_pos": "TAB_LAST",
+        "engine_name": "百度搜索",
+        "open_type": "OPEN_LINK",
+        "search_type": "SEARCH_TEXT",
+        "copy_type": "COPY_TEXT",
+        "download_type": "DOWNLOAD_LINK",
+        "download_directory": "0",
+        "download_saveas": true,
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/baidu?wd=%s"
+      },
+      "DIR_LOW_L": {
+        "act_name": "ACT_OPEN",
+        "tab_active": false,
+        "tab_pos": "TAB_LAST",
+        "engine_name": "百度搜索",
+        "open_type": "OPEN_LINK",
+        "search_type": "SEARCH_TEXT",
+        "copy_type": "COPY_TEXT",
+        "download_type": "DOWNLOAD_LINK",
+        "download_directory": "0",
+        "download_saveas": true,
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/baidu?wd=%s"
+      },
+      "DIR_LOW_R": {
+        "act_name": "ACT_OPEN",
+        "tab_active": false,
+        "tab_pos": "TAB_LAST",
+        "engine_name": "百度搜索",
+        "open_type": "OPEN_LINK",
+        "search_type": "SEARCH_TEXT",
+        "copy_type": "COPY_TEXT",
+        "download_type": "DOWNLOAD_LINK",
+        "download_directory": "0",
+        "download_saveas": true,
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/baidu?wd=%s"
+      },
+      "DIR_OUTER": {
+        "act_name": "ACT_NONE",
+        "tab_active": false,
+        "tab_pos": "TAB_LAST",
+        "engine_name": "百度搜索",
+        "open_type": "OPEN_LINK",
+        "search_type": "SEARCH_TEXT",
+        "copy_type": "COPY_TEXT",
+        "download_type": "DOWNLOAD_LINK",
+        "download_directory": "0",
+        "download_saveas": true,
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/baidu?wd=%s"
+      }
+    }
+  },
+  "directionControl": {
+    "textAction": "ALLOW_NORMAL",
+    "imageAction": "ALLOW_NORMAL",
+    "linkAction": "ALLOW_H"
+  },
+  "enableSync": true,
+  "triggeredDistance": 30,
+  "enablePrompt": true,
+  "tipsContent": {
+    "ACT_NONE": "%a",
+    "ACT_OPEN": "%g%a",
+    "ACT_COPY": "%a",
+    "ACT_SEARCH": "%g%a",
+    "ACT_TRANS": "%a",
+    "ACT_DL": "%a",
+    "ACT_QRCODE": "%a",
+    "ACT_FIND": "%a"
+  },
+  "Engines": [
     {
       "name": "Baidu Image",
       "url": "https://image.baidu.com/n/pc_search?queryImageUrl=%s"
+    },
+    {
+      "name": "Bing Search",
+      "url": "https://www.bing.com/search?q=%s"
     }
   ],
   "Actions_ShiftKey": {
@@ -22,7 +426,8 @@
         "download_type": "DOWNLOAD_LINK",
         "download_directory": "0",
         "download_saveas": true,
-        "search_onsite": false
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/baidu?wd=%s"
       },
       "DIR_D": {
         "act_name": "ACT_OPEN",
@@ -35,7 +440,8 @@
         "download_type": "DOWNLOAD_LINK",
         "download_directory": "0",
         "download_saveas": true,
-        "search_onsite": false
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/baidu?wd=%s"
       },
       "DIR_L": {
         "act_name": "ACT_OPEN",
@@ -48,7 +454,8 @@
         "download_type": "DOWNLOAD_LINK",
         "download_directory": "0",
         "download_saveas": true,
-        "search_onsite": false
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/baidu?wd=%s"
       },
       "DIR_R": {
         "act_name": "ACT_OPEN",
@@ -61,7 +468,8 @@
         "download_type": "DOWNLOAD_LINK",
         "download_directory": "0",
         "download_saveas": true,
-        "search_onsite": false
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/baidu?wd=%s"
       },
       "DIR_UP_L": {
         "act_name": "ACT_OPEN",
@@ -74,7 +482,8 @@
         "download_type": "DOWNLOAD_LINK",
         "download_directory": "0",
         "download_saveas": true,
-        "search_onsite": false
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/baidu?wd=%s"
       },
       "DIR_UP_R": {
         "act_name": "ACT_OPEN",
@@ -87,7 +496,8 @@
         "download_type": "DOWNLOAD_LINK",
         "download_directory": "0",
         "download_saveas": true,
-        "search_onsite": false
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/baidu?wd=%s"
       },
       "DIR_LOW_L": {
         "act_name": "ACT_OPEN",
@@ -100,7 +510,8 @@
         "download_type": "DOWNLOAD_LINK",
         "download_directory": "0",
         "download_saveas": true,
-        "search_onsite": false
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/baidu?wd=%s"
       },
       "DIR_LOW_R": {
         "act_name": "ACT_OPEN",
@@ -113,7 +524,8 @@
         "download_type": "DOWNLOAD_LINK",
         "download_directory": "0",
         "download_saveas": true,
-        "search_onsite": false
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/baidu?wd=%s"
       },
       "DIR_OUTER": {
         "act_name": "ACT_OPEN",
@@ -126,7 +538,8 @@
         "download_type": "DOWNLOAD_LINK",
         "download_directory": "0",
         "download_saveas": true,
-        "search_onsite": false
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/baidu?wd=%s"
       }
     },
     "imageAction": {
@@ -141,7 +554,8 @@
         "download_type": "DOWNLOAD_LINK",
         "download_directory": "0",
         "download_saveas": true,
-        "search_onsite": false
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/baidu?wd=%s"
       },
       "DIR_D": {
         "act_name": "ACT_OPEN",
@@ -154,7 +568,8 @@
         "download_type": "DOWNLOAD_LINK",
         "download_directory": "0",
         "download_saveas": true,
-        "search_onsite": false
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/baidu?wd=%s"
       },
       "DIR_L": {
         "act_name": "ACT_OPEN",
@@ -167,7 +582,8 @@
         "download_type": "DOWNLOAD_LINK",
         "download_directory": "0",
         "download_saveas": true,
-        "search_onsite": false
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/baidu?wd=%s"
       },
       "DIR_R": {
         "act_name": "ACT_OPEN",
@@ -180,7 +596,8 @@
         "download_type": "DOWNLOAD_LINK",
         "download_directory": "0",
         "download_saveas": true,
-        "search_onsite": false
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/baidu?wd=%s"
       },
       "DIR_UP_L": {
         "act_name": "ACT_OPEN",
@@ -193,7 +610,8 @@
         "download_type": "DOWNLOAD_LINK",
         "download_directory": "0",
         "download_saveas": true,
-        "search_onsite": false
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/baidu?wd=%s"
       },
       "DIR_UP_R": {
         "act_name": "ACT_OPEN",
@@ -206,7 +624,8 @@
         "download_type": "DOWNLOAD_LINK",
         "download_directory": "0",
         "download_saveas": true,
-        "search_onsite": false
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/baidu?wd=%s"
       },
       "DIR_LOW_L": {
         "act_name": "ACT_OPEN",
@@ -219,7 +638,8 @@
         "download_type": "DOWNLOAD_LINK",
         "download_directory": "0",
         "download_saveas": true,
-        "search_onsite": false
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/baidu?wd=%s"
       },
       "DIR_LOW_R": {
         "act_name": "ACT_OPEN",
@@ -232,7 +652,8 @@
         "download_type": "DOWNLOAD_LINK",
         "download_directory": "0",
         "download_saveas": true,
-        "search_onsite": false
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/baidu?wd=%s"
       },
       "DIR_OUTER": {
         "act_name": "ACT_OPEN",
@@ -245,7 +666,8 @@
         "download_type": "DOWNLOAD_LINK",
         "download_directory": "0",
         "download_saveas": true,
-        "search_onsite": false
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/baidu?wd=%s"
       }
     },
     "linkAction": {
@@ -260,7 +682,8 @@
         "download_type": "DOWNLOAD_LINK",
         "download_directory": "0",
         "download_saveas": true,
-        "search_onsite": false
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/baidu?wd=%s"
       },
       "DIR_D": {
         "act_name": "ACT_OPEN",
@@ -273,7 +696,8 @@
         "download_type": "DOWNLOAD_LINK",
         "download_directory": "0",
         "download_saveas": true,
-        "search_onsite": false
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/baidu?wd=%s"
       },
       "DIR_L": {
         "act_name": "ACT_OPEN",
@@ -286,7 +710,8 @@
         "download_type": "DOWNLOAD_LINK",
         "download_directory": "0",
         "download_saveas": true,
-        "search_onsite": false
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/baidu?wd=%s"
       },
       "DIR_R": {
         "act_name": "ACT_OPEN",
@@ -299,7 +724,8 @@
         "download_type": "DOWNLOAD_LINK",
         "download_directory": "0",
         "download_saveas": true,
-        "search_onsite": false
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/baidu?wd=%s"
       },
       "DIR_UP_L": {
         "act_name": "ACT_OPEN",
@@ -312,7 +738,8 @@
         "download_type": "DOWNLOAD_LINK",
         "download_directory": "0",
         "download_saveas": true,
-        "search_onsite": false
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/baidu?wd=%s"
       },
       "DIR_UP_R": {
         "act_name": "ACT_OPEN",
@@ -325,7 +752,8 @@
         "download_type": "DOWNLOAD_LINK",
         "download_directory": "0",
         "download_saveas": true,
-        "search_onsite": false
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/baidu?wd=%s"
       },
       "DIR_LOW_L": {
         "act_name": "ACT_OPEN",
@@ -338,7 +766,8 @@
         "download_type": "DOWNLOAD_LINK",
         "download_directory": "0",
         "download_saveas": true,
-        "search_onsite": false
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/baidu?wd=%s"
       },
       "DIR_LOW_R": {
         "act_name": "ACT_OPEN",
@@ -351,7 +780,8 @@
         "download_type": "DOWNLOAD_LINK",
         "download_directory": "0",
         "download_saveas": true,
-        "search_onsite": false
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/baidu?wd=%s"
       },
       "DIR_OUTER": {
         "act_name": "ACT_OPEN",
@@ -364,396 +794,416 @@
         "download_type": "DOWNLOAD_LINK",
         "download_directory": "0",
         "download_saveas": true,
-        "search_onsite": false
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/baidu?wd=%s"
       }
     }
   },
-  "Actions": {
-    "textAction": {
-      "DIR_U": {
-        "act_name": "ACT_COPY",
-        "tab_active": true,
-        "tab_pos": "TAB_LAST",
-        "engine_name": "百度搜索",
-        "open_type": "OPEN_LINK",
-        "search_type": "SEARCH_TEXT",
-        "copy_type": "COPY_TEXT",
-        "download_type": "DOWNLOAD_LINK",
-        "download_directory": "0",
-        "download_saveas": true,
-        "search_onsite": false
-      },
-      "DIR_D": {
-        "act_name": "ACT_SEARCH",
-        "tab_active": true,
-        "tab_pos": "TAB_CRIGHT",
-        "engine_name": "百度搜索",
-        "open_type": "OPEN_LINK",
-        "search_type": "SEARCH_TEXT",
-        "copy_type": "COPY_TEXT",
-        "download_type": "DOWNLOAD_LINK",
-        "download_directory": "0",
-        "download_saveas": true,
-        "search_onsite": true
-      },
-      "DIR_L": {
-        "act_name": "ACT_SEARCH",
-        "tab_active": true,
-        "tab_pos": "TAB_CRIGHT",
-        "engine_name": "百度搜索",
-        "open_type": "OPEN_LINK",
-        "search_type": "SEARCH_TEXT",
-        "copy_type": "COPY_TEXT",
-        "download_type": "DOWNLOAD_LINK",
-        "download_directory": "0",
-        "download_saveas": true,
-        "search_onsite": false
-      },
-      "DIR_R": {
-        "act_name": "ACT_SEARCH",
-        "tab_active": false,
-        "tab_pos": "TAB_CRIGHT",
-        "engine_name": "百度搜索",
-        "open_type": "OPEN_LINK",
-        "search_type": "SEARCH_TEXT",
-        "copy_type": "COPY_TEXT",
-        "download_type": "DOWNLOAD_LINK",
-        "download_directory": "0",
-        "download_saveas": true,
-        "search_onsite": false
-      },
-      "DIR_UP_L": {
-        "act_name": "ACT_OPEN",
-        "tab_active": false,
-        "tab_pos": "TAB_LAST",
-        "engine_name": "百度搜索",
-        "open_type": "OPEN_LINK",
-        "search_type": "SEARCH_TEXT",
-        "copy_type": "COPY_TEXT",
-        "download_type": "DOWNLOAD_LINK",
-        "download_directory": "0",
-        "download_saveas": true,
-        "search_onsite": false
-      },
-      "DIR_UP_R": {
-        "act_name": "ACT_OPEN",
-        "tab_active": false,
-        "tab_pos": "TAB_LAST",
-        "engine_name": "百度搜索",
-        "open_type": "OPEN_LINK",
-        "search_type": "SEARCH_TEXT",
-        "copy_type": "COPY_TEXT",
-        "download_type": "DOWNLOAD_LINK",
-        "download_directory": "0",
-        "download_saveas": true,
-        "search_onsite": false
-      },
-      "DIR_LOW_L": {
-        "act_name": "ACT_OPEN",
-        "tab_active": false,
-        "tab_pos": "TAB_LAST",
-        "engine_name": "百度搜索",
-        "open_type": "OPEN_LINK",
-        "search_type": "SEARCH_TEXT",
-        "copy_type": "COPY_TEXT",
-        "download_type": "DOWNLOAD_LINK",
-        "download_directory": "0",
-        "download_saveas": true,
-        "search_onsite": false
-      },
-      "DIR_LOW_R": {
-        "act_name": "ACT_OPEN",
-        "tab_active": false,
-        "tab_pos": "TAB_LAST",
-        "engine_name": "百度搜索",
-        "open_type": "OPEN_LINK",
-        "search_type": "SEARCH_TEXT",
-        "copy_type": "COPY_TEXT",
-        "download_type": "DOWNLOAD_LINK",
-        "download_directory": "0",
-        "download_saveas": true,
-        "search_onsite": false
-      },
-      "DIR_OUTER": {
-        "act_name": "ACT_NONE",
-        "tab_active": false,
-        "tab_pos": "TAB_LAST",
-        "engine_name": "百度搜索",
-        "open_type": "OPEN_LINK",
-        "search_type": "SEARCH_TEXT",
-        "copy_type": "COPY_TEXT",
-        "download_type": "DOWNLOAD_LINK",
-        "download_directory": "0",
-        "download_saveas": true,
-        "search_onsite": false
-      }
-    },
-    "imageAction": {
-      "DIR_U": {
-        "act_name": "ACT_DL",
-        "tab_active": true,
-        "tab_pos": "TAB_LAST",
-        "engine_name": "百度搜索",
-        "open_type": "OPEN_LINK",
-        "search_type": "SEARCH_TEXT",
-        "copy_type": "COPY_TEXT",
-        "download_type": "DOWNLOAD_LINK",
-        "download_directory": "0",
-        "download_saveas": true,
-        "search_onsite": false
-      },
-      "DIR_D": {
-        "act_name": "ACT_SEARCH",
-        "tab_active": true,
-        "tab_pos": "TAB_CRIGHT",
-        "engine_name": "Baidu Image",
-        "open_type": "OPEN_LINK",
-        "search_type": "SEARCH_LINK",
-        "copy_type": "COPY_TEXT",
-        "download_type": "DOWNLOAD_LINK",
-        "download_directory": "0",
-        "download_saveas": true,
-        "search_onsite": false
-      },
-      "DIR_L": {
-        "act_name": "ACT_OPEN",
-        "tab_active": true,
-        "tab_pos": "TAB_CRIGHT",
-        "engine_name": "百度搜索",
-        "open_type": "OPEN_LINK",
-        "search_type": "SEARCH_TEXT",
-        "copy_type": "COPY_TEXT",
-        "download_type": "DOWNLOAD_LINK",
-        "download_directory": "0",
-        "download_saveas": true,
-        "search_onsite": false
-      },
-      "DIR_R": {
-        "act_name": "ACT_OPEN",
-        "tab_active": false,
-        "tab_pos": "TAB_CRIGHT",
-        "engine_name": "百度搜索",
-        "open_type": "OPEN_LINK",
-        "search_type": "SEARCH_TEXT",
-        "copy_type": "COPY_TEXT",
-        "download_type": "DOWNLOAD_LINK",
-        "download_directory": "0",
-        "download_saveas": true,
-        "search_onsite": false
-      },
-      "DIR_UP_L": {
-        "act_name": "ACT_OPEN",
-        "tab_active": false,
-        "tab_pos": "TAB_LAST",
-        "engine_name": "百度搜索",
-        "open_type": "OPEN_LINK",
-        "search_type": "SEARCH_TEXT",
-        "copy_type": "COPY_TEXT",
-        "download_type": "DOWNLOAD_LINK",
-        "download_directory": "0",
-        "download_saveas": true,
-        "search_onsite": false
-      },
-      "DIR_UP_R": {
-        "act_name": "ACT_OPEN",
-        "tab_active": false,
-        "tab_pos": "TAB_LAST",
-        "engine_name": "百度搜索",
-        "open_type": "OPEN_LINK",
-        "search_type": "SEARCH_TEXT",
-        "copy_type": "COPY_TEXT",
-        "download_type": "DOWNLOAD_LINK",
-        "download_directory": "0",
-        "download_saveas": true,
-        "search_onsite": false
-      },
-      "DIR_LOW_L": {
-        "act_name": "ACT_OPEN",
-        "tab_active": false,
-        "tab_pos": "TAB_LAST",
-        "engine_name": "百度搜索",
-        "open_type": "OPEN_LINK",
-        "search_type": "SEARCH_TEXT",
-        "copy_type": "COPY_TEXT",
-        "download_type": "DOWNLOAD_LINK",
-        "download_directory": "0",
-        "download_saveas": true,
-        "search_onsite": false
-      },
-      "DIR_LOW_R": {
-        "act_name": "ACT_OPEN",
-        "tab_active": false,
-        "tab_pos": "TAB_LAST",
-        "engine_name": "百度搜索",
-        "open_type": "OPEN_LINK",
-        "search_type": "SEARCH_TEXT",
-        "copy_type": "COPY_TEXT",
-        "download_type": "DOWNLOAD_LINK",
-        "download_directory": "0",
-        "download_saveas": true,
-        "search_onsite": false
-      },
-      "DIR_OUTER": {
-        "act_name": "ACT_NONE",
-        "tab_active": false,
-        "tab_pos": "TAB_LAST",
-        "engine_name": "百度搜索",
-        "open_type": "OPEN_LINK",
-        "search_type": "SEARCH_TEXT",
-        "copy_type": "COPY_TEXT",
-        "download_type": "DOWNLOAD_LINK",
-        "download_directory": "0",
-        "download_saveas": true,
-        "search_onsite": false
-      }
-    },
-    "linkAction": {
-      "DIR_U": {
-        "act_name": "ACT_OPEN",
-        "tab_active": true,
-        "tab_pos": "TAB_LAST",
-        "engine_name": "百度搜索",
-        "open_type": "OPEN_LINK",
-        "search_type": "SEARCH_TEXT",
-        "copy_type": "COPY_TEXT",
-        "download_type": "DOWNLOAD_LINK",
-        "download_directory": "0",
-        "download_saveas": true,
-        "search_onsite": false
-      },
-      "DIR_D": {
-        "act_name": "ACT_OPEN",
-        "tab_active": false,
-        "tab_pos": "TAB_LAST",
-        "engine_name": "百度搜索",
-        "open_type": "OPEN_LINK",
-        "search_type": "SEARCH_TEXT",
-        "copy_type": "COPY_TEXT",
-        "download_type": "DOWNLOAD_LINK",
-        "download_directory": "0",
-        "download_saveas": true,
-        "search_onsite": false
-      },
-      "DIR_L": {
-        "act_name": "ACT_OPEN",
-        "tab_active": true,
-        "tab_pos": "TAB_CRIGHT",
-        "engine_name": "百度搜索",
-        "open_type": "OPEN_LINK",
-        "search_type": "SEARCH_TEXT",
-        "copy_type": "COPY_LINK",
-        "download_type": "DOWNLOAD_LINK",
-        "download_directory": "0",
-        "download_saveas": true,
-        "search_onsite": false
-      },
-      "DIR_R": {
-        "act_name": "ACT_OPEN",
-        "tab_active": false,
-        "tab_pos": "TAB_CRIGHT",
-        "engine_name": "百度搜索",
-        "open_type": "OPEN_LINK",
-        "search_type": "SEARCH_TEXT",
-        "copy_type": "COPY_TEXT",
-        "download_type": "DOWNLOAD_LINK",
-        "download_directory": "0",
-        "download_saveas": true,
-        "search_onsite": false
-      },
-      "DIR_UP_L": {
-        "act_name": "ACT_OPEN",
-        "tab_active": false,
-        "tab_pos": "TAB_LAST",
-        "engine_name": "百度搜索",
-        "open_type": "OPEN_LINK",
-        "search_type": "SEARCH_TEXT",
-        "copy_type": "COPY_TEXT",
-        "download_type": "DOWNLOAD_LINK",
-        "download_directory": "0",
-        "download_saveas": true,
-        "search_onsite": false
-      },
-      "DIR_UP_R": {
-        "act_name": "ACT_OPEN",
-        "tab_active": false,
-        "tab_pos": "TAB_LAST",
-        "engine_name": "百度搜索",
-        "open_type": "OPEN_LINK",
-        "search_type": "SEARCH_TEXT",
-        "copy_type": "COPY_TEXT",
-        "download_type": "DOWNLOAD_LINK",
-        "download_directory": "0",
-        "download_saveas": true,
-        "search_onsite": false
-      },
-      "DIR_LOW_L": {
-        "act_name": "ACT_OPEN",
-        "tab_active": false,
-        "tab_pos": "TAB_LAST",
-        "engine_name": "百度搜索",
-        "open_type": "OPEN_LINK",
-        "search_type": "SEARCH_TEXT",
-        "copy_type": "COPY_TEXT",
-        "download_type": "DOWNLOAD_LINK",
-        "download_directory": "0",
-        "download_saveas": true,
-        "search_onsite": false
-      },
-      "DIR_LOW_R": {
-        "act_name": "ACT_OPEN",
-        "tab_active": false,
-        "tab_pos": "TAB_LAST",
-        "engine_name": "百度搜索",
-        "open_type": "OPEN_LINK",
-        "search_type": "SEARCH_TEXT",
-        "copy_type": "COPY_TEXT",
-        "download_type": "DOWNLOAD_LINK",
-        "download_directory": "0",
-        "download_saveas": true,
-        "search_onsite": false
-      },
-      "DIR_OUTER": {
-        "act_name": "ACT_NONE",
-        "tab_active": false,
-        "tab_pos": "TAB_LAST",
-        "engine_name": "百度搜索",
-        "open_type": "OPEN_LINK",
-        "search_type": "SEARCH_TEXT",
-        "copy_type": "COPY_TEXT",
-        "download_type": "DOWNLOAD_LINK",
-        "download_directory": "0",
-        "download_saveas": true,
-        "search_onsite": false
-      }
-    }
-  },
-  "directionControl": {
+  "directionControl_ShiftKey": {
     "textAction": "ALLOW_NORMAL",
     "imageAction": "ALLOW_NORMAL",
-    "linkAction": "ALLOW_H"
+    "linkAction": "ALLOW_NORMAL"
   },
-  "tipsContent": {
-    "ACT_NONE": "%a",
-    "ACT_OPEN": "%g%a",
-    "ACT_COPY": "%a",
-    "ACT_SEARCH": "%g%a",
-    "ACT_TRANS": "%a",
-    "ACT_DL": "%a",
-    "ACT_QRCODE": "%a",
-    "ACT_FIND": "%a"
-  },
-  "triggeredDistance": 30,
-  "enablePrompt": true,
-  "timeoutCancel": 2000,
-  "switchToParentTab": false,
-  "style": "",
-  "enableTimeoutCancel": false,
-  "enableSync": true,
-  "enableStyle": false,
-  "enableShiftKey": false,
   "enableIndicator": false,
-  "enableCtrlKey": false,
+  "enableStyle": false,
+  "enableTimeoutCancel": false,
   "enableAutoSelectPreviousTab": true,
+  "enableCtrlKey": false,
+  "enableShiftKey": false,
+  "timeoutCancel": 2000,
+  "disableAdjustTabSequence": false,
+  "switchToParentTab": false,
+  "Actions_CtrlKey": {
+    "textAction": {
+      "DIR_U": {
+        "act_name": "ACT_OPEN",
+        "tab_active": false,
+        "tab_pos": "TAB_LAST",
+        "engine_name": "",
+        "open_type": "OPEN_LINK",
+        "search_type": "SEARCH_TEXT",
+        "copy_type": "COPY_TEXT",
+        "download_type": "DOWNLOAD_LINK",
+        "download_directory": [],
+        "download_saveas": true,
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/s?wd=%s"
+      },
+      "DIR_D": {
+        "act_name": "ACT_OPEN",
+        "tab_active": false,
+        "tab_pos": "TAB_LAST",
+        "engine_name": "",
+        "open_type": "OPEN_LINK",
+        "search_type": "SEARCH_TEXT",
+        "copy_type": "COPY_TEXT",
+        "download_type": "DOWNLOAD_LINK",
+        "download_directory": [],
+        "download_saveas": true,
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/s?wd=%s"
+      },
+      "DIR_L": {
+        "act_name": "ACT_OPEN",
+        "tab_active": false,
+        "tab_pos": "TAB_LAST",
+        "engine_name": "",
+        "open_type": "OPEN_LINK",
+        "search_type": "SEARCH_TEXT",
+        "copy_type": "COPY_TEXT",
+        "download_type": "DOWNLOAD_LINK",
+        "download_directory": [],
+        "download_saveas": true,
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/s?wd=%s"
+      },
+      "DIR_R": {
+        "act_name": "ACT_OPEN",
+        "tab_active": false,
+        "tab_pos": "TAB_LAST",
+        "engine_name": "",
+        "open_type": "OPEN_LINK",
+        "search_type": "SEARCH_TEXT",
+        "copy_type": "COPY_TEXT",
+        "download_type": "DOWNLOAD_LINK",
+        "download_directory": [],
+        "download_saveas": true,
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/s?wd=%s"
+      },
+      "DIR_UP_L": {
+        "act_name": "ACT_OPEN",
+        "tab_active": false,
+        "tab_pos": "TAB_LAST",
+        "engine_name": "",
+        "open_type": "OPEN_LINK",
+        "search_type": "SEARCH_TEXT",
+        "copy_type": "COPY_TEXT",
+        "download_type": "DOWNLOAD_LINK",
+        "download_directory": [],
+        "download_saveas": true,
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/s?wd=%s"
+      },
+      "DIR_UP_R": {
+        "act_name": "ACT_OPEN",
+        "tab_active": false,
+        "tab_pos": "TAB_LAST",
+        "engine_name": "",
+        "open_type": "OPEN_LINK",
+        "search_type": "SEARCH_TEXT",
+        "copy_type": "COPY_TEXT",
+        "download_type": "DOWNLOAD_LINK",
+        "download_directory": [],
+        "download_saveas": true,
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/s?wd=%s"
+      },
+      "DIR_LOW_L": {
+        "act_name": "ACT_OPEN",
+        "tab_active": false,
+        "tab_pos": "TAB_LAST",
+        "engine_name": "",
+        "open_type": "OPEN_LINK",
+        "search_type": "SEARCH_TEXT",
+        "copy_type": "COPY_TEXT",
+        "download_type": "DOWNLOAD_LINK",
+        "download_directory": [],
+        "download_saveas": true,
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/s?wd=%s"
+      },
+      "DIR_LOW_R": {
+        "act_name": "ACT_OPEN",
+        "tab_active": false,
+        "tab_pos": "TAB_LAST",
+        "engine_name": "",
+        "open_type": "OPEN_LINK",
+        "search_type": "SEARCH_TEXT",
+        "copy_type": "COPY_TEXT",
+        "download_type": "DOWNLOAD_LINK",
+        "download_directory": [],
+        "download_saveas": true,
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/s?wd=%s"
+      },
+      "DIR_OUTER": {
+        "act_name": "ACT_OPEN",
+        "tab_active": false,
+        "tab_pos": "TAB_LAST",
+        "engine_name": "",
+        "open_type": "OPEN_LINK",
+        "search_type": "SEARCH_TEXT",
+        "copy_type": "COPY_TEXT",
+        "download_type": "DOWNLOAD_LINK",
+        "download_directory": [],
+        "download_saveas": true,
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/s?wd=%s"
+      }
+    },
+    "linkAction": {
+      "DIR_U": {
+        "act_name": "ACT_OPEN",
+        "tab_active": false,
+        "tab_pos": "TAB_LAST",
+        "engine_name": "",
+        "open_type": "OPEN_LINK",
+        "search_type": "SEARCH_TEXT",
+        "copy_type": "COPY_TEXT",
+        "download_type": "DOWNLOAD_LINK",
+        "download_directory": [],
+        "download_saveas": true,
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/s?wd=%s"
+      },
+      "DIR_D": {
+        "act_name": "ACT_OPEN",
+        "tab_active": false,
+        "tab_pos": "TAB_LAST",
+        "engine_name": "",
+        "open_type": "OPEN_LINK",
+        "search_type": "SEARCH_TEXT",
+        "copy_type": "COPY_TEXT",
+        "download_type": "DOWNLOAD_LINK",
+        "download_directory": [],
+        "download_saveas": true,
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/s?wd=%s"
+      },
+      "DIR_L": {
+        "act_name": "ACT_OPEN",
+        "tab_active": false,
+        "tab_pos": "TAB_LAST",
+        "engine_name": "",
+        "open_type": "OPEN_LINK",
+        "search_type": "SEARCH_TEXT",
+        "copy_type": "COPY_TEXT",
+        "download_type": "DOWNLOAD_LINK",
+        "download_directory": [],
+        "download_saveas": true,
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/s?wd=%s"
+      },
+      "DIR_R": {
+        "act_name": "ACT_OPEN",
+        "tab_active": false,
+        "tab_pos": "TAB_LAST",
+        "engine_name": "",
+        "open_type": "OPEN_LINK",
+        "search_type": "SEARCH_TEXT",
+        "copy_type": "COPY_TEXT",
+        "download_type": "DOWNLOAD_LINK",
+        "download_directory": [],
+        "download_saveas": true,
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/s?wd=%s"
+      },
+      "DIR_UP_L": {
+        "act_name": "ACT_OPEN",
+        "tab_active": false,
+        "tab_pos": "TAB_LAST",
+        "engine_name": "",
+        "open_type": "OPEN_LINK",
+        "search_type": "SEARCH_TEXT",
+        "copy_type": "COPY_TEXT",
+        "download_type": "DOWNLOAD_LINK",
+        "download_directory": [],
+        "download_saveas": true,
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/s?wd=%s"
+      },
+      "DIR_UP_R": {
+        "act_name": "ACT_OPEN",
+        "tab_active": false,
+        "tab_pos": "TAB_LAST",
+        "engine_name": "",
+        "open_type": "OPEN_LINK",
+        "search_type": "SEARCH_TEXT",
+        "copy_type": "COPY_TEXT",
+        "download_type": "DOWNLOAD_LINK",
+        "download_directory": [],
+        "download_saveas": true,
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/s?wd=%s"
+      },
+      "DIR_LOW_L": {
+        "act_name": "ACT_OPEN",
+        "tab_active": false,
+        "tab_pos": "TAB_LAST",
+        "engine_name": "",
+        "open_type": "OPEN_LINK",
+        "search_type": "SEARCH_TEXT",
+        "copy_type": "COPY_TEXT",
+        "download_type": "DOWNLOAD_LINK",
+        "download_directory": [],
+        "download_saveas": true,
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/s?wd=%s"
+      },
+      "DIR_LOW_R": {
+        "act_name": "ACT_OPEN",
+        "tab_active": false,
+        "tab_pos": "TAB_LAST",
+        "engine_name": "",
+        "open_type": "OPEN_LINK",
+        "search_type": "SEARCH_TEXT",
+        "copy_type": "COPY_TEXT",
+        "download_type": "DOWNLOAD_LINK",
+        "download_directory": [],
+        "download_saveas": true,
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/s?wd=%s"
+      },
+      "DIR_OUTER": {
+        "act_name": "ACT_OPEN",
+        "tab_active": false,
+        "tab_pos": "TAB_LAST",
+        "engine_name": "",
+        "open_type": "OPEN_LINK",
+        "search_type": "SEARCH_TEXT",
+        "copy_type": "COPY_TEXT",
+        "download_type": "DOWNLOAD_LINK",
+        "download_directory": [],
+        "download_saveas": true,
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/s?wd=%s"
+      }
+    },
+    "imageAction": {
+      "DIR_U": {
+        "act_name": "ACT_OPEN",
+        "tab_active": false,
+        "tab_pos": "TAB_LAST",
+        "engine_name": "",
+        "open_type": "OPEN_LINK",
+        "search_type": "SEARCH_TEXT",
+        "copy_type": "COPY_TEXT",
+        "download_type": "DOWNLOAD_LINK",
+        "download_directory": [],
+        "download_saveas": true,
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/s?wd=%s"
+      },
+      "DIR_D": {
+        "act_name": "ACT_OPEN",
+        "tab_active": false,
+        "tab_pos": "TAB_LAST",
+        "engine_name": "",
+        "open_type": "OPEN_LINK",
+        "search_type": "SEARCH_TEXT",
+        "copy_type": "COPY_TEXT",
+        "download_type": "DOWNLOAD_LINK",
+        "download_directory": [],
+        "download_saveas": true,
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/s?wd=%s"
+      },
+      "DIR_L": {
+        "act_name": "ACT_OPEN",
+        "tab_active": false,
+        "tab_pos": "TAB_LAST",
+        "engine_name": "",
+        "open_type": "OPEN_LINK",
+        "search_type": "SEARCH_TEXT",
+        "copy_type": "COPY_TEXT",
+        "download_type": "DOWNLOAD_LINK",
+        "download_directory": [],
+        "download_saveas": true,
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/s?wd=%s"
+      },
+      "DIR_R": {
+        "act_name": "ACT_OPEN",
+        "tab_active": false,
+        "tab_pos": "TAB_LAST",
+        "engine_name": "",
+        "open_type": "OPEN_LINK",
+        "search_type": "SEARCH_TEXT",
+        "copy_type": "COPY_TEXT",
+        "download_type": "DOWNLOAD_LINK",
+        "download_directory": [],
+        "download_saveas": true,
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/s?wd=%s"
+      },
+      "DIR_UP_L": {
+        "act_name": "ACT_OPEN",
+        "tab_active": false,
+        "tab_pos": "TAB_LAST",
+        "engine_name": "",
+        "open_type": "OPEN_LINK",
+        "search_type": "SEARCH_TEXT",
+        "copy_type": "COPY_TEXT",
+        "download_type": "DOWNLOAD_LINK",
+        "download_directory": [],
+        "download_saveas": true,
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/s?wd=%s"
+      },
+      "DIR_UP_R": {
+        "act_name": "ACT_OPEN",
+        "tab_active": false,
+        "tab_pos": "TAB_LAST",
+        "engine_name": "",
+        "open_type": "OPEN_LINK",
+        "search_type": "SEARCH_TEXT",
+        "copy_type": "COPY_TEXT",
+        "download_type": "DOWNLOAD_LINK",
+        "download_directory": [],
+        "download_saveas": true,
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/s?wd=%s"
+      },
+      "DIR_LOW_L": {
+        "act_name": "ACT_OPEN",
+        "tab_active": false,
+        "tab_pos": "TAB_LAST",
+        "engine_name": "",
+        "open_type": "OPEN_LINK",
+        "search_type": "SEARCH_TEXT",
+        "copy_type": "COPY_TEXT",
+        "download_type": "DOWNLOAD_LINK",
+        "download_directory": [],
+        "download_saveas": true,
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/s?wd=%s"
+      },
+      "DIR_LOW_R": {
+        "act_name": "ACT_OPEN",
+        "tab_active": false,
+        "tab_pos": "TAB_LAST",
+        "engine_name": "",
+        "open_type": "OPEN_LINK",
+        "search_type": "SEARCH_TEXT",
+        "copy_type": "COPY_TEXT",
+        "download_type": "DOWNLOAD_LINK",
+        "download_directory": [],
+        "download_saveas": true,
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/s?wd=%s"
+      },
+      "DIR_OUTER": {
+        "act_name": "ACT_OPEN",
+        "tab_active": false,
+        "tab_pos": "TAB_LAST",
+        "engine_name": "",
+        "open_type": "OPEN_LINK",
+        "search_type": "SEARCH_TEXT",
+        "copy_type": "COPY_TEXT",
+        "download_type": "DOWNLOAD_LINK",
+        "download_directory": [],
+        "download_saveas": true,
+        "search_onsite": false,
+        "engine_url": "https://www.baidu.com/s?wd=%s"
+      }
+    }
+  },
+  "directionControl_CtrlKey": {
+    "textAction": "ALLOW_NORMAL",
+    "linkAction": "ALLOW_NORMAL",
+    "imageAction": "ALLOW_NORMAL"
+  },
   "downloadDirectories": [
     "",
     "",
@@ -764,374 +1214,150 @@
     "",
     ""
   ],
-  "disableAdjustTabSequence": false,
-  "directionControl_ShiftKey": {
-    "textAction": "ALLOW_NORMAL",
-    "imageAction": "ALLOW_NORMAL",
-    "linkAction": "ALLOW_NORMAL"
-  },
-  "directionControl_CtrlKey": {
-    "textAction": "ALLOW_NORMAL",
-    "linkAction": "ALLOW_NORMAL",
-    "imageAction": "ALLOW_NORMAL"
-  },
-  "Actions_CtrlKey": {
-    "textAction": {
-      "DIR_U": {
-        "act_name": "ACT_OPEN",
-        "tab_active": false,
-        "tab_pos": "TAB_LAST",
-        "engine_name": "百度搜索",
-        "open_type": "OPEN_LINK",
-        "search_type": "SEARCH_TEXT",
-        "copy_type": "COPY_TEXT",
-        "download_type": "DOWNLOAD_LINK",
-        "download_directory": "0",
-        "download_saveas": true,
-        "search_onsite": false
-      },
-      "DIR_D": {
-        "act_name": "ACT_OPEN",
-        "tab_active": false,
-        "tab_pos": "TAB_LAST",
-        "engine_name": "百度搜索",
-        "open_type": "OPEN_LINK",
-        "search_type": "SEARCH_TEXT",
-        "copy_type": "COPY_TEXT",
-        "download_type": "DOWNLOAD_LINK",
-        "download_directory": "0",
-        "download_saveas": true,
-        "search_onsite": false
-      },
-      "DIR_L": {
-        "act_name": "ACT_OPEN",
-        "tab_active": false,
-        "tab_pos": "TAB_LAST",
-        "engine_name": "百度搜索",
-        "open_type": "OPEN_LINK",
-        "search_type": "SEARCH_TEXT",
-        "copy_type": "COPY_TEXT",
-        "download_type": "DOWNLOAD_LINK",
-        "download_directory": "0",
-        "download_saveas": true,
-        "search_onsite": false
-      },
-      "DIR_R": {
-        "act_name": "ACT_OPEN",
-        "tab_active": false,
-        "tab_pos": "TAB_LAST",
-        "engine_name": "百度搜索",
-        "open_type": "OPEN_LINK",
-        "search_type": "SEARCH_TEXT",
-        "copy_type": "COPY_TEXT",
-        "download_type": "DOWNLOAD_LINK",
-        "download_directory": "0",
-        "download_saveas": true,
-        "search_onsite": false
-      },
-      "DIR_UP_L": {
-        "act_name": "ACT_OPEN",
-        "tab_active": false,
-        "tab_pos": "TAB_LAST",
-        "engine_name": "百度搜索",
-        "open_type": "OPEN_LINK",
-        "search_type": "SEARCH_TEXT",
-        "copy_type": "COPY_TEXT",
-        "download_type": "DOWNLOAD_LINK",
-        "download_directory": "0",
-        "download_saveas": true,
-        "search_onsite": false
-      },
-      "DIR_UP_R": {
-        "act_name": "ACT_OPEN",
-        "tab_active": false,
-        "tab_pos": "TAB_LAST",
-        "engine_name": "百度搜索",
-        "open_type": "OPEN_LINK",
-        "search_type": "SEARCH_TEXT",
-        "copy_type": "COPY_TEXT",
-        "download_type": "DOWNLOAD_LINK",
-        "download_directory": "0",
-        "download_saveas": true,
-        "search_onsite": false
-      },
-      "DIR_LOW_L": {
-        "act_name": "ACT_OPEN",
-        "tab_active": false,
-        "tab_pos": "TAB_LAST",
-        "engine_name": "百度搜索",
-        "open_type": "OPEN_LINK",
-        "search_type": "SEARCH_TEXT",
-        "copy_type": "COPY_TEXT",
-        "download_type": "DOWNLOAD_LINK",
-        "download_directory": "0",
-        "download_saveas": true,
-        "search_onsite": false
-      },
-      "DIR_LOW_R": {
-        "act_name": "ACT_OPEN",
-        "tab_active": false,
-        "tab_pos": "TAB_LAST",
-        "engine_name": "百度搜索",
-        "open_type": "OPEN_LINK",
-        "search_type": "SEARCH_TEXT",
-        "copy_type": "COPY_TEXT",
-        "download_type": "DOWNLOAD_LINK",
-        "download_directory": "0",
-        "download_saveas": true,
-        "search_onsite": false
-      },
-      "DIR_OUTER": {
-        "act_name": "ACT_OPEN",
-        "tab_active": false,
-        "tab_pos": "TAB_LAST",
-        "engine_name": "百度搜索",
-        "open_type": "OPEN_LINK",
-        "search_type": "SEARCH_TEXT",
-        "copy_type": "COPY_TEXT",
-        "download_type": "DOWNLOAD_LINK",
-        "download_directory": "0",
-        "download_saveas": true,
-        "search_onsite": false
-      }
+  "style": "",
+  "maxTriggeredDistance": 9999,
+  "alwaysImage": false,
+  "cmdPanel_textAction": [
+    {
+      "act_name": "ACT_OPEN",
+      "tab_active": true,
+      "tab_pos": "TAB_CRIGHT",
+      "engine_name": "默认",
+      "engine_url": "https://www.baidu.com/s?wd=%s",
+      "open_type": "OPEN_LINK",
+      "search_type": "SEARCH_TEXT",
+      "copy_type": "COPY_TEXT",
+      "download_type": "DOWNLOAD_LINK",
+      "download_directory": 0,
+      "download_saveas": true,
+      "search_onsite": false,
+      "icon": ""
     },
-    "linkAction": {
-      "DIR_U": {
-        "act_name": "ACT_OPEN",
-        "tab_active": false,
-        "tab_pos": "TAB_LAST",
-        "engine_name": "百度搜索",
-        "open_type": "OPEN_LINK",
-        "search_type": "SEARCH_TEXT",
-        "copy_type": "COPY_TEXT",
-        "download_type": "DOWNLOAD_LINK",
-        "download_directory": "0",
-        "download_saveas": true,
-        "search_onsite": false
-      },
-      "DIR_D": {
-        "act_name": "ACT_OPEN",
-        "tab_active": false,
-        "tab_pos": "TAB_LAST",
-        "engine_name": "百度搜索",
-        "open_type": "OPEN_LINK",
-        "search_type": "SEARCH_TEXT",
-        "copy_type": "COPY_TEXT",
-        "download_type": "DOWNLOAD_LINK",
-        "download_directory": "0",
-        "download_saveas": true,
-        "search_onsite": false
-      },
-      "DIR_L": {
-        "act_name": "ACT_OPEN",
-        "tab_active": false,
-        "tab_pos": "TAB_LAST",
-        "engine_name": "百度搜索",
-        "open_type": "OPEN_LINK",
-        "search_type": "SEARCH_TEXT",
-        "copy_type": "COPY_TEXT",
-        "download_type": "DOWNLOAD_LINK",
-        "download_directory": "0",
-        "download_saveas": true,
-        "search_onsite": false
-      },
-      "DIR_R": {
-        "act_name": "ACT_OPEN",
-        "tab_active": false,
-        "tab_pos": "TAB_LAST",
-        "engine_name": "百度搜索",
-        "open_type": "OPEN_LINK",
-        "search_type": "SEARCH_TEXT",
-        "copy_type": "COPY_TEXT",
-        "download_type": "DOWNLOAD_LINK",
-        "download_directory": "0",
-        "download_saveas": true,
-        "search_onsite": false
-      },
-      "DIR_UP_L": {
-        "act_name": "ACT_OPEN",
-        "tab_active": false,
-        "tab_pos": "TAB_LAST",
-        "engine_name": "百度搜索",
-        "open_type": "OPEN_LINK",
-        "search_type": "SEARCH_TEXT",
-        "copy_type": "COPY_TEXT",
-        "download_type": "DOWNLOAD_LINK",
-        "download_directory": "0",
-        "download_saveas": true,
-        "search_onsite": false
-      },
-      "DIR_UP_R": {
-        "act_name": "ACT_OPEN",
-        "tab_active": false,
-        "tab_pos": "TAB_LAST",
-        "engine_name": "百度搜索",
-        "open_type": "OPEN_LINK",
-        "search_type": "SEARCH_TEXT",
-        "copy_type": "COPY_TEXT",
-        "download_type": "DOWNLOAD_LINK",
-        "download_directory": "0",
-        "download_saveas": true,
-        "search_onsite": false
-      },
-      "DIR_LOW_L": {
-        "act_name": "ACT_OPEN",
-        "tab_active": false,
-        "tab_pos": "TAB_LAST",
-        "engine_name": "百度搜索",
-        "open_type": "OPEN_LINK",
-        "search_type": "SEARCH_TEXT",
-        "copy_type": "COPY_TEXT",
-        "download_type": "DOWNLOAD_LINK",
-        "download_directory": "0",
-        "download_saveas": true,
-        "search_onsite": false
-      },
-      "DIR_LOW_R": {
-        "act_name": "ACT_OPEN",
-        "tab_active": false,
-        "tab_pos": "TAB_LAST",
-        "engine_name": "百度搜索",
-        "open_type": "OPEN_LINK",
-        "search_type": "SEARCH_TEXT",
-        "copy_type": "COPY_TEXT",
-        "download_type": "DOWNLOAD_LINK",
-        "download_directory": "0",
-        "download_saveas": true,
-        "search_onsite": false
-      },
-      "DIR_OUTER": {
-        "act_name": "ACT_OPEN",
-        "tab_active": false,
-        "tab_pos": "TAB_LAST",
-        "engine_name": "百度搜索",
-        "open_type": "OPEN_LINK",
-        "search_type": "SEARCH_TEXT",
-        "copy_type": "COPY_TEXT",
-        "download_type": "DOWNLOAD_LINK",
-        "download_directory": "0",
-        "download_saveas": true,
-        "search_onsite": false
-      }
+    {
+      "act_name": "ACT_OPEN",
+      "tab_active": true,
+      "tab_pos": "TAB_CRIGHT",
+      "engine_name": "默认",
+      "engine_url": "https://www.baidu.com/s?wd=%s",
+      "open_type": "OPEN_LINK",
+      "search_type": "SEARCH_TEXT",
+      "copy_type": "COPY_TEXT",
+      "download_type": "DOWNLOAD_LINK",
+      "download_directory": 0,
+      "download_saveas": true,
+      "search_onsite": false,
+      "icon": ""
     },
-    "imageAction": {
-      "DIR_U": {
-        "act_name": "ACT_OPEN",
-        "tab_active": false,
-        "tab_pos": "TAB_LAST",
-        "engine_name": "百度搜索",
-        "open_type": "OPEN_LINK",
-        "search_type": "SEARCH_TEXT",
-        "copy_type": "COPY_TEXT",
-        "download_type": "DOWNLOAD_LINK",
-        "download_directory": "0",
-        "download_saveas": true,
-        "search_onsite": false
-      },
-      "DIR_D": {
-        "act_name": "ACT_OPEN",
-        "tab_active": false,
-        "tab_pos": "TAB_LAST",
-        "engine_name": "百度搜索",
-        "open_type": "OPEN_LINK",
-        "search_type": "SEARCH_TEXT",
-        "copy_type": "COPY_TEXT",
-        "download_type": "DOWNLOAD_LINK",
-        "download_directory": "0",
-        "download_saveas": true,
-        "search_onsite": false
-      },
-      "DIR_L": {
-        "act_name": "ACT_OPEN",
-        "tab_active": false,
-        "tab_pos": "TAB_LAST",
-        "engine_name": "百度搜索",
-        "open_type": "OPEN_LINK",
-        "search_type": "SEARCH_TEXT",
-        "copy_type": "COPY_TEXT",
-        "download_type": "DOWNLOAD_LINK",
-        "download_directory": "0",
-        "download_saveas": true,
-        "search_onsite": false
-      },
-      "DIR_R": {
-        "act_name": "ACT_OPEN",
-        "tab_active": false,
-        "tab_pos": "TAB_LAST",
-        "engine_name": "百度搜索",
-        "open_type": "OPEN_LINK",
-        "search_type": "SEARCH_TEXT",
-        "copy_type": "COPY_TEXT",
-        "download_type": "DOWNLOAD_LINK",
-        "download_directory": "0",
-        "download_saveas": true,
-        "search_onsite": false
-      },
-      "DIR_UP_L": {
-        "act_name": "ACT_OPEN",
-        "tab_active": false,
-        "tab_pos": "TAB_LAST",
-        "engine_name": "百度搜索",
-        "open_type": "OPEN_LINK",
-        "search_type": "SEARCH_TEXT",
-        "copy_type": "COPY_TEXT",
-        "download_type": "DOWNLOAD_LINK",
-        "download_directory": "0",
-        "download_saveas": true,
-        "search_onsite": false
-      },
-      "DIR_UP_R": {
-        "act_name": "ACT_OPEN",
-        "tab_active": false,
-        "tab_pos": "TAB_LAST",
-        "engine_name": "百度搜索",
-        "open_type": "OPEN_LINK",
-        "search_type": "SEARCH_TEXT",
-        "copy_type": "COPY_TEXT",
-        "download_type": "DOWNLOAD_LINK",
-        "download_directory": "0",
-        "download_saveas": true,
-        "search_onsite": false
-      },
-      "DIR_LOW_L": {
-        "act_name": "ACT_OPEN",
-        "tab_active": false,
-        "tab_pos": "TAB_LAST",
-        "engine_name": "百度搜索",
-        "open_type": "OPEN_LINK",
-        "search_type": "SEARCH_TEXT",
-        "copy_type": "COPY_TEXT",
-        "download_type": "DOWNLOAD_LINK",
-        "download_directory": "0",
-        "download_saveas": true,
-        "search_onsite": false
-      },
-      "DIR_LOW_R": {
-        "act_name": "ACT_OPEN",
-        "tab_active": false,
-        "tab_pos": "TAB_LAST",
-        "engine_name": "百度搜索",
-        "open_type": "OPEN_LINK",
-        "search_type": "SEARCH_TEXT",
-        "copy_type": "COPY_TEXT",
-        "download_type": "DOWNLOAD_LINK",
-        "download_directory": "0",
-        "download_saveas": true,
-        "search_onsite": false
-      },
-      "DIR_OUTER": {
-        "act_name": "ACT_OPEN",
-        "tab_active": false,
-        "tab_pos": "TAB_LAST",
-        "engine_name": "百度搜索",
-        "open_type": "OPEN_LINK",
-        "search_type": "SEARCH_TEXT",
-        "copy_type": "COPY_TEXT",
-        "download_type": "DOWNLOAD_LINK",
-        "download_directory": "0",
-        "download_saveas": true,
-        "search_onsite": false
-      }
+    {
+      "act_name": "ACT_OPEN",
+      "tab_active": true,
+      "tab_pos": "TAB_CRIGHT",
+      "engine_name": "默认",
+      "engine_url": "https://www.baidu.com/s?wd=%s",
+      "open_type": "OPEN_LINK",
+      "search_type": "SEARCH_TEXT",
+      "copy_type": "COPY_TEXT",
+      "download_type": "DOWNLOAD_LINK",
+      "download_directory": 0,
+      "download_saveas": true,
+      "search_onsite": false,
+      "icon": ""
     }
-  }
+  ],
+  "cmdPanel_linkAction": [
+    {
+      "act_name": "ACT_OPEN",
+      "tab_active": true,
+      "tab_pos": "TAB_CRIGHT",
+      "engine_name": "默认",
+      "engine_url": "https://www.baidu.com/s?wd=%s",
+      "open_type": "OPEN_LINK",
+      "search_type": "SEARCH_TEXT",
+      "copy_type": "COPY_TEXT",
+      "download_type": "DOWNLOAD_LINK",
+      "download_directory": 0,
+      "download_saveas": true,
+      "search_onsite": false,
+      "icon": ""
+    },
+    {
+      "act_name": "ACT_OPEN",
+      "tab_active": true,
+      "tab_pos": "TAB_CRIGHT",
+      "engine_name": "默认",
+      "engine_url": "https://www.baidu.com/s?wd=%s",
+      "open_type": "OPEN_LINK",
+      "search_type": "SEARCH_TEXT",
+      "copy_type": "COPY_TEXT",
+      "download_type": "DOWNLOAD_LINK",
+      "download_directory": 0,
+      "download_saveas": true,
+      "search_onsite": false,
+      "icon": ""
+    },
+    {
+      "act_name": "ACT_OPEN",
+      "tab_active": true,
+      "tab_pos": "TAB_CRIGHT",
+      "engine_name": "默认",
+      "engine_url": "https://www.baidu.com/s?wd=%s",
+      "open_type": "OPEN_LINK",
+      "search_type": "SEARCH_TEXT",
+      "copy_type": "COPY_TEXT",
+      "download_type": "DOWNLOAD_LINK",
+      "download_directory": 0,
+      "download_saveas": true,
+      "search_onsite": false,
+      "icon": ""
+    }
+  ],
+  "cmdPanel_imageAction": [
+    {
+      "act_name": "ACT_OPEN",
+      "tab_active": true,
+      "tab_pos": "TAB_CRIGHT",
+      "engine_name": "默认",
+      "engine_url": "https://www.baidu.com/s?wd=%s",
+      "open_type": "OPEN_LINK",
+      "search_type": "SEARCH_TEXT",
+      "copy_type": "COPY_TEXT",
+      "download_type": "DOWNLOAD_LINK",
+      "download_directory": 0,
+      "download_saveas": true,
+      "search_onsite": false,
+      "icon": ""
+    },
+    {
+      "act_name": "ACT_OPEN",
+      "tab_active": true,
+      "tab_pos": "TAB_CRIGHT",
+      "engine_name": "默认",
+      "engine_url": "https://www.baidu.com/s?wd=%s",
+      "open_type": "OPEN_LINK",
+      "search_type": "SEARCH_TEXT",
+      "copy_type": "COPY_TEXT",
+      "download_type": "DOWNLOAD_LINK",
+      "download_directory": 0,
+      "download_saveas": true,
+      "search_onsite": false,
+      "icon": ""
+    },
+    {
+      "act_name": "ACT_OPEN",
+      "tab_active": true,
+      "tab_pos": "TAB_CRIGHT",
+      "engine_name": "默认",
+      "engine_url": "https://www.baidu.com/s?wd=%s",
+      "open_type": "OPEN_LINK",
+      "search_type": "SEARCH_TEXT",
+      "copy_type": "COPY_TEXT",
+      "download_type": "DOWNLOAD_LINK",
+      "download_directory": 0,
+      "download_saveas": true,
+      "search_onsite": false,
+      "icon": ""
+    }
+  ],
+  "debug": false,
+  "version": "0.0.0"
 }
