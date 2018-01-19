@@ -9,13 +9,18 @@
 - `&&` 和 `||` 有相同的优先级，高于 `;` 和 `&`
 - `"`包裹字符，除 **$**，**`**(反引号)和 **\\**(转义符)之外的其他字符将被作为普通字符对待，" 需转义，可以防止空格被解释为分隔符，含有空格的字符串被包在双引号中依旧是算作单一字符
 - `'`包裹字符，除了 ' 之外的所有特殊字符都将会被直接按照字面意思进行解析，如果想在 ' 中嵌套 ' 需使用拼接 'XXX'"'"'XXX'"'" 或 'XXX'\''XXX'\'
-- 在脚本中用`set`命令启用或禁用参数，`set -x`，启用调试，`set +x` ，关闭调试， sh/bash 命令有如下调试选项，`sh -x /script.sh `
-```bash
--x    #提供跟踪执行信息，将执行的每一条命令和结果打印出来
--n    #读一遍脚本的命令但不执行，用于检查脚本中的错误
-```
+- `set`
+  - 在脚本中用`set`命令启用或禁用参数，`set -x`，启用调试，`set +x` ，关闭调试， sh/bash 可以直接指定调试选项，`sh -x /script.sh `
+  ```bash
+  -x    #提供跟踪执行信息，将执行的每一条命令和结果打印出来
+  -n    #读一遍脚本的命令但不执行，用于检查脚本中的错误
+  ```
+  - `set -u`或`set -o nounset`，变量展开时遇到不存在的变量报错，并停止执行
+  - `command || { echo "command failed"; exit 1; }`，command如有非零返回值，脚本停止执行，`set -e`，如果脚本发生错误，终止执行，此时若某条命令可能出错，则可 `command || true`
+  - `set -- "$@" -config="/etc/cfssl/${CFSSL_CONFIG}" -db-config="/etc/cfssl/${DB_CONFIG}"`，增加两个位置参数，`set - `或`set --`后跟的参数将成为为位置参数，区别为 `--` 后如果不带参数，原有的参数将被 unset
 - `expr`，输出表达式变量的值，用于整数及字符串，如：+、-、*、/ 和 % 运算，其中 * 需要转义，`expr 15 \* 15`，`expr index “sarasara” "as"`，抓取第一个字符数字串出现的位置
 - `eval command-line`，shell 在执行 command 之前扫描 command-line 两次(进行两次 Expansion)，`eval echo \$$#`，取得最后一个参数
+
 
 ### 参数/变量/函数
 
@@ -206,6 +211,14 @@ done
 ```
 
 
+### Expansion
+
+- 执行顺序：brace expansion; tilde expansion, parameter and variable expansion, arithmetic expansion, [process substitution], and command substitution (done in a left-to-right fashion); word splitting; filename expansion; quote removal;
+- Brace Expansion，可以嵌套，有逗号分隔模式`/usr/{ucb/{ex,edit},lib/{ex?.?*,how_ex}}`，还有序列模式`{x..y[..incr]}`， x 和 y 可以是整数或字符，表示范围在 x-y 之间，两头都可包含，可选的 incr 是整数, 整数类型可以加'0'前缀，已使得到的项包含相同的位数，{} 中如需要 '{' 和 ',' 需要用 \ 转义
+- Tilde Expansion，`~`代表 $HOME，`~fred/foo` 用户 fred 的家目录下的 foo 子目录，`~+/foo` $PWD/foo
+- Process Substitution，`>(list)`，list 的输入被当成一个文件，对这条命令的输出将给 list 提供输入，`<(list)`，list 的输出被当成文件，可以输出给其他命令，< 和 > 与 list 之间不能有空格
+
+
 ### 进程/重定向
 
 - `./script-name`，`(cd ..; ls -l)`，如果默认方式执行脚本，或将命令行下输入的命令用括号括起来，那么会 fork 出一个子 shell 执行小括号中的命令，一行中可以输入由分号隔开的多个命令，执行命令后，虽然执行了 cd .. 命令，但是 shell 当前的路径并没改变
@@ -218,20 +231,31 @@ done
 - `Ctrl-C`，发送 SIGINT(Interrupt) ，结束前台进程
 - `|`，`|&`，管道命令，| 只把标准输出传给下一个命令的标准输入，|& 同时把 stdin 和 stderr 传给下一个命令的标准输入
 - 输入输出重定向
-  - `command < input-file`，命令 “command” 读取的输入 stdin(0) 来自文件 “input-file”, 而不是与命令运行终端相连接的键盘
-  - `command > output-file`，命令 “command” 的输出 stdout(1) 重定向到文件 “output-file” 上以取代显示屏
-  - `command >> output-file `，把命令（或执行程序）的输出附加到指定文件的后面，文件原有内容不被破坏
-  - `command 2> error-file `，对命令的错误 stderr(2) 重定向，将产生的错误消息发送到文件中，`2>&1`，把 stderr 重定向到 stdout
-  - `command > /dev/null 2>&1`，标准输出和错误输出丢弃
+  - `command <input-file`，命令 “command” 读取的输入 stdin(0) 来自文件 “input-file”, 而不是与命令运行终端相连接的键盘
+  - `command >output-file`，命令 “command” 的输出 stdout(1) 重定向到文件 “output-file” 上以取代显示屏，`command 2> output-file `，对命令的错误 stderr(2) 重定向，`>|`等同`>`
+  - `command >/dev/null`，标准输出丢弃
+  - Duplicating File Descriptors，`[n]>&file descriptor`，n 为 file descriptor，默认为 1，`2>&1`，标准错误复制到标准输出
+  - `command >>output-file `，把命令（或执行程序）的输出附加到指定文件的后面，文件原有内容不被破坏
+  - `&>output-file`，等同于`>output-file 2>&1`，`&>>output-file`，等同`>>output-file 2>&1`
   - Process Substitution，使得一个进程的 stdin 或 stdout 可以被当做一个临时文件，`command <(list)` or `command >(list)`，注意 <，> 与左括号之间是没有空格的，否则会被解释成为重定向
     - `cat <(ls)`，把 <(ls) 当作一个临时文件，文件内容是 ls 的结果，cat 这个临时文件
     - `ls > >(cat)`，把 >(cat) 当成临时文件，ls 的结果重定向到这个文件，最后这个文件被cat
-
-
-### Expansion
-
-- 执行顺序：brace expansion; tilde expansion, parameter and variable expansion, arithmetic expansion, [process substitution], and command substitution (done in a left-to-right fashion); word splitting; filename expansion; quote removal;
-- Brace Expansion，可以嵌套，有逗号分隔模式`/usr/{ucb/{ex,edit},lib/{ex?.?*,how_ex}}`，还有序列模式`{x..y[..incr]}`， x 和 y 可以是整数或字符，表示范围在 x-y 之间，两头都可包含，可选的 incr 是整数, 整数类型可以加'0'前缀，已使得到的项包含相同的位数，{} 中如需要 '{' 和 ',' 需要用 \ 转义
-- Tilde Expansion，`~`代表 $HOME，`~fred/foo` 用户 fred 的家目录下的 foo 子目录，`~+/foo` $PWD/foo
-- Process Substitution，`>(list)`，list 的输入被当成一个文件，对这条命令的输出将给 list 提供输入，`<(list)`，list 的输出被当成文件，可以输出给其他命令，< 和 > 与 list 之间不能有空格
-
+-  **Interactive Shell**，标准输入输出绑定终端，**bash -c <command>** 执行的是非交互式，可用如下脚本判断
+  ```bash
+  case "$-" in
+    *i*)  echo This shell is interactive ;;
+    *)	echo This shell is not interactive ;;
+  esac
+  或者
+  if [ -z "$PS1" ]; then
+    echo This shell is not interactive
+  else
+    echo This shell is interactive
+  fi
+  ```
+Interactive Shell 表现出如下行为
+  - Startup files 将执行
+    - login shell : 启动时 /etc/profile,~/.bash_profile, ~/.bash_login, ~/.profile 结束时  ~/.bash_logout 
+    - non-login shell : 启动时执行 ~/.bashrc，一般 ~/.bash_profile 带有 if [ -f ~/.bashrc ]; then . ~/.bashrc; fi，**ssh** 属于这种
+  - Job Control 指令可执行，退出时时将发送 SIGHUP给所有 job
+- `trap "echo TRAPed signal" HUP INT QUIT TERM`，捕获 HUP INT QUIT TERM 信号并执行 echo TRAPed signal

@@ -9,6 +9,7 @@
 - `UpArrow & DownArrow`，输入临近的历史命令
 - `history`，查看所有的历史命令
 - `Ctrl-R`，进入历史命令的搜索功能模式
+- `Ctrl-U`，清除当前正在输入的命令
 - `clear`，清屏，等价于 `ctrl-L`
 - `locate 搜索关键字`，快速搜索文件(类似 Windows 上的 everything 索引式搜索)
 	- `updatedb`，配合上面的 locate，给 locate 的索引更新(locate 默认是一天更新一次索引)
@@ -17,11 +18,11 @@
 	- `echo '$name\"'`，原样输出字符串，不进行转义或变量替换
 	- `echo string...`， 对各种特殊符号转义，空格会被转义为参数分隔符(可以用 **\\** 转义空格)，`` echo `date` ``，显示命令执行结果
 - `printf  format-string  [arguments...]`，类似C语言，不会像 echo 自动添加换行符，换行需添加 **\n**
-	- `printf "%-10s %-8s %-3.2f\n" 郭靖 男 66.12`，％-10s 字符串，宽度为10个字符(-表示左对齐，没有则表示右对齐，超过10个也会显示)，%-3.2f 浮点数，其中.2指保留2位小数，％d 整数，％e 指数形式浮点数， %% 百分号
+	- `printf "%-10s %-8s %-3.2f\n" 郭靖 男 66.12`，％-10s 字符串，宽度为10个字符(-表示左对齐，没有则表示右对齐，超过10个也会显示)，%-3.2f 浮点数，其中.2指保留2位小数，%d 整数，%e 指数形式浮点数， %% 百分号
 - `cat <filename>...`，显示文件内容(属于打印语句)
 	- `cat -n <filename>`，打印文件至标准输出，并显示每行行号，等价于`nl -ba 文件名`
 	- `cat -b <filename>`，打印文件至标准输出，只对非空行编号，等价于`nl 文件名`
-- `more <filename>`，用分页的方式查看文件内容(按 *space* 翻下一页，按 *Ctrl-B* 返回上页)
+- `more <filename>`，用分页的方式查看文件内容(按 *space* 翻下一页，按 *B* 返回上页，Q 退出)
 - `less <filename>`，用分页的方式查看文件内容(带上下翻页)
 	- 按 `j` 向下移动，按 `k` 向上移动，`u` 向上半页，`d` 向下半页
 	- `G`，移动到最后一行，`g` 移动到第一行
@@ -75,6 +76,7 @@
 	- `rm -r -i 文件夹`，在删除文件夹里的文件会提示(要的话,在提示后面输入yes)
 	- `rm -r -f 文件夹`，强制删除
 	- `rm -rfv 文件夹1/ 文件夹2/ 文件夹3/`删除多个，v 表示显示详情
+- `ln -s /cfssl-bin/* /bin`，软链接
 - `grep`，正则查找行
 	- `grep '^[^#]' /etc/openvpn/server.conf`，查看某个配置文件，排除掉里面以 # 开头的注释内容
 	- `grep '^[^#;]' /etc/openvpn/server.conf`，查看某个配置文件，排除掉里面以 # 开头和 ; 开头的注释内容
@@ -125,8 +127,8 @@
 	- `*`，匹配光标当前所在的单词，移动光标到下一个匹配单词
 	- `#`，匹配光标当前所在的单词，移动光标到上一个匹配单词
 - 搜索/替换
-	- `/YouMeek`，从光标开始处向文件尾搜索 YouMeek 字符，支持正则，按 `n` 继续向下找，按 `N` 继续向上找
-	- `?YouMeek`，从光标开始处向文件首搜索 YouMeek 字符，支持正则，按 `n` 继续向上找，按 `N` 继续向上找
+	- `/YouMeek`，从光标开始处向文件尾搜索 YouMeek 字符，支持正则，按 `n` 继续向下找，按 `N` 向上找
+	- `?YouMeek`，从光标开始处向文件首搜索 YouMeek 字符，支持正则，按 `n` 继续向上找，按 `N` 向下找
 	- `:%s/YouMeek/Judasn/g`，把文件中所有 YouMeek 替换为：Judasn
 	- `:%s/YouMeek/Judasn/`，把文件中所有行中第一个 YouMeek 替换为：Judasn
 	- `:s/YouMeek/Judasn/g`，把光标当前行所有 YouMeek 替换为 Judasn
@@ -223,6 +225,7 @@
 	- `/etc/hosts`，hosts
 - `net-tools`
 	- `ifconfig`，`netstat -tlunp`
+- `nc 127.0.0.1 1234`，打开至127.0.0.1:1234的TCP连接
 - `dnsutils`
 	- `dig www.baidu.com`，根据域名查出IP地址(DNS)
 		- `dig -x 192.30.252.153`，从IP地址反查域名
@@ -242,6 +245,7 @@
 - `whoami`，当前用户名称，相当于`id -un`，`id sam`，输出 sam 的用户 id，组 id，`id -gn`，输出当前用户的当前组
 - `cat /etc/group`，查看所有组
 - `cat /etc/passwd`，查看所有用户
+- `addgroup -S cfssl && adduser -S -g cfssl cfssl`，添加用户和组，根据配置 **/etc/adduser.conf**
 - `useradd -s /bin/bash -g group –G adm,root gem`，新建一个用户gem，该用户的登录Shell是 /bin/bash，它属于group用户组，同时又属于adm和root用户组，其中group用户组是其主组
 - `usermod -s /bin/ksh -d /home/z –g developer sam`，将用户sam的登录Shell修改为ksh，主目录改为/home/z，用户组改为developer
 - `userdel -r youmeek`，删除名字为 youmeek 的用户，**-r**，表示删除用户的时候连同用户的家目录一起删除
@@ -262,13 +266,13 @@
 - `groupdel judasn`，删除一个名为 judasn 的用户组(前提：先删除组下面的所有用户)
 - `passwd`，修改当前用户密码
 	- `passwd youmeek`，修改 youmeek 用户的密码(前提：只有 root 用户才有修改其他用户的权限，其他用户只能修改自己的)
-- `chmod 777 文件名/目录`，给指定文件增加最高权限，系统中的所有人都可以进行读写，等于`chmod +rwx 文件名/目录`
+- `chmod 777 <filename>`，所有人都可以进行读写执行，等于`chmod +rwx <filename>`
 	- linux 的权限分为 rwx。r 代表：可读，w 代表：可写，x 代表：可执行
 	- 这三个权限都可以转换成数值表示，r = 4，w = 2，x = 1，也就是最大权限，第一个 7 是所属主(user)的权限，第二个 7 是所属组(group)的权限，最后一位 7 是非本群组用户(others)的权限
 	- `chmod ug+rx,o-x start.sh`，将文件 start.sh 设为该文件拥有者，与其所属同组者可写读取可执行，其他以人则不可执行
 	- \+ 表示增加权限，- 表示取消权限，= 表示设定权限
 	- `chmod -R a+r`，将当前目录下的所有文件与子目录皆设为任何人可读取，**-R** 对目前目录下的所有文件与子目录进行相同的权限变更，递归
-	- 所属主的 x 权限位上是 **s**，这时称为 set uid 简写 SUID，则用户如果具有这个文件的执行权限，执行时将临时变成所属主身份，如果所属组的 x 权限位上是 **s**，称为 set gid，简称SGID，SGID用在目录上最多，则用户如果具有这个文件夹的读写执行权限，则该用户在这个目录下建立的文件和文件夹所属组都是这个目录所属组，但所属主仍是该用户，即任何人在 SGID 目录中创建文件文件夹，该组的其他用户都可以删掉，如果 others 的 x 权限位是 **t**，这时称为 SBIT 全称 Sticky Bit，只对目录有效，表示任何一个能够在这个目录下建立文件的用户，在这个目录下所建立的文件，只有该用户自己和root可以删除，其他用户均不可以，设定可以用数字方式：**SUID 为 4，SGID 为 2，SBIT 为 1**，如果我们想把 file 加上 SUID 权限的话`chmod 4755 file`，也可以用表达式：给test目录加上SGID权限和other可读取写入执行权限`chmod o=rwxt test/`， 给test目录加上SBIT权限和other可读取写入执行权限`chmod g+s,o=rwx test/`
+	- 所属主的 x 权限位上是 **s**，这时称为 set uid 简写 SUID，则用户如果具有这个文件的执行权限，执行时将临时变成所属主身份，如果所属组的 x 权限位上是 **s**，称为 set gid，简称SGID，SGID用在目录上最多，则用户如果具有这个文件夹的读写执行权限，则该用户在这个目录下建立的文件和文件夹所属组都是这个目录所属组，但所属主仍是该用户，即任何人在 SGID 目录中创建文件文件夹，该组的其他用户都可以删掉，如果 others 的 x 权限位是 **t**，这时称为 SBIT 全称 Sticky Bit，只对目录有效，表示任何一个能够在这个目录下建立文件的用户，在这个目录下所建立的文件，只有该用户自己和root可以删除，其他用户均不可以，设定可以用数字方式：**SUID 为 4，SGID 为 2，SBIT 为 1**，如果我们想把 file 加上 SUID 权限的话`chmod 4755 file`，也可以用表达式：给test目录加上SGID权限和other可读取写入执行权限，`chmod g+s,o=rwx test/`，给test目录加上SBIT权限和other可读取写入执行权限`chmod o=rwxt test/`
 - `umask`，查看当前权限掩码，结果 **0022** 所对应的文件和目录创建缺省权限分别为644和755，`umask 002`，设定权限掩码为 022 
 - `chown -R user:group /usr/sam`，将 /usr/sam 下的所有文件与子目录的属主设为 user 属组 group
 - `sudo <command>`，使用管理员权限使用命令，使用 sudo 回车之后需要输入当前登录账号的密码。
