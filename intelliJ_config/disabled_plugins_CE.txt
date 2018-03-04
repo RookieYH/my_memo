@@ -1,5 +1,6 @@
 AntSupport
 CVS
+Coverage
 DevKit
 Subversion
 TestNG-J
