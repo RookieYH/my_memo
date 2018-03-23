@@ -1,9 +1,0 @@
-AntSupport
-CVS
-Coverage
-DevKit
-Subversion
-TestNG-J
-com.intellij.uiDesigner
-hg4idea
-org.jetbrains.android
