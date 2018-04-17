@@ -104,6 +104,7 @@
   -x file # 当由 file 指定的文件或目录存在并且可执行时返回真
   -O file # 当由 file 存在并且被当前进程的有效用户 id 的用户拥有时返回真
   -G file # 当由 file 存在并且属于当前进程的有效用户 id 的用户的用户组时返回真
+  -o optname # 当 optname 为 enabled 返回真，optname 来自 set 命令
   file1 -nt file2 # file1 比file2 新时返回真
   file1 -ot file2 # file1 比file2 旧时返回真 
   ```
@@ -253,9 +254,9 @@ done
     echo This shell is interactive
   fi
   ```
-Interactive Shell 表现出如下行为
+- Interactive Shell 表现出如下行为
   - Startup files 将执行
-    - login shell : 启动时 /etc/profile,~/.bash_profile, ~/.bash_login, ~/.profile 结束时  ~/.bash_logout 
+    - login shell : 启动时 /etc/profile, ~/.bash_profile, ~/.bash_login, ~/.profile; 结束时  ~/.bash_logout 
     - non-login shell : 启动时执行 ~/.bashrc，一般 ~/.bash_profile 带有 if [ -f ~/.bashrc ]; then . ~/.bashrc; fi，**ssh** 属于这种
   - Job Control 指令可执行，退出时时将发送 SIGHUP给所有 job
 - `trap "echo TRAPed signal" HUP INT QUIT TERM`，捕获 HUP INT QUIT TERM 信号并执行 echo TRAPed signal
