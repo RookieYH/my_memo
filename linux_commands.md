@@ -16,9 +16,9 @@
 - `which git`，返回文件路径，从环境变量 **PATH** 搜索
 - `echo "string"`，输出字符串"， **\\** 转义特殊字符，**${}** 输出变量，**``** 执行命令，输出结果
 	- `echo '$name\"'`，原样输出字符串，不进行转义或变量替换
-	- `echo string...`， 对各种特殊符号转义，空格会被转义为参数分隔符(可以用 **\\** 转义空格)，`` echo `date` ``，显示命令执行结果
+	- `echo string...`， 空格为参数分隔符(可以用 **\\** 转义空格)，`` echo `date` ``，显示命令执行结果
 - `printf  format-string  [arguments...]`，类似C语言，不会像 echo 自动添加换行符，换行需添加 **\n**
-	- `printf "%-10s %-8s %-3.2f\n" 郭靖 男 66.12`，％-10s 字符串，宽度为10个字符(-表示左对齐，没有则表示右对齐，超过10个也会显示)，%-3.2f 浮点数，其中.2指保留2位小数，%d 整数，%e 指数形式浮点数， %% 百分号
+	- `printf "%-10s %-8s %-3.2f\n" 郭靖 男 66.12`，%-10s 字符串，宽度为10个字符(-表示左对齐，没有则表示右对齐，超过10个也会显示)，%-3.2f 浮点数，其中.2指保留2位小数，%d 整数，%e 指数形式浮点数， %% 百分号
 - `cat <filename>...`，显示文件内容(属于打印语句)
 	- `cat -n <filename>`，打印文件至标准输出，并显示每行行号，等价于`nl -ba 文件名`
 	- `cat -b <filename>`，打印文件至标准输出，只对非空行编号，等价于`nl 文件名`
@@ -90,6 +90,11 @@
 	- `find /usr/local/backups -name "*.html" -mtime +10 -print0 |xargs -0 rm -rfv`,删除以html结尾的10天前的文件，包括带空格的文件
 - `file <filename>`，显示文件类型，`file -i <filename>`，显示文件 MINE-type
 - `wget -O wordpress.zip http://www.linuxde.net/download.aspx?id=1080`，下载并以 wordpress.zip 文件名保存
+- `tr [OPTION]... SET1 [SET2]`，从标准输入替换,压缩,删除字符集并输出至标准输出
+	- `echo "HELLO WORLD" | tr 'A-Z' 'a-z'`，大写转小写，'ABD-}'、'bB.,'、'a-de-h'、'a-c0-9' 等都可以做为字符参数
+	- `echo "hello 123 world 456" | tr -d '0-9'`，删除数字
+	- `echo aa.,a 1 b#$bb 2 c*/cc 3 ddd 4 | tr -d -c '0-9 \n'`，结果1  2  3  4，补集中包含了数字0~9、空格和换行符\n，其他字符被删除
+	- `echo "thissss is      a text linnnnnnne." | tr -s ' sn'`，压缩重复字符，结果 this is a text line.
 
 
 ## vi/vim

@@ -18,7 +18,8 @@
   - `set -u`或`set -o nounset`，变量展开时遇到不存在的变量报错，并停止执行
   - `command || { echo "command failed"; exit 1; }`，command如有非零返回值，脚本停止执行，`set -e`，如果脚本发生错误，终止执行，此时若某条命令可能出错，则可 `command || true`
   - `set -- "$@" -config="/etc/cfssl/${CFSSL_CONFIG}" -db-config="/etc/cfssl/${DB_CONFIG}"`，增加两个位置参数，`set - `或`set --`后跟的参数将成为为位置参数，区别为 `--` 后如果不带参数，原有的参数将被 unset
-- `expr`，输出表达式变量的值，用于整数及字符串，如：+、-、*、/ 和 % 运算，其中 * 需要转义，`expr 15 \* 15`，`expr index “sarasara” "as"`，抓取第一个字符数字串出现的位置
+- `expr`，输出表达式变量的值，用于整数及字符串，如：+、-、*、/ 和 % 运算，其中 * 需要转义，`expr 15 \* 15`，`expr index “sarasara” "as"`，抓取第一个字符(a 或 s)出现的位置
+- `let`，提供常用算术运算符还提供了方幂 ** 运算符，`let no++ let no-=20 a=5+4`
 - `eval command-line`，shell 在执行 command 之前扫描 command-line 两次(进行两次 Expansion)，`eval echo \$$#`，取得最后一个参数
 
 
