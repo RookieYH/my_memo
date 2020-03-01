@@ -13,7 +13,7 @@
 - `clear`，清屏，等价于 `ctrl-L`
 - `locate 搜索关键字`，快速搜索文件(类似 Windows 上的 everything 索引式搜索)
 	- `updatedb`，配合上面的 locate，给 locate 的索引更新(locate 默认是一天更新一次索引)
-- `which git`，返回文件路径，从环境变量 **PATH** 搜索
+- `which git`，返回可执行文件路径，从环境变量 **PATH** 搜索
 - `echo "string"`，输出字符串"， **\\** 转义特殊字符，**${}** 输出变量，**``** 执行命令，输出结果
 	- `echo '$name\"'`，原样输出字符串，不进行转义或变量替换
 	- `echo string...`， 空格为参数分隔符(可以用 **\\** 转义空格)，`` echo `date` ``，显示命令执行结果
@@ -86,7 +86,7 @@
 	- `find /opt -type d -iname .oh-my-zsh`，在/opt下查找，-type d 代表只找目录，.oh-my-zsh 代表搜索的是隐藏文件夹名字为 oh-my-zsh 的，-iname 表示忽略大小写
 	- `find . -name "lin*" -exec ls -l {} \;`，当前目录搜索 lin 开头的文件，然后用其搜索后的结果集，再执行 ls -l 的命令
 	- `find /usr/local/backups -mtime +10 -name "*.html" -exec rm -rf {} \;`,找到并删除以html结尾的10天前的文件，包括带空格的文件
-	- `find /opt -type f -size +800M  -print0 | xargs -0 du -h | sort -nr`，找出  /opt 目录下大于 800 M 的文件
+	- `find /opt -type f -size +800M  -print0 | xargs -0 du -h | sort -nr`，找出  /opt 目录下大于 800 M 的文件，-print0 指定输出的文件列表以null分隔，xargs 命令的 -0 参数表示 用 null 当作分隔符
 	- `find /usr/local/backups -name "*.html" -mtime +10 -print0 |xargs -0 rm -rfv`,删除以html结尾的10天前的文件，包括带空格的文件
 - `file <filename>`，显示文件类型，`file -i <filename>`，显示文件 MINE-type
 - `wget -O wordpress.zip http://www.linuxde.net/download.aspx?id=1080`，下载并以 wordpress.zip 文件名保存
@@ -292,6 +292,15 @@
 
 ## 其他常用命令
 
+- `curl -X POST -d "data=xxx" example.com/form.cgi`， 
+	带有 -d/--data 默认 Content-Type : application/x-www-form-urlencoded,并自动 POST,可省略-X POST
+	- `curl -d '@data.txt' https://google.com/login`,读取 data.txt 文件的内容，作为数据体
+	- `curl -G --data-urlencode 'comment=hello world' https://www.example.com`，--data--urlencode对数据 URL 编码，-G GET 请求
+	- `curl -H "Content-Type:application/json" -H 'Accept-Language: en-US' http://example.com`，请求带头信息
+	- `curl -i https://www.example.com`，输出网页头信息和内容
+	- `curl -k https://www.example.com`，不检查服务器的 SSL 证书
+	- `curl -o example.html https://www.example.com` 将相应保存成 example.html 等同于 `wget`
+- `awk -F ':' '{print $1, $(NF-1)}' demo.txt`， awk见 http://www.ruanyifeng.com/blog/2018/11/awk.html
 - `tar -cvf mytest.tar mytest/`，对 mytest/ 目录进行归档处理(归档和压缩不一样)
 - `tar -xvf mytest.tar`，释放 mytest.tar 到当前目录
 	- `tar -xvf mytest.tar -C /opt/setups/`，释放 mytest.tar 这个归档文件，释放到 /opt/setups/ 目录下	
