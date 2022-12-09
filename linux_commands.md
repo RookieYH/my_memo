@@ -230,7 +230,9 @@
 	- `/etc/hosts`，hosts
 - `net-tools`
 	- `ifconfig`，`netstat -tlunp`
+- `ss`，`ss -nplt`，netstat 的替代品
 - `nc 127.0.0.1 1234`，打开至127.0.0.1:1234的TCP连接， `nc -l 1234`，在1234端口监听，`nc -zv 127.0.0.1 8080 8888`，tcp 扫描8080和8888端口，-v verbose，-u udp，`nc -zv 127.0.0.1 8080-8090`，范围扫描
+- `telnet ip port`，检查端口连通性 
 - `dnsutils`
 	- `dig www.baidu.com`，根据域名查出IP地址(DNS)
 		- `dig -x 192.30.252.153`，从IP地址反查域名
