@@ -1,6 +1,0 @@
-# custom IntelliJ IDEA VM options
-
--Xms512m
--Xmx1536m
--XX:ReservedCodeCacheSize=360m
--XX:SoftRefLRUPolicyMSPerMB=60
